@@ -100,9 +100,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  
+  # package list
   environment.systemPackages = with pkgs; [
     neovim
     tree
@@ -121,7 +120,12 @@
     htop
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
+  # font list
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Hack" ]; })
+  ];
+
+    # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
