@@ -5,6 +5,9 @@
   imports = [
     ./nvim.nix
     ./tmux.nix
+    ./git.nix
+    ./zsh.nix
+    ./openbox.nix
   ];
 
   home = {
