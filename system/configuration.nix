@@ -119,15 +119,21 @@
     btop
     htop
     gcc
-    catppuccin
     openbox
     xfce
+    catppuccin
   ];
 
   # font list
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
+
+  catppuccin = {
+    enable = true;
+    accent = "pink";
+    flavor = "mocha";
+  };
 
     # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  catppuccin.enable = true;
   # Import additional configs
   imports = [
     ./nvim.nix
