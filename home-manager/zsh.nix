@@ -1,18 +1,6 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  catppuccin.enable = true;
-  # Import additional configs
-  imports = [
-    ./nvim.nix
-    ./tmux.nix
-  ];
-
-  home = {
-    username = "lotus";
-    homeDirectory = "/home/lotus";
-  };
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -42,18 +30,4 @@
       copyfile = "xclip -selection clipboard -i";
     };
   };
-
-  # Define home directory packages
-  home.packages = with pkgs; [
-    neovim
-    zsh
-    git
-    tmux
-    librewolf
-    xclip
-  ];
-
-  # Home Manager version and other configurations
-  home.stateVersion = "24.05";
 }
-

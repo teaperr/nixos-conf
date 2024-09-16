@@ -118,6 +118,10 @@
     unzip
     btop
     htop
+    gcc
+    catppuccin
+    openbox
+    xfce
   ];
 
   # font list
