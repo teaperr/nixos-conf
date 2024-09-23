@@ -14,13 +14,25 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = false;
   boot.loader.grub = {
+    default = "saved";
     enable = true;
-    version = 2;
     efiSupport = true;
+    useOSProber = false;
+    copyKernels = false;
     devices = [ "nodev" ];
-    useOSProber = true;
-  };
-  boot.loader.efi.canTouchEfiVariables = true;
+    efiInstallAsRemovable = true;
+    extraConfig = ''
+menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-simple-2134f490-b35b-4d68-a850-e126953c75db' {
+    savedefault
+    insmod part_gpt
+    insmod ext2
+    search --no-floppy --fs-uuid --set=root 2134f490-b35b-4d68-a850-e126953c75db
+    linux /vmlinuz-linux root=/dev/nvme0n1p1
+    initrd /initramfs-linux.img
+}
+    '';
+ };
+  boot.loader.efi.canTouchEfiVariables = false;
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
@@ -137,6 +149,11 @@
     gnome.gnome-settings-daemon
     volumeicon
     dunst
+    os-prober
+    grub2
+    grub2_efi
+    efibootmgr
+    arch-install-scripts
   ];
 
   # font list
