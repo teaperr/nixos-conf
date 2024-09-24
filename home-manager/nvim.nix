@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.file = {
-    ".config/nvim" = {
-      source = ./files/nvim;
-    };
-  };
+  # imports = {
+    # ./nvim/plugins.nix
+  # };
 }

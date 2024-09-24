@@ -84,6 +84,16 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
+  security = {
+    sudo = {
+      enable = true;
+      extraConfig = ''
+        Defaults timestamp_timeout=15
+      '';
+  };
+
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -154,6 +164,7 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
     grub2_efi
     efibootmgr
     arch-install-scripts
+    obs-studio
   ];
 
   # font list
