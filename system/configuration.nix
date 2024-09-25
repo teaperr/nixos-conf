@@ -147,6 +147,7 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
     grub2_efi
     efibootmgr
     arch-install-scripts
+    i3lock-fancy-rapid
   ];
 
   # font list
