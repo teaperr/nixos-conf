@@ -10,14 +10,8 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins = [ "git" "tmux" ];
+      plugins = [ "git" "tmux" "zsh-syntax-highlighting" "zsh-autosuggestions" ];
     };
-
-    # extra zsh plugins (not included with omz
-    extraPlugins = with pkgs; [
-      zsh-syntax-highlighting
-      zsh-autosuggestions
-    ];
     
     shellAliases = {
       rsrc = "source ~/.zshrc";

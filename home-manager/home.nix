@@ -18,12 +18,13 @@
 
   # Define home directory packages
   home.packages = with pkgs; [
-    neovim
     zsh
     git
     tmux
     librewolf
     xclip
+    zsh-autosuggestions
+    zsh-syntax-highlighting
   ];
 
   # Home Manager version and other configurations
