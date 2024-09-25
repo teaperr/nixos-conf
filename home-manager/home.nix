@@ -20,7 +20,6 @@
 
   # Define home directory packages
   home.packages = with pkgs; [
-    tofi
     fastfetch
     zsh
     git
