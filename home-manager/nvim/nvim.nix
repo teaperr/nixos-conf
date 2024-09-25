@@ -2,7 +2,7 @@
 
 {
   programs.neovim = {
-    enable = true;
-	catppuccin.enable = true;
+    # enable = true;
+    catppuccin.enable = true;
   };
 }
