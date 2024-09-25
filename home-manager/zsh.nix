@@ -19,7 +19,7 @@
       ZSH_TMUX_AUTOSTART = "TRUE";
       CASE_SENSITIVE = "TRUE";
       ENABLE_CORRECTION = "TRUE";
-      COMPLETION_WAITING_DOTS = "TRUE";
+      COMPLETION_WAITING_DOTS = "...";
       COLORTERM = "truecolor";
       TERM = "xterm-256color";
     };
