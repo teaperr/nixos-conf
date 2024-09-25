@@ -12,7 +12,7 @@
 
     catppuccin.enable = true;
 
-    extraConfigBeforePlugins = ''
+    extraConfig = ''
       # keep directory on new session
       set -g update-environment "PWD";
       # catppuccin config
