@@ -1,15 +1,17 @@
 { pkgs, ... }:
 
-let
-  # Helper function to recursively get all .nix files in a directory
-  getNixFiles = dir: builtins.filter (file: builtins.match ".*\\.nix$" file != null) (builtins.pathRecurse dir);
-  
-  # Automatically import all .nix files in the current directory
-  nixFiles = getNixFiles ./.;
-in
 {
-  # Dynamically import all .nix files
-  imports = nixFiles;
+  # Import additional configs
+  imports = [
+    ./alacritty.nix
+    ./git.nix
+    ./nvim/nvim.nix
+    ./openbox/openbox.nix
+    ./theming.nix
+    ./tint2.nix
+    ./tmux.nix
+    ./zsh.nix
+  ];
 
   home = {
     username = "lotus";
@@ -50,3 +52,4 @@ in
   # Home Manager version and other configurations
   home.stateVersion = "24.05";
 }
+
