@@ -49,6 +49,7 @@
     imagemagick
     cmake
     gnumake
+    nitrogen
   ];
 
   # Home Manager version and other configurations
