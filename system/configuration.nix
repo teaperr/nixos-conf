@@ -63,7 +63,7 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
     defaultSession = "none+openbox";
   };
 
-  services = {
+  services.xserver = {
     desktopManager = {
       plasma6.enable = true;
       xfce.enable = true;
