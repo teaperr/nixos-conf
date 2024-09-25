@@ -63,7 +63,7 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
     defaultSession = "none+openbox";
   };
 
-  services.xserver = {
+  services = {
     desktopManager = {
       plasma6.enable = true;
       xfce.enable = true;
@@ -135,36 +135,18 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
   
   # package list
   environment.systemPackages = with pkgs; [
-    neovim
-    tree
     home-manager
     wget
     git
     alacritty
     zsh
-    librewolf
-    tmux
-    vesktop
-    xorg.xinput
-    xclip
     unzip
-    btop
-    htop
     gcc
-    catppuccin
-    rofi
-    tint2
-    picom
-    spaceFM
-    gnome.gnome-settings-daemon
-    volumeicon
-    dunst
     os-prober
     grub2
     grub2_efi
     efibootmgr
     arch-install-scripts
-    obs-studio
   ];
 
   # font list

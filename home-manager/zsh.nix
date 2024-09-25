@@ -16,6 +16,10 @@
     sessionVariables = {
       EDITOR = "nvim";
       ZSH_TMUX_FIXTERM_WITH_256COLOR = "TRUE";
+      ZSH_TMUX_AUTOSTART = "TRUE";
+      CASE_SENSITIVE = "TRUE";
+      ENABLE_CORRECTION = "TRUE";
+      COMPLETION_WAITING_DOTS = "TRUE";
     };
     
     shellAliases = {
