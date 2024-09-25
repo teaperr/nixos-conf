@@ -48,7 +48,7 @@
     betterlockscreen
     imagemagick
     cmake
-    make
+    gnumake
   ];
 
   # Home Manager version and other configurations
