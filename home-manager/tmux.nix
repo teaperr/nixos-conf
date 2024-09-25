@@ -13,6 +13,9 @@
     catppuccin.enable = true;
 
     extraConfig = ''
+      # keep directory on new session
+      set -g update-environment "PWD";
+      # catppuccin config
       set -g @catppuccin_flavor 'macchiato'
       set -g @catppuccin_window_left_separator ""
       set -g @catppuccin_window_right_separator ""
