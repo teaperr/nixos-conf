@@ -59,7 +59,7 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
   };
 
   services.displayManager = {
-    ly.enable = true;
+    greetd.enable = true;
     defaultSession = "none+openbox";
   };
 
