@@ -45,6 +45,7 @@
     dunst
     obs-studio
     xterm
+    betterlockscreen
   ];
 
   # Home Manager version and other configurations
