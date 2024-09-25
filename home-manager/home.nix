@@ -51,6 +51,7 @@
     gnumake
     nitrogen
     picom
+    krita
   ];
 
   # Home Manager version and other configurations
