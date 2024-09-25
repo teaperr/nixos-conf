@@ -5,7 +5,7 @@
     enable = true;
     catppuccin.enable = true;
     extraConfig = ''
-vim.o.termguicolors = true
+set termguicolors
     '';
   };
 }
