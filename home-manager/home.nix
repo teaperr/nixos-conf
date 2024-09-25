@@ -47,6 +47,8 @@
     xterm
     betterlockscreen
     imagemagick
+    cmake
+    make
   ];
 
   # Home Manager version and other configurations
