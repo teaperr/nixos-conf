@@ -1,4 +1,4 @@
-{ config, ... }
+{ config, ... }:
 
 {
   home.file.".config/tint2/tint2rc".text = ''
