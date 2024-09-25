@@ -3,7 +3,7 @@
 {
   # Import additional configs
   imports = [
-    ./nvim.nix
+    ./nvim/nvim.nix
     ./tmux.nix
     ./git.nix
     ./zsh.nix
