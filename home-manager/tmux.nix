@@ -14,7 +14,10 @@
 
     extraConfig = ''
       # keep directory on new session
-      set -g update-environment "PWD";
+      bind '"' split-window -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
+      bind c new-window -c "#{pane_current_path}"
+
       # catppuccin config
       set -g @catppuccin_flavor 'macchiato'
       set -g @catppuccin_window_left_separator ""

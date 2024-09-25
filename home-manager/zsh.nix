@@ -4,7 +4,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     oh-my-zsh = {
@@ -32,5 +32,9 @@
       fixmouse = "xinput set-prop '13' 'libinput Accel Speed' -1 && xinput set-button-map 13 1 2 3 4 5 6 7 8 3";
       copyfile = "xclip -selection clipboard -i";
     };
+    home.packages = with pkgs; [
+      zsh-autosuggestions
+      zsh-syntax-highlighting
+    ];
   };
 }
