@@ -58,20 +58,20 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # services.displayManager = {
-  #   sddm.enable = true;
-  #   defaultSession = "none+openbox";
-  # };
-
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd openbox";
-	user = "lotus";
-      };
-    };
+  services.displayManager = {
+    sddm.enable = true;
+    defaultSession = "none+openbox";
   };
+
+	#  services.greetd = {
+	#    enable = true;
+	#    settings = {
+	#      default_session = {
+	#        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd openbox";
+	# user = "lotus";
+	#      };
+	#    };
+	#  };
 
   services.xserver = {
     desktopManager = {
