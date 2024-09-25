@@ -43,6 +43,7 @@
     volumeicon
     dunst
     obs-studio
+    xterm
   ];
 
   # Home Manager version and other configurations

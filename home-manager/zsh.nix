@@ -20,6 +20,8 @@
       CASE_SENSITIVE = "TRUE";
       ENABLE_CORRECTION = "TRUE";
       COMPLETION_WAITING_DOTS = "TRUE";
+      COLORTERM = "truecolor";
+      TERM = "xterm-256color";
     };
     
     shellAliases = {
