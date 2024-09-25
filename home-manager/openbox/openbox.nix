@@ -6,4 +6,5 @@
     ./environment.nix
     ./rc.nix
   ];
+  programs.nitrogen.enable = true;
 }
