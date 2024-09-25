@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.file.".config/rofi/rofi.rasi".text ''
+  home.file.".config/rofi/rofi.rasi".text = ''
 configuration{
     modi: "run,drun,window";
     icon-theme: "Oranchelo";
@@ -27,7 +27,7 @@ window {
 }
   '';
 
-  home.file.".config/rofi/userconfig/config.rasi".text ''
+  home.file.".config/rofi/userconfig/config.rasi".text = ''
 configuration{
     modi: "run,drun,window";
     icon-theme: "Oranchelo";

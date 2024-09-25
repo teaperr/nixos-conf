@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.file.".config/alacritty/alacritty.toml".text ''
+  home.file.".config/alacritty/alacritty.toml".text = ''
 import = [
     "~/.config/alacritty/catppuccin-mocha.toml"
 ]
@@ -20,7 +20,7 @@ size = 10.0
 TERM = "xterm-256color"
   '';
   
-  home.file.".config/alacritty/catppuccin-mocha.toml".text ''
+  home.file.".config/alacritty/catppuccin-mocha.toml".text = ''
 [colors.primary]
 background = "#1e1e2e"
 foreground = "#cdd6f4"
