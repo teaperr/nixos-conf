@@ -9,6 +9,8 @@
     	tmuxPlugins.better-mouse-mode
     ];
 
+    catppuccin.enable = true;
+
     extraConfig = ''
       set -g @catppuccin_flavor 'macchiato'
       set -g @catppuccin_window_left_separator ""
