@@ -1,4 +1,4 @@
-{ config, ... }
+{ config, ... }:
 
 {
   home.file.".config/openbox/rc.xml".text = ''
