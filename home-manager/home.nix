@@ -46,6 +46,7 @@
     obs-studio
     xterm
     betterlockscreen
+    imagemagick
   ];
 
   # Home Manager version and other configurations
