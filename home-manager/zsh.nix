@@ -12,6 +12,11 @@
       theme = "robbyrussell";
       plugins = [ "git" "tmux" ];
     };
+
+    sessionVariables = {
+      EDITOR = "nvim";
+      ZSH_TMUX_FIXTERM_WITH_256COLOR = "TRUE";
+    };
     
     shellAliases = {
       rsrc = "source ~/.zshrc";
