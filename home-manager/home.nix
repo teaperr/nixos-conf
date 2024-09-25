@@ -27,7 +27,6 @@
     xclip
     zsh-autosuggestions
     zsh-syntax-highlighting
-    neovim
     tree
     librewolf
     tmux
