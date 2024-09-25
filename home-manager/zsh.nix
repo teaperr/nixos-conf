@@ -10,7 +10,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins = [ "git" "tmux" "zsh-syntax-highlighting" "zsh-autosuggestions" ];
+      plugins = [ "git" "tmux" ];
     };
     
     shellAliases = {
