@@ -34,5 +34,5 @@ delay 2
 bash ~/.screenlayout/openbox2.sh
 
 dunst &
-  ''l
+  '';
 }
