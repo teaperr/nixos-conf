@@ -50,6 +50,7 @@
     cmake
     gnumake
     nitrogen
+    picom
   ];
 
   # Home Manager version and other configurations
