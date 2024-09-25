@@ -3,12 +3,14 @@
 {
   # Import additional configs
   imports = [
-    ./nvim/nvim.nix
-    ./tmux.nix
-    ./git.nix
-    ./zsh.nix
-    ./openbox.nix
     ./alacritty.nix
+    ./git.nix
+    ./nvim/nvim.nix
+    ./openbox/openbox.nix
+    ./theming.nix
+    ./tint2.nix
+    ./tmux.nix
+    ./zsh.nix
   ];
 
   home = {
