@@ -31,7 +31,7 @@ kdeconnect-cli --refresh &
 # delay to make sure desktop is properly loaded
 delay 2
 # monitor layout
-bash ~/.screenlayout/openbox2.sh
+bash ~/nixos-config/home-manager/scripts/openbox2.sh
 
 dunst &
   '';

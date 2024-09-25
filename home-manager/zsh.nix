@@ -15,13 +15,13 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      ZSH_TMUX_FIXTERM_WITH_256COLOR = "TRUE";
+      # ZSH_TMUX_FIXTERM_WITH_256COLOR = "TRUE";
       ZSH_TMUX_AUTOSTART = "TRUE";
       CASE_SENSITIVE = "TRUE";
       ENABLE_CORRECTION = "TRUE";
       COMPLETION_WAITING_DOTS = "...";
-      COLORTERM = "truecolor";
-      TERM = "xterm-256color";
+      # COLORTERM = "truecolor";
+      # TERM = "xterm-256color";
     };
     
     shellAliases = {

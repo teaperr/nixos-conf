@@ -17,7 +17,7 @@ bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" }
 size = 10.0
 
 [env]
-TERM = "screen-256color"
+TERM = "xterm-256color"
   '';
   
   home.file.".config/alacritty/catppuccin-mocha.toml".text = ''
