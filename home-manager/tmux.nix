@@ -4,7 +4,7 @@
     enable = true;
     clock24 = true;
     baseIndex = 1;
-    terminal = "tmux-256color";
+    terminal = "alacritty";
 
     plugins = with pkgs; [
     	tmuxPlugins.better-mouse-mode
