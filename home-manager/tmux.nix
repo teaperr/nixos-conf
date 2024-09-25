@@ -5,7 +5,7 @@
     clock24 = true;
     baseIndex = 1;
     secureSocket =  false;
-    terminal = "tmux-direct";
+    terminal = "xterm-256color";
 
     plugins = with pkgs; [
     	tmuxPlugins.better-mouse-mode
