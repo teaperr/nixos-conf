@@ -4,7 +4,8 @@
     enable = true;
     clock24 = true;
     baseIndex = 1;
-    terminal = "alacritty";
+    secureSocket =  false;
+    terminal = "tmux-direct";
 
     plugins = with pkgs; [
     	tmuxPlugins.better-mouse-mode
