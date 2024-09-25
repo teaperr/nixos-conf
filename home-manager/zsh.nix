@@ -6,9 +6,18 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    oh-my-zsh.enable = true;
-    oh-my-zsh.theme = "robbyrussell";
-    oh-my-zsh.plugins = [ "git" "zsh-syntax-highlighting" "zsh-autosuggestions" "tmux" ];
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [ "git" "tmux" ];
+    };
+
+    # extra zsh plugins (not included with omz
+    extraPlugins = with pkgs; [
+      zsh-syntax-highlighting
+      zsh-autosuggestions
+    ];
     
     shellAliases = {
       rsrc = "source ~/.zshrc";
