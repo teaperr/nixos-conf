@@ -194,7 +194,12 @@
     <!-- Lock screen with i3lockmore -->
     <keybind key="W-l">
       <action name="Execute">
-        <command>betterlockscreen ~/Pictures/wallpaper.png</command>
+        <command>betterlockscreen -l --span</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-Backspace">
+      <action name="Execute">
+        <command>openbox --exit</command>
       </action>
     </keybind>
     <!-- Move window to the left monitor (DVI-I-1) -->
