@@ -20,6 +20,7 @@
 
   # Define home directory packages
   home.packages = with pkgs; [
+    fastfetch
     zsh
     git
     tmux
