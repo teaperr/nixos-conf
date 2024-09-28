@@ -4,6 +4,6 @@
   services.xserver = {
     enable = true;
     layout = "us";
-    dpi = 120;
+    dpi = 100;
   };
 }
