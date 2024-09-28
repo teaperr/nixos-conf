@@ -12,6 +12,9 @@ endif
 
 syntax on
 set termguicolors
+set shiftwidth=2
+set relativenumber
+set number
 colorscheme catppuccin-mocha
     '';
   };

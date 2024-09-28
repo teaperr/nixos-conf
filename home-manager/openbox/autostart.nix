@@ -15,7 +15,7 @@ picom --backend glx &
 
 # initialize desktop
 # exec spacefm --desktop &
-nitrogen ~/nixos-config/home-manager/common/assets/wallpaper.* &
+nitrogen &
 
 #config section
 xinput set-prop "pointer:Razer Razer DeathAdder Essential" "libinput Accel Speed" -1 &
