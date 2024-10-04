@@ -4,6 +4,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+<<<<<<< HEAD
+=======
+      ./services
+>>>>>>> fc8d91c085648909ef35950d979bba7fe20a51bf
     ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

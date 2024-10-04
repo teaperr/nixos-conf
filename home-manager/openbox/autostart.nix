@@ -11,8 +11,14 @@
 	# picom &
 	picom --backend glx &
 
+<<<<<<< HEAD
 	# initialize desktop
 	exec spacefm --desktop &
+=======
+# initialize desktop
+# exec spacefm --desktop &
+nitrogen &
+>>>>>>> fc8d91c085648909ef35950d979bba7fe20a51bf
 
 	# config section
 	xinput set-prop "pointer:Razer Razer DeathAdder Essential" "libinput Accel Speed" -1 &

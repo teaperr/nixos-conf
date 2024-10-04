@@ -11,6 +11,7 @@
     fastfetch
     zsh
     git
+		github-cli
     tmux
     librewolf
     xclip
