@@ -1,5 +1,3 @@
-{ config, ... }:
-
 {
   home.file.".config/openbox/rc.xml".text = ''
 <?xml version="1.0" encoding="UTF-8"?>
@@ -185,6 +183,11 @@
     </keybind>
     <keybind key="Super-Page_Up">
       <action name="Maximize"/>
+    </keybind>
+		<keybind key="Super-v">
+      <action name="Execute">
+        <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'</command>
+      </action>
     </keybind>
     <keybind key="Print">
       <action name="Execute">

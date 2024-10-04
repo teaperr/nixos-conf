@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   home.file.".config/alacritty/alacritty.toml".text = ''
 import = [
@@ -8,6 +6,8 @@ import = [
 
 [window]
 startup_mode = "Maximized"
+opacity = 0.8
+blur = true
 
 [font]
 normal = { family = "Hack Nerd Font", style = "Regular" }

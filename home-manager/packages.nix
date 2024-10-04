@@ -1,0 +1,44 @@
+{ pkgs, ... }:
+
+{
+	home.packages = with pkgs; [
+		haskellPackages.greenclip
+		ripgrep
+		clipman
+		kicad
+		ueberzugpp
+		arandr
+    fastfetch
+    zsh
+    git
+    tmux
+    librewolf
+    xclip
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    tree
+    librewolf
+    tmux
+    vesktop
+    xorg.xinput
+    xclip
+    btop
+    htop
+    catppuccin
+    rofi
+    tint2
+    picom
+    spaceFM
+    volumeicon
+    dunst
+    obs-studio
+    xterm
+    betterlockscreen
+    imagemagick
+    cmake
+    gnumake
+    nitrogen
+    picom
+    krita
+	];
+}

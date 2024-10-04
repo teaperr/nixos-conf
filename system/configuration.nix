@@ -4,12 +4,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./hardware-specific.nix
     ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  hardware.nvidia.open = false;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = false;
@@ -17,7 +14,7 @@
     default = "saved";
     enable = true;
     efiSupport = true;
-    useOSProber = false;
+    useOSProber = true;
     copyKernels = false;
     devices = [ "nodev" ];
     efiInstallAsRemovable = true;
@@ -91,8 +88,6 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
       variant = "";
     };
   };
-
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   security = {
     sudo = {
