@@ -46,6 +46,11 @@
 				key = "kk";
 				action = "<C-o>";
 			}
+			{
+				mode = "n";
+				key = "<leader>t";
+				action = ":TransparentToggle<Enter>";
+			}
 		];
   };
 }

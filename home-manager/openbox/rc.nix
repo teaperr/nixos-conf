@@ -2,6 +2,12 @@
   home.file.".config/openbox/rc.xml".text = ''
 <?xml version="1.0" encoding="UTF-8"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<applications>
+		<startup>
+			<command>sh ~/.config/openbox/autostart</command>
+			<command>sh ~/.config/openbox/environment</command>
+		</startup>
+	</applications>
   <resistance>
     <strength>10</strength>
     <screen_edge_strength>10</screen_edge_strength>

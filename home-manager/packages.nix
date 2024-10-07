@@ -2,6 +2,7 @@
 
 {
 	home.packages = with pkgs; [
+		catimg
 		haskellPackages.greenclip
 		ripgrep
 		clipman

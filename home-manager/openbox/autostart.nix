@@ -1,5 +1,6 @@
 {
-  home.file.".config/openbox/autostart".text = ''
+  home.file.".config/openbox/autostart" = {
+		text = ''
 	if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
 	 /usr/lib/openbox/gnome-settings-daemon &
 	elif which gnome-settings-daemon >/dev/null 2>&1; then
@@ -11,14 +12,12 @@
 	# picom &
 	picom --backend glx &
 
-<<<<<<< HEAD
 	# initialize desktop
 	exec spacefm --desktop &
-=======
-# initialize desktop
-# exec spacefm --desktop &
-nitrogen &
->>>>>>> fc8d91c085648909ef35950d979bba7fe20a51bf
+
+	# initialize desktop
+	# exec spacefm --desktop &
+	nitrogen &
 
 	# config section
 	xinput set-prop "pointer:Razer Razer DeathAdder Essential" "libinput Accel Speed" -1 &
@@ -39,5 +38,6 @@ nitrogen &
 	xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1366x768 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --mode 1920x1080 --pos 1440x0 --rotate normal
 
 	dunst &
-  '';
+		'';
+	};
 }
