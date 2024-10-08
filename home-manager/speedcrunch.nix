@@ -37,4 +37,21 @@ Layout\WindowAlwaysOnTop=false
 Layout\WindowGeometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x1@\0\0\0\xac\0\0\x3\xc1\0\0\x2\xa8\0\0\x1\x41\0\0\0\xc4\0\0\x3\xc0\0\0\x2\xa3\0\0\0\0\0\0\0\0\x5V\0\0\x1\x41\0\0\0\xc4\0\0\x3\xc0\0\0\x2\xa3)
 Layout\WindowOnFullScreen=false
 	'';
+	home.file.".local/share/SpeedCrunch/color-schemes/catppuccin-mocha.json".text = ''
+{
+  "cursor": "#f5e0dc",
+  "number": "#fab387",
+  "parens": "#cdd6f4",
+  "result": "#a6e3a1",
+  "comment": "#6c7086",
+  "matched": "#94e2d5",
+  "function": "#89b4fa",
+  "operator": "#89dceb",
+  "variable": "#f38ba8",
+  "scrollbar": "#9399b2",
+  "separator": "#9399b2",
+  "background": "#1e1e2e",
+  "editorbackground": "#313244"
+}
+	'';
 }
