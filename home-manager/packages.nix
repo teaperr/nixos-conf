@@ -2,6 +2,10 @@
 
 {
 	home.packages = with pkgs; [
+		speedcrunch
+		libreoffice-qt6-fresh
+		haskellPackages.doctemplates
+		pandoc
 		obconf
 		pavucontrol
 		catimg

@@ -1,19 +1,22 @@
 {
   imports = [
-    ./zsh.nix
-		./yazi.nix
-    ./nvim
     ./alacritty.nix
-    ./tmux.nix
+    ./git.nix
+		./greenclip.nix
+		./kde
+		./librewolf.nix
+    ./nvim
+    ./openbox
+		./packages.nix
     ./picom.nix
+		./rofi
+		./services
+		./speedcrunch.nix
     ./theming.nix
     ./tint2.nix
-    ./git.nix
-    ./openbox/openbox.nix
-		./packages.nix
-		./librewolf.nix
-		./services
-		./greenclip.nix
-		./rofi/rofi.nix
+    ./tmux.nix
+		./vesktop
+		./yazi.nix
+    ./zsh.nix
   ];
 }
