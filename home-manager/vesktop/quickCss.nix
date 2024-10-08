@@ -21,13 +21,6 @@
   max-height: 60vh;
 }
 
-/* trans home icon
-.childWrapper-1j_1ub{
-background: url(https://raw.githubusercontent.com/teaperr/teaperhost/main/squircle.png);
-background-size: contain;
-visibility: hidden;
-}
-
 [aria-label='Direct Messages'].wrapper-3kah-n {
   background: url(https://raw.githubusercontent.com/teaperr/teaperhost/main/squircle.png);
   background-size: contain;
@@ -36,13 +29,5 @@ visibility: hidden;
 [class*="acronym"] {
   visibility: visible !important;
 } */
-/* home icon */
-.wrapper-3kah-n[data-list-item-id="guildsnav___home"] .childWrapper-1j_1ub {
-    background: url("https://raw.githubusercontent.com/teaperr/teaperhost/main/squircle.png") no-repeat center !important;
-    background-size: cover !important;
-}
-.wrapper-3kah-n[data-list-item-id="guildsnav___home"] .childWrapper-1j_1ub svg {
-    display: none;
-}
 	'';
 }

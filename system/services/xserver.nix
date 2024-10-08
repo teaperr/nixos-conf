@@ -1,8 +1,6 @@
 {
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    dpi = 100;
-    xkb.options = "terminate:ctrl_alt_bksp";
-  };
+	services.xserver = {
+		dpi = 100;
+		enableCtrlAltBackspace = true;
+	};
 }
