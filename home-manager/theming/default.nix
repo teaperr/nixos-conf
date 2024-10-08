@@ -1,4 +1,7 @@
 {
+	imports = [
+		./catppuccinColors.nix
+	];
 	programs = {
 
 	};

@@ -1,7 +1,6 @@
 {
-	home.file.".config/spectaclerc".text = ''
-[General]
-launchAction=UseLastUsedCapturemode
+	home.file.".config/spectaclerc".text = ''[General]
+clipboardGroup=PostScreenshotCopyImage
 
 [GuiConfig]
 captureMode=0

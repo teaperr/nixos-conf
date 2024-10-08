@@ -62,10 +62,10 @@ fi
 # Ask for confirmation
 rdialog () {
 rofi -dmenu\
-    -i\
-    -no-fixed-num-lines\
-    -p "Are You Sure? : "\
-    -theme "$ddir/confirm.rasi"
+	  -i\
+	  -no-fixed-num-lines\
+	  -p "Are You Sure? : "\
+	  -theme "$ddir/confirm.rasi"
 }
 
 # Display Help
@@ -78,30 +78,30 @@ options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
 
 chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
 case $chosen in
-    $shutdown)
+	  $shutdown)
 		ans=$(rdialog &)
 		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
 			systemctl poweroff
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
-        else
+	      else
 			show_msg
-        fi
-        ;;
-    $reboot)
+	      fi
+	      ;;
+	  $reboot)
 		ans=$(rdialog &)
 		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
 			systemctl reboot
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
-        else
+	      else
 			show_msg
-        fi
-        ;;
-    $lock)
-        sh $HOME/.local/bin/lock
-        ;;
-    $suspend)
+	      fi
+	      ;;
+	  $lock)
+	      sh $HOME/.local/bin/lock
+	      ;;
+	  $suspend)
 		ans=$(rdialog &)
 		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
 			mpc -q pause
@@ -110,20 +110,20 @@ case $chosen in
 			systemctl suspend
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
-        else
+	      else
 			show_msg
-        fi
-        ;;
-    $logout)
+	      fi
+	      ;;
+	  $logout)
 		ans=$(rdialog &)
 		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
 			bspc quit
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
-        else
+	      else
 			show_msg
-        fi
-        ;;
+	      fi
+	      ;;
 esac
 
 '';
@@ -218,21 +218,21 @@ options="$screen\n$area\n$window\n$infive\n$inten"
 
 chosen="$(echo -e "$options" | $rofi_command -p 'Take Screenshot' -dmenu -selected-row 0)"
 case $chosen in
-    $screen)
+	  $screen)
 		shotnow
-        ;;
-    $area)
+	      ;;
+	  $area)
 		shotarea
-        ;;
-    $window)
+	      ;;
+	  $window)
 		shotwin
 		;;
-    $infive)
+	  $infive)
 		shot5
 		;;
-    $inten)
+	  $inten)
 		shot10
-        ;;
+	      ;;
 esac
 
 '';
@@ -241,192 +241,192 @@ esac
 @import "font.rasi"
 
 * {
-    background-color:       @BG;
-    text-color:             @FG;
+	  background-color:       @BG;
+	  text-color:             @FG;
 }
 
 window {
-    width:        	        250px;
-    padding:    	        20px;
-    border:		            0px 0px 2px 0px;
-    border-radius:          8px;
-    border-color:           @BDR;
-    location:               0;
-    x-offset:               0;
-    y-offset:               -4%;
+	  width:        	        250px;
+	  padding:    	        20px;
+	  border:		            0px 0px 2px 0px;
+	  border-radius:          8px;
+	  border-color:           @BDR;
+	  location:               0;
+	  x-offset:               0;
+	  y-offset:               -4%;
 }
 
 entry {
-    expand: 		        true;
-    width: 		            150px;
-    text-color:		        @BDR;
+	  expand: 		        true;
+	  width: 		            150px;
+	  text-color:		        @BDR;
 }
 '';
 
 	".config/rofi/config/bluetooth.rasi".text = ''configuration {
-    show-icons:                     false;
-    display-drun: 		            "";
-    drun-display-format:            "{icon} {name}";
-    disable-history:                false;
-    click-to-exit: 		            true;
-    location:                       0;
+	  show-icons:                     false;
+	  display-drun: 		            "";
+	  drun-display-format:            "{icon} {name}";
+	  disable-history:                false;
+	  click-to-exit: 		            true;
+	  location:                       0;
 }
 
 @import "font.rasi"
 @import "colors.rasi"
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                         2px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    width:                          300px;
-    anchor:                         center;
-    x-offset:                       0;
-    y-offset:                       0;
+	  transparency:                   "real";
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  border:                         2px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  width:                          300px;
+	  anchor:                         center;
+	  x-offset:                       0;
+	  y-offset:                       0;
 }
 
 prompt {
-    enabled: 			            true;
-    margin: 			            0px 8px 0px 8px;
-    padding: 			            8px;
-    background-color: 	            @IMG;
-    text-color: 	                @BG;
-    border:                  	    0px 0px 0px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
+	  enabled: 			            true;
+	  margin: 			            0px 8px 0px 8px;
+	  padding: 			            8px;
+	  background-color: 	            @IMG;
+	  text-color: 	                @BG;
+	  border:                  	    0px 0px 0px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
 }
 
 textbox-prompt-colon {
-    expand: 			            false;
-    str: 			                "󰂯";
-    border-radius:                  100%;
-    background-color:               @SEL;
-    text-color:                     @FG;
-    padding:                        8px 12px 8px 12px;
-    font:			                "HackGen Console NF Regular 10";
+	  expand: 			            false;
+	  str: 			                "󰂯";
+	  border-radius:                  100%;
+	  background-color:               @SEL;
+	  text-color:                     @FG;
+	  padding:                        8px 12px 8px 12px;
+	  font:			                "HackGen Console NF Regular 10";
 }
 
 entry {
-    background-color:               @BG;
-    text-color:                     @FG;
-    placeholder-color:              @FG;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "";
-    blink:                          true;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    padding:                        8px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  placeholder-color:              @FG;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  placeholder:                    "";
+	  blink:                          true;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  padding:                        8px;
 }
 
 inputbar {
-    children: 		                [ textbox-prompt-colon, prompt, entry ];
-    background-color:               @BG;
-    text-color:                     @FG;
-    expand:                         false;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  0px;
-    border-color:                   @BDR;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+	  children: 		                [ textbox-prompt-colon, prompt, entry ];
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  expand:                         false;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  0px;
+	  border-color:                   @BDR;
+	  margin:                         0px 0px 0px 0px;
+	  padding:                        0px;
+	  position:                       center;
 }
 
 case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
-    spacing:                        0;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
-    columns:                        1;
-    lines:			    7;
-    spacing:                        4px;
-    cycle:                          true;
-    dynamic:                        true;
-    layout:                         vertical;
+	  background-color:               @BG;
+	  columns:                        1;
+	  lines:			    7;
+	  spacing:                        4px;
+	  cycle:                          true;
+	  dynamic:                        true;
+	  layout:                         vertical;
 }
 
 mainbox {
-    background-color:               @BG;
-    children:                       [ inputbar, listview ];
-    spacing:                       	15px;
-    padding:                        15px;
+	  background-color:               @BG;
+	  children:                       [ inputbar, listview ];
+	  spacing:                       	15px;
+	  padding:                        15px;
 }
 
 element {
-    background-color:               @BG;
-    text-color:                     @FG;
-    orientation:                    horizontal;
-    border-radius:                  4px;
-    padding:                        6px 6px 6px 6px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  orientation:                    horizontal;
+	  border-radius:                  4px;
+	  padding:                        6px 6px 6px 6px;
 }
 
 element-icon {
-    background-color: 				inherit;
-    text-color:       				inherit;
-    size:                           0px;
-    border:                         0px;
+	  background-color: 				inherit;
+	  text-color:       				inherit;
+	  size:                           0px;
+	  border:                         0px;
 }
 
 element-text {
-    background-color: 				inherit;
-    text-color:       				inherit;
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         2px 0px 2px 6px;
+	  background-color: 				inherit;
+	  text-color:       				inherit;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  vertical-align:                 0.5;
+	  margin:                         2px 0px 2px 6px;
 }
 
 element normal.urgent,
 element alternate.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
-    border-radius:                  9px;
+	  background-color:               @UGT;
+	  text-color:                     @FG;
+	  border-radius:                  9px;
 }
 
 element normal.active,
 element alternate.active {
-    background-color:               @BGA;
-    text-color:                     @FG;
+	  background-color:               @BGA;
+	  text-color:                     @FG;
 }
 
 element selected {
-    background-color:               @BGA;
-    text-color:                     @SEL;
-    border:                  		0px 0px 0px 0px;
-    border-radius:                  10px;
-    border-color:                  	@BDR;
+	  background-color:               @BGA;
+	  text-color:                     @SEL;
+	  border:                  		0px 0px 0px 0px;
+	  border-radius:                  10px;
+	  border-color:                  	@BDR;
 }
 
 element selected.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
+	  background-color:               @UGT;
+	  text-color:                     @FG;
 }
 
 element selected.active {
-    background-color:               @BGA;
-    color:                          @FG;
+	  background-color:               @BGA;
+	  color:                          @FG;
 }
 '';
 
 	".config/rofi/config/colors.rasi".text = ''* {
-    BG:     #1E1D2Fff;     /* Background color */
-    BGA:    #B7BDF8ff;     /* Background accent (Lavender) */
-    FG:     #D9E0EEff;     /* Foreground color */
-    FGA:    #C9CBFFff;     /* Foreground accent (Lavender) */
-    BDR:    #B7BDF8ff;     /* Border color (Lavender) */
-    SEL:    #1E1E2Eff;     /* Selection color */
-    UGT:    #B7BDF8ff;     /* Underline text (Lavender) */
-    IMG:    #B7BDF8ff;     /* Image color (Lavender) */
-    OFF:    #575268ff;     /* Off color (disabled state) */
-    ON:     #B7BDF8ff;     /* On color (active state, Lavender) */
+	  BG:     #1E1D2Fff;     /* Background color */
+	  BGA:    #B7BDF8ff;     /* Background accent (Lavender) */
+	  FG:     #D9E0EEff;     /* Foreground color */
+	  FGA:    #C9CBFFff;     /* Foreground accent (Lavender) */
+	  BDR:    #B7BDF8ff;     /* Border color (Lavender) */
+	  SEL:    #1E1E2Eff;     /* Selection color */
+	  UGT:    #B7BDF8ff;     /* Underline text (Lavender) */
+	  IMG:    #B7BDF8ff;     /* Image color (Lavender) */
+	  OFF:    #575268ff;     /* Off color (disabled state) */
+	  ON:     #B7BDF8ff;     /* On color (active state, Lavender) */
 }
 '';
 
@@ -434,191 +434,191 @@ element selected.active {
 @import "font.rasi"
 
 * {
-    background-color:       @BG;
-    text-color:             @FG;
+	  background-color:       @BG;
+	  text-color:             @FG;
 }
 
 window {
-    width:      	        200px;
-    padding:                20px;
-    border:		            0px 0px 2px 0px;
-    border-radius:          8px;
-    border-color:           @BDR;
-    location:               0;
-    x-offset:               0;
-    y-offset:               -4%;
+	  width:      	        200px;
+	  padding:                20px;
+	  border:		            0px 0px 2px 0px;
+	  border-radius:          8px;
+	  border-color:           @BDR;
+	  location:               0;
+	  x-offset:               0;
+	  y-offset:               -4%;
 }
 
 entry {
-    expand: 		        true;
-    width: 		            150px;
-    text-color:		        @BDR;
+	  expand: 		        true;
+	  width: 		            150px;
+	  text-color:		        @BDR;
 }
 '';
 
 	".config/rofi/config/font.rasi".text = ''* {
-    font:				 	"HackGen Console NF Regular 10";
+	  font:				 	"HackGen Console NF Regular 10";
 }
 '';
 
 	".config/rofi/config/launcher.rasi".text = ''configuration {
-    show-icons:                     true;
-    display-drun: 		            "";
-    drun-display-format:            "{icon} {name}";
-    disable-history:                false;
-    click-to-exit: 		            true;
-    location:                       0;
+	  show-icons:                     true;
+	  display-drun: 		            "";
+	  drun-display-format:            "{icon} {name}";
+	  disable-history:                false;
+	  click-to-exit: 		            true;
+	  location:                       0;
 }
 
 @import "font.rasi"
 @import "colors.rasi"
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                         2px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    width:                          500px;
-    anchor:                         center;
-    x-offset:                       0;
-    y-offset:                       0;
+	  transparency:                   "real";
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  border:                         2px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  width:                          500px;
+	  anchor:                         center;
+	  x-offset:                       0;
+	  y-offset:                       0;
 }
 
 prompt {
-    enabled: 			            true;
-    padding: 			            8px;
-    background-color: 		        @BG;
-    text-color: 		            @IMG;
+	  enabled: 			            true;
+	  padding: 			            8px;
+	  background-color: 		        @BG;
+	  text-color: 		            @IMG;
 }
 
 textbox-prompt-colon {
-    expand: 			            false;
-    str: 			                "";
-    border-radius:                  100%;
-    background-color:               @SEL;
-    text-color:                     @FG;
-    padding:                        8px 12px 8px 12px;
-    font:			                "HackGen Console NF Regular 10";
+	  expand: 			            false;
+	  str: 			                "";
+	  border-radius:                  100%;
+	  background-color:               @SEL;
+	  text-color:                     @FG;
+	  padding:                        8px 12px 8px 12px;
+	  font:			                "HackGen Console NF Regular 10";
 }
 
 entry {
-    background-color:               @BG;
-    text-color:                     @FG;
-    placeholder-color:              @FG;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search...";
-    blink:                          true;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    padding:                        8px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  placeholder-color:              @FG;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  placeholder:                    "Search...";
+	  blink:                          true;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  padding:                        8px;
 }
 
 inputbar {
-	children: 		                [ textbox-prompt-colon, prompt, entry ];
-    background-color:               @BG;
-    text-color:                     @FG;
-    expand:                         false;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  0px;
-    border-color:                   @BDR;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+	children: 			              [ textbox-prompt-colon, prompt, entry ];
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  expand:                         false;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  0px;
+	  border-color:                   @BDR;
+	  margin:                         0px 0px 0px 0px;
+	  padding:                        0px;
+	  position:                       center;
 }
 
 case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
-    spacing:                        0;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
-    columns:                        1;
-    lines:			                7;
-    spacing:                        4px;
-    cycle:                          false;
-    dynamic:                        true;
-    layout:                         vertical;
+	  background-color:               @BG;
+	  columns:                        1;
+	  lines:			                7;
+	  spacing:                        4px;
+	  cycle:                          false;
+	  dynamic:                        true;
+	  layout:                         vertical;
 }
 
 mainbox {
-    background-color:               @BG;
-    children:                       [ inputbar, listview ];
-    spacing:                        15px;
-    padding:                        15px;
+	  background-color:               @BG;
+	  children:                       [ inputbar, listview ];
+	  spacing:                        15px;
+	  padding:                        15px;
 }
 
 element {
-    background-color:               @BG;
-    text-color:                     @FG;
-    orientation:                    horizontal;
-    border-radius:                  4px;
-    padding:                        6px 6px 6px 6px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  orientation:                    horizontal;
+	  border-radius:                  4px;
+	  padding:                        6px 6px 6px 6px;
 }
 
 element-icon {
-    background-color: 	            inherit;
-    text-color:       		        inherit;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    size:                           24px;
-    border:                         0px;
+	  background-color: 	            inherit;
+	  text-color:       		        inherit;
+	  horizontal-align:               0.5;
+	  vertical-align:                 0.5;
+	  size:                           24px;
+	  border:                         0px;
 }
 
 element-text {
-    background-color: 		        inherit;
-    text-color:       		        inherit;
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         2px 0px 2px 2px;
+	  background-color: 		        inherit;
+	  text-color:       		        inherit;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  vertical-align:                 0.5;
+	  margin:                         2px 0px 2px 2px;
 }
 
 element normal.urgent,
 element alternate.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
-    border-radius:                  9px;
+	  background-color:               @UGT;
+	  text-color:                     @FG;
+	  border-radius:                  9px;
 }
 
 element normal.active,
 element alternate.active {
-    background-color:               @BGA;
-    text-color:                     @FG;
+	  background-color:               @BGA;
+	  text-color:                     @FG;
 }
 
 element selected {
-    background-color:               @BGA;
-    text-color:                     @SEL;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  10px;
-    border-color:                   @BDR;
+	  background-color:               @BGA;
+	  text-color:                     @SEL;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  10px;
+	  border-color:                   @BDR;
 }
 
 element selected.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
+	  background-color:               @UGT;
+	  text-color:                     @FG;
 }
 
 element selected.active {
-    background-color:               @BGA;
-    color:                          @FG;
+	  background-color:               @BGA;
+	  color:                          @FG;
 }
 '';
 
 	".config/rofi/config/mpd.rasi".text = ''configuration {
-    show-icons:                     false;
-    display-drun: 		            "";
-    drun-display-format:            "{icon} {name}";
-    disable-history:                false;
-    click-to-exit: 		            true;
-    location:                       0;
+	  show-icons:                     false;
+	  display-drun: 		            "";
+	  drun-display-format:            "{icon} {name}";
+	  disable-history:                false;
+	  click-to-exit: 		            true;
+	  location:                       0;
 }
 
 @import "font.rasi"
@@ -628,456 +628,456 @@ element selected.active {
 /* BUTTON = FALSE */
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                         2px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    width:                          400px;
-    anchor:                         center;
-    x-offset:                       0;
-    y-offset:                       0;
+	  transparency:                   "real";
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  border:                         2px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  width:                          400px;
+	  anchor:                         center;
+	  x-offset:                       0;
+	  y-offset:                       0;
 }
 
 prompt {
-    enabled: 			            true;
-    margin: 			            0px 0px 0px 8px;
-    padding: 			            8px;
-    background-color: 		        @BG;
-    text-color: 		            @FG;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
+	  enabled: 			            true;
+	  margin: 			            0px 0px 0px 8px;
+	  padding: 			            8px;
+	  background-color: 		        @BG;
+	  text-color: 		            @FG;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
 }
 
 textbox-prompt-colon {
-    expand: 			            false;
-    str: 			                "󰝚";
-    border-radius:                  100%;
-    background-color:               @BG;
-    text-color:                     @FG;
-    padding:                        8px 12px 8px 12px;
-    font:			                "HackGen Console NF Regular 10";
+	  expand: 			            false;
+	  str: 			                "󰝚";
+	  border-radius:                  100%;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  padding:                        8px 12px 8px 12px;
+	  font:			                "HackGen Console NF Regular 10";
 }
 
 entry {
-    background-color:               @BG;
-    text-color:                     @FG;
-    placeholder-color:              @FG;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search...";
-    blink:                          true;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    padding:                        8px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  placeholder-color:              @FG;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  placeholder:                    "Search...";
+	  blink:                          true;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  padding:                        8px;
 }
 
 inputbar {
-    children: 			            [ textbox-prompt-colon, prompt ];
-    background-color:               @BG;
-    text-color:                     @FG;
-    expand:                         false;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  0px;
-    border-color:                   @BDR;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+	  children: 			            [ textbox-prompt-colon, prompt ];
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  expand:                         false;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  0px;
+	  border-color:                   @BDR;
+	  margin:                         0px 0px 0px 0px;
+	  padding:                        0px;
+	  position:                       center;
 }
 
 case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
-    spacing:                        0;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
-    columns:                        3;
-    lines:			                2;
-    spacing:                        15px;
-    cycle:                          false;
-    dynamic:                        true;
-    layout:                         vertical;
+	  background-color:               @BG;
+	  columns:                        3;
+	  lines:			                2;
+	  spacing:                        15px;
+	  cycle:                          false;
+	  dynamic:                        true;
+	  layout:                         vertical;
 }
 
 mainbox {
-    background-color:               @BG;
-    children:                       [ inputbar, listview ];
-    spacing:                        15px;
-    padding:                        15px;
+	  background-color:               @BG;
+	  children:                       [ inputbar, listview ];
+	  spacing:                        15px;
+	  padding:                        15px;
 }
 
 element {
-    background-color:               @BGA;
-    text-color:                     @SEL;
-    orientation:                    horizontal;
-    border-radius:                  10px;
-    padding:                        8px;
+	  background-color:               @BGA;
+	  text-color:                     @SEL;
+	  orientation:                    horizontal;
+	  border-radius:                  10px;
+	  padding:                        8px;
 }
 
 element-icon {
-    background-color: 		        inherit;
-    text-color:       		        inherit;
-    size:                           0px;
-    border:                         0px;
+	  background-color: 		        inherit;
+	  text-color:       		        inherit;
+	  size:                           0px;
+	  border:                         0px;
 }
 
 element-text {
-    background-color: 		        inherit;
-    text-color:       		        inherit;
-    expand:                         true;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    margin:                         2px 0px 0px 0px;
+	  background-color: 		        inherit;
+	  text-color:       		        inherit;
+	  expand:                         true;
+	  horizontal-align:               0.5;
+	  vertical-align:                 0.5;
+	  margin:                         2px 0px 0px 0px;
 }
 
 element selected {
-    background-color:               @IMG;
-    text-color:                     @BG;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  10px;
-    border-color:                   @BDR;
+	  background-color:               @IMG;
+	  text-color:                     @BG;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  10px;
+	  border-color:                   @BDR;
 }
 
 element.active,
 element.selected.urgent {
-  background-color: @ON;
-  text-color: @BG;
-  border-color: @ON;
+	background-color: @ON;
+	text-color: @BG;
+	border-color: @ON;
 }
 
 element.selected.urgent {
-  border-color: @BDR;
+	border-color: @BDR;
 }
 
 element.urgent,
 element.selected.active {
-  background-color: @OFF;
-  text-color: @BG;
-  border-color: @OFF;
+	background-color: @OFF;
+	text-color: @BG;
+	border-color: @OFF;
 }
 
 element.selected.active {
-  border-color: @BDR;
+	border-color: @BDR;
 }
 '';
 
 	".config/rofi/config/networkmenu.rasi".text = ''configuration {
-    show-icons:                     false;
-    display-drun: 		            "";
-    drun-display-format:            "{icon} {name}";
-    disable-history:                false;
-    click-to-exit: 		            true;
-    location:                       0;
+	  show-icons:                     false;
+	  display-drun: 		            "";
+	  drun-display-format:            "{icon} {name}";
+	  disable-history:                false;
+	  click-to-exit: 		            true;
+	  location:                       0;
 }
 
 @import "font.rasi"
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                         2px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    width:                          400px;
-    anchor:                         center;
-    x-offset:                       0;
-    y-offset:                       0;
+	  transparency:                   "real";
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  border:                         2px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  width:                          400px;
+	  anchor:                         center;
+	  x-offset:                       0;
+	  y-offset:                       0;
 }
 
 prompt {
-    enabled: 			            true;
-    margin: 			            0px 8px 0px 8px;
-    padding: 			            8px;
-    background-color: 		        @IMG;
-    text-color: 		            @BG;
-    border:                  	    0px 0px 0px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
+	  enabled: 			            true;
+	  margin: 			            0px 8px 0px 8px;
+	  padding: 			            8px;
+	  background-color: 		        @IMG;
+	  text-color: 		            @BG;
+	  border:                  	    0px 0px 0px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
 }
 
 textbox-prompt-colon {
-    expand: 			            false;
-    str: 			                "󰖩";
-    border-radius:                  100%;
-    background-color:               @SEL;
-    text-color:                     @FG;
-    padding:                        8px 12px 8px 12px;
-    font:			                "HackGen Console NF Regular 10";
+	  expand: 			            false;
+	  str: 			                "󰖩";
+	  border-radius:                  100%;
+	  background-color:               @SEL;
+	  text-color:                     @FG;
+	  padding:                        8px 12px 8px 12px;
+	  font:			                "HackGen Console NF Regular 10";
 }
 
 entry {
-    background-color:               @BG;
-    text-color:                     @FG;
-    placeholder-color:              @FG;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "";
-    blink:                          true;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    padding:                        8px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  placeholder-color:              @FG;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  placeholder:                    "";
+	  blink:                          true;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  padding:                        8px;
 }
 
 inputbar {
-    children: 		                [ textbox-prompt-colon, prompt, entry ];
-    background-color:               @BG;
-    text-color:                     @FG;
-    expand:                         false;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  0px;
-    border-color:                   @BDR;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+	  children: 		                [ textbox-prompt-colon, prompt, entry ];
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  expand:                         false;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  0px;
+	  border-color:                   @BDR;
+	  margin:                         0px 0px 0px 0px;
+	  padding:                        0px;
+	  position:                       center;
 }
 
 case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
-    spacing:                        0;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
-    columns:                        1;
-    lines:			                7;
-    spacing:                        4px;
-    cycle:                          true;
-    dynamic:                        true;
-    layout:                         vertical;
+	  background-color:               @BG;
+	  columns:                        1;
+	  lines:			                7;
+	  spacing:                        4px;
+	  cycle:                          true;
+	  dynamic:                        true;
+	  layout:                         vertical;
 }
 
 mainbox {
-    background-color:               @BG;
-    children:                       [ inputbar, listview ];
-    spacing:                        15px;
-    padding:                        15px;
+	  background-color:               @BG;
+	  children:                       [ inputbar, listview ];
+	  spacing:                        15px;
+	  padding:                        15px;
 }
 
 element {
-    background-color:               @BG;
-    text-color:                     @FG;
-    orientation:                    horizontal;
-    border-radius:                  4px;
-    padding:                        6px 6px 6px 6px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  orientation:                    horizontal;
+	  border-radius:                  4px;
+	  padding:                        6px 6px 6px 6px;
 }
 
 element-icon {
-    background-color: 	            inherit;
-    text-color:       		        inherit;
-    size:                           0px;
-    border:                         0px;
+	  background-color: 	            inherit;
+	  text-color:       		        inherit;
+	  size:                           0px;
+	  border:                         0px;
 }
 
 element-text {
-    background-color: 	            inherit;
-    text-color:       		        inherit;
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         2px 0px 2px 6px;
+	  background-color: 	            inherit;
+	  text-color:       		        inherit;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  vertical-align:                 0.5;
+	  margin:                         2px 0px 2px 6px;
 }
 
 element normal.urgent,
 element alternate.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
-    border-radius:                  9px;
+	  background-color:               @UGT;
+	  text-color:                     @FG;
+	  border-radius:                  9px;
 }
 
 element normal.active,
 element alternate.active {
-    background-color:               @BGA;
-    text-color:                     @FG;
+	  background-color:               @BGA;
+	  text-color:                     @FG;
 }
 
 element selected {
-    background-color:               @BGA;
-    text-color:                     @SEL;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  10px;
-    border-color:                   @BDR;
+	  background-color:               @BGA;
+	  text-color:                     @SEL;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  10px;
+	  border-color:                   @BDR;
 }
 
 element selected.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
+	  background-color:               @UGT;
+	  text-color:                     @FG;
 }
 
 element selected.active {
-    background-color:               @BGA;
-    color:                          @FG;
+	  background-color:               @BGA;
+	  color:                          @FG;
 }
 '';
 
 	".config/rofi/config/network.rasi".text = ''configuration {
-    show-icons:                     false;
-    display-drun: 		            "";
-    drun-display-format:            "{icon} {name}";
-    disable-history:                false;
-    click-to-exit: 		            true;
-    location:                       0;
+	  show-icons:                     false;
+	  display-drun: 		            "";
+	  drun-display-format:            "{icon} {name}";
+	  disable-history:                false;
+	  click-to-exit: 		            true;
+	  location:                       0;
 }
 
 @import "font.rasi"
 @import "colors.rasi"
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                         2px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    width:                          300px;
-    anchor:                         center;
-    x-offset:                       0;
-    y-offset:                       0;
+	  transparency:                   "real";
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  border:                         2px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  width:                          300px;
+	  anchor:                         center;
+	  x-offset:                       0;
+	  y-offset:                       0;
 }
 
 prompt {
-    enabled: 			            true;
-    margin: 			            0px 0px 0px 8px;
-    padding: 			            8px;
-    background-color: 		        @BG;
-    text-color: 		            @FG;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
+	  enabled: 			            true;
+	  margin: 			            0px 0px 0px 8px;
+	  padding: 			            8px;
+	  background-color: 		        @BG;
+	  text-color: 		            @FG;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
 }
 
 textbox-prompt-colon {
-    expand: 			            false;
-    str: 			                "";
-    border-radius:                  100%;
-    background-color:               @BG;
-    text-color:                     @FG;
-    padding:                        8px 12px 8px 12px;
-    font:			                "HackGen Console NF Regular 10";
+	  expand: 			            false;
+	  str: 			                "";
+	  border-radius:                  100%;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  padding:                        8px 12px 8px 12px;
+	  font:			                "HackGen Console NF Regular 10";
 }
 
 entry {
-    background-color:               @BG;
-    text-color:                     @FG;
-    placeholder-color:              @FG;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search...";
-    blink:                          true;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    padding:                        8px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  placeholder-color:              @FG;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  placeholder:                    "Search...";
+	  blink:                          true;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  padding:                        8px;
 }
 
 inputbar {
-    children: 			             [textbox-prompt-colon, prompt ];
-    background-color:               @BG;
-    text-color:                     @FG;
-    expand:                         false;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  0px;
-    border-color:                   @BDR;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+	  children: 			             [textbox-prompt-colon, prompt ];
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  expand:                         false;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  0px;
+	  border-color:                   @BDR;
+	  margin:                         0px 0px 0px 0px;
+	  padding:                        0px;
+	  position:                       center;
 }
 
 case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
-    spacing:                        0;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
-    columns:                        1;
-    lines:			                4;
-    spacing:                        4px;
-    cycle:                          true;
-    dynamic:                        true;
-    layout:                         vertical;
+	  background-color:               @BG;
+	  columns:                        1;
+	  lines:			                4;
+	  spacing:                        4px;
+	  cycle:                          true;
+	  dynamic:                        true;
+	  layout:                         vertical;
 }
 
 mainbox {
-    background-color:               @BG;
-    children:                       [ inputbar, listview ];
-    spacing:                        15px;
-    padding:                        15px;
+	  background-color:               @BG;
+	  children:                       [ inputbar, listview ];
+	  spacing:                        15px;
+	  padding:                        15px;
 }
 
 element {
-    background-color:               @BG;
-    text-color:                     @FG;
-    orientation:                    horizontal;
-    border-radius:                  10px;
-    padding:                        6px 6px 6px 6px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  orientation:                    horizontal;
+	  border-radius:                  10px;
+	  padding:                        6px 6px 6px 6px;
 }
 
 element-icon {
-    background-color: 		        inherit;
-    text-color:       		        inherit;
-    size:                           0px;
-    border:                         0px;
+	  background-color: 		        inherit;
+	  text-color:       		        inherit;
+	  size:                           0px;
+	  border:                         0px;
 }
 
 element-text {
-    background-color: 		        inherit;
-    text-color:       		        inherit;
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         2px 0px 2px 6px;
+	  background-color: 		        inherit;
+	  text-color:       		        inherit;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  vertical-align:                 0.5;
+	  margin:                         2px 0px 2px 6px;
 }
 
 element selected {
-    background-color:               @IMG;
-    text-color:                     @BG;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  10px;
-    border-color:                   @BDR;
+	  background-color:               @IMG;
+	  text-color:                     @BG;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  10px;
+	  border-color:                   @BDR;
 }
 
 element.active,
 element.selected.urgent {
-  background-color: @ON;
-  text-color: @BG;
-  border-color: @ON;
+	background-color: @ON;
+	text-color: @BG;
+	border-color: @ON;
 }
 
 element.selected.urgent {
-  border-color: @BDR;
+	border-color: @BDR;
 }
 
 element.urgent,
 element.selected.active {
-  background-color: @OFF;
-  text-color: @BG;
-  border-color: @OFF;
+	background-color: @OFF;
+	text-color: @BG;
+	border-color: @OFF;
 }
 
 element.selected.active {
-  border-color: @BDR;
+	border-color: @BDR;
 }
 '';
 
 	".config/rofi/config/powermenu.rasi".text = ''configuration {
-    show-icons:                     true;
-    display-drun: 		            "";
-    drun-display-format:            "{icon} {name}";
-    disable-history:                false;
-    click-to-exit: 		            true;
-    location:                       4;
+	  show-icons:                     true;
+	  display-drun: 		            "";
+	  drun-display-format:            "{icon} {name}";
+	  disable-history:                false;
+	  click-to-exit: 		            true;
+	  location:                       4;
 }
 
 @import "font.rasi"
@@ -1087,303 +1087,303 @@ element.selected.active {
 /* BUTTON = TRUE */
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                  	    2px;
-    border-color:                   @BGA;
-    border-radius:                  10px;
-    width:                          110px;
-    x-offset:                       -1%;
-    y-offset:                       0;
+	  transparency:                   "real";
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  border:                  	    2px;
+	  border-color:                   @BGA;
+	  border-radius:                  10px;
+	  width:                          110px;
+	  x-offset:                       -1%;
+	  y-offset:                       0;
 }
 
 prompt {
-    enabled: 			            true;
-    margin: 			            0px 0px 0px 8px;
-    padding: 			            8px;
-    background-color: 		        @BG;
-    text-color: 		            @FG;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
+	  enabled: 			            true;
+	  margin: 			            0px 0px 0px 8px;
+	  padding: 			            8px;
+	  background-color: 		        @BG;
+	  text-color: 		            @FG;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
 }
 
 textbox-prompt-colon {
-    expand: 			            false;
-    str: 			                "";
-    border-radius:                  100%;
-    background-color:               @BG;
-    text-color:                     @BG;
-    padding:                        8px 12px 8px 12px;
-    font:			                "HackGen Console NF Regular 10";
+	  expand: 			            false;
+	  str: 			                "";
+	  border-radius:                  100%;
+	  background-color:               @BG;
+	  text-color:                     @BG;
+	  padding:                        8px 12px 8px 12px;
+	  font:			                "HackGen Console NF Regular 10";
 }
 
 entry {
-    background-color:               @BG;
-    text-color:                     @FG;
-    placeholder-color:              @FG;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search...";
-    blink:                          true;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    padding:                        8px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  placeholder-color:              @FG;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  placeholder:                    "Search...";
+	  blink:                          true;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  padding:                        8px;
 }
 
 inputbar {
-    children: 		                [ textbox-prompt-colon ];
-    background-color:               @BG;
-    text-color:                     @FG;
-    expand:                         false;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  0px;
-    border-color:                   @BDR;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+	  children: 		                [ textbox-prompt-colon ];
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  expand:                         false;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  0px;
+	  border-color:                   @BDR;
+	  margin:                         0px 0px 0px 0px;
+	  padding:                        0px;
+	  position:                       center;
 }
 
 case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
-    spacing:                        0;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
-    columns:                        1;
-    lines:			                5;
-    spacing:                        15px;
-    cycle:                          true;
-    dynamic:                        true;
-    layout:                         vertical;
+	  background-color:               @BG;
+	  columns:                        1;
+	  lines:			                5;
+	  spacing:                        15px;
+	  cycle:                          true;
+	  dynamic:                        true;
+	  layout:                         vertical;
 }
 
 mainbox {
-    background-color:               @BG;
-    children:                       [ listview ];
-    spacing:                        15px;
-    padding:                        15px;
+	  background-color:               @BG;
+	  children:                       [ listview ];
+	  spacing:                        15px;
+	  padding:                        15px;
 }
 
 element {
-    background-color:               @BG;
-    text-color:                     @FG;
-    orientation:                    horizontal;
-    border-radius:                  10px;
-    padding:                        20px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  orientation:                    horizontal;
+	  border-radius:                  10px;
+	  padding:                        20px;
 }
 
 element-icon {
-    background-color: 		        inherit;
-    text-color:       		        inherit;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    size:                           0px;
-    border:                         0px;
+	  background-color: 		        inherit;
+	  text-color:       		        inherit;
+	  horizontal-align:               0.5;
+	  vertical-align:                 0.5;
+	  size:                           0px;
+	  border:                         0px;
 }
 
 element-text {
-    background-color: 		        inherit;
-    text-color:       		        inherit;
-    font:			                "feather 20";
-    expand:                         true;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    margin:                         0px 0px 0px 0px;
+	  background-color: 		        inherit;
+	  text-color:       		        inherit;
+	  font:			                "feather 20";
+	  expand:                         true;
+	  horizontal-align:               0.5;
+	  vertical-align:                 0.5;
+	  margin:                         0px 0px 0px 0px;
 }
 
 element selected {
-    background-color:               @BGA;
-    text-color:                     @SEL;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  10px;
-    border-color:                   @BDR;
+	  background-color:               @BGA;
+	  text-color:                     @SEL;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  10px;
+	  border-color:                   @BDR;
 }
 
 element.active,
 element.selected.urgent {
-  background-color: @ON;
-  text-color: @BG;
-  border-color: @ON;
+	background-color: @ON;
+	text-color: @BG;
+	border-color: @ON;
 }
 
 element.selected.urgent {
-  border-color: @BDR;
+	border-color: @BDR;
 }
 
 element.urgent,
 element.selected.active {
-  background-color: @OFF;
-  text-color: @BG;
-  border-color: @OFF;
+	background-color: @OFF;
+	text-color: @BG;
+	border-color: @OFF;
 }
 
 element.selected.active {
-  border-color: @BDR;
+	border-color: @BDR;
 }
 '';
 
 	".config/rofi/config/runner.rasi".text = ''configuration {
-    show-icons:                     false;
-    display-run: 		            "";
-    disable-history:                false;
-    click-to-exit: 		            true;
-    location:                       0;
+	  show-icons:                     false;
+	  display-run: 		            "";
+	  disable-history:                false;
+	  click-to-exit: 		            true;
+	  location:                       0;
 }
 
 @import "font.rasi"
 @import "colors.rasi"
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                         2px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    width:                          350px;
-    location:                       center;
-    anchor:                         center;
-    x-offset:                       0;
-    y-offset:                       0;
+	  transparency:                   "real";
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  border:                         2px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  width:                          350px;
+	  location:                       center;
+	  anchor:                         center;
+	  x-offset:                       0;
+	  y-offset:                       0;
 }
 
 prompt {
-    enabled: 			            true;
-    padding: 			            8px;
-    background-color: 		        @BG;
-    text-color: 		            @IMG;
+	  enabled: 			            true;
+	  padding: 			            8px;
+	  background-color: 		        @BG;
+	  text-color: 		            @IMG;
 }
 
 textbox-prompt-colon {
-    expand: 			            false;
-    str: 			                "󰞷";
-    border-radius:                  100%;
-    background-color:               @BG;
-    text-color:                     @FG;
-    padding:                        8px 12px 8px 12px;
+	  expand: 			            false;
+	  str: 			                "󰞷";
+	  border-radius:                  100%;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  padding:                        8px 12px 8px 12px;
 	font:							"HackGen Console NF Regular 10";
 }
 
 entry {
-    background-color:               @BG;
-    text-color:                     @FG;
-    placeholder-color:              @FG;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Run...";
-    blink:                          true;
-    border:                  		0px 0px 2px 0px;
-    border-color:                  	@BDR;
-    border-radius:                  10px;
-    padding:                        8px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  placeholder-color:              @FG;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  placeholder:                    "Run...";
+	  blink:                          true;
+	  border:                  		0px 0px 2px 0px;
+	  border-color:                  	@BDR;
+	  border-radius:                  10px;
+	  padding:                        8px;
 }
 
 inputbar {
 	children: 						[ textbox-prompt-colon, prompt, entry ];
-    background-color:               @BG;
-    text-color:                     @FG;
-    expand:                         false;
-    border:                  		0px 0px 0px 0px;
-    border-radius:                  0px;
-    border-color:                  	@BDR;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  expand:                         false;
+	  border:                  		0px 0px 0px 0px;
+	  border-radius:                  0px;
+	  border-color:                  	@BDR;
+	  margin:                         0px 0px 0px 0px;
+	  padding:                        0px;
+	  position:                       center;
 }
 
 case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
-    spacing:                        0;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
-    columns:                        1;
-    lines:							5;
-    spacing:                        4px;
-    cycle:                          false;
-    dynamic:                        true;
-    layout:                         vertical;
+	  background-color:               @BG;
+	  columns:                        1;
+	  lines:							5;
+	  spacing:                        4px;
+	  cycle:                          false;
+	  dynamic:                        true;
+	  layout:                         vertical;
 }
 
 mainbox {
-    background-color:               @BG;
-    children:                       [ inputbar, listview ];
-    spacing:                       	15px;
-    padding:                        15px;
+	  background-color:               @BG;
+	  children:                       [ inputbar, listview ];
+	  spacing:                       	15px;
+	  padding:                        15px;
 }
 
 element {
-    background-color:               @BG;
-    text-color:                     @FG;
-    orientation:                    horizontal;
-    border-radius:                  4px;
-    padding:                        6px 6px 6px 6px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  orientation:                    horizontal;
+	  border-radius:                  4px;
+	  padding:                        6px 6px 6px 6px;
 }
 
 element-icon {
-    background-color: 				inherit;
-    text-color:       				inherit;
-    size:                           0px;
-    border:                         0px;
+	  background-color: 				inherit;
+	  text-color:       				inherit;
+	  size:                           0px;
+	  border:                         0px;
 }
 
 element-text {
-    background-color: 				inherit;
-    text-color:       				inherit;
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         2px 0px 2px 2px;
+	  background-color: 				inherit;
+	  text-color:       				inherit;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  vertical-align:                 0.5;
+	  margin:                         2px 0px 2px 2px;
 }
 
 element normal.urgent,
 element alternate.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
-    border-radius:                  9px;
+	  background-color:               @UGT;
+	  text-color:                     @FG;
+	  border-radius:                  9px;
 }
 
 element normal.active,
 element alternate.active {
-    background-color:               @BGA;
-    text-color:                     @FG;
+	  background-color:               @BGA;
+	  text-color:                     @FG;
 }
 
 element selected {
-    background-color:               @BGA;
-    text-color:                     @SEL;
-    border:                  		0px 0px 0px 0px;
-    border-radius:                  10px;
-    border-color:                  	@BDR;
+	  background-color:               @BGA;
+	  text-color:                     @SEL;
+	  border:                  		0px 0px 0px 0px;
+	  border-radius:                  10px;
+	  border-color:                  	@BDR;
 }
 
 element selected.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
+	  background-color:               @UGT;
+	  text-color:                     @FG;
 }
 
 element selected.active {
-    background-color:               @BGA;
-    color:                          @FG;
+	  background-color:               @BGA;
+	  color:                          @FG;
 }
 '';
 
 	".config/rofi/config/screenshot.rasi".text = ''configuration {
-    show-icons:                     false;
-    display-drun: 		            "";
-    drun-display-format:            "{icon} {name}";
-    disable-history:                false;
-    click-to-exit: 		            true;
-    location:                       0;
+	  show-icons:                     false;
+	  display-drun: 		            "";
+	  drun-display-format:            "{icon} {name}";
+	  disable-history:                false;
+	  click-to-exit: 		            true;
+	  location:                       0;
 }
 
 @import "font.rasi"
@@ -1393,146 +1393,157 @@ element selected.active {
 /* BUTTON = FALSE */
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                         2px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    width:                          300px;
-    anchor:                         center;
-    x-offset:                       0;
-    y-offset:                       0;
+	  transparency:                   "real";
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  border:                         2px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  width:                          300px;
+	  anchor:                         center;
+	  x-offset:                       0;
+	  y-offset:                       0;
 }
 
 prompt {
-    enabled: 			            true;
-    margin: 			            0px 0px 0px 8px;
-    padding: 			            8px;
-    background-color: 		        @BG;
-    text-color: 		            @FG;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
+	  enabled: 			            true;
+	  margin: 			            0px 0px 0px 8px;
+	  padding: 			            8px;
+	  background-color: 		        @BG;
+	  text-color: 		            @FG;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
 }
 
 textbox-prompt-colon {
-    expand: 			            false;
-    str: 			                "󰄀";
-    border-radius:                  100%;
-    background-color:               @BG;
-    text-color:                     @FG;
-    padding:                        8px 12px 8px 12px;
-    font:			                "HackGen Console NF Regular 10";
+	  expand: 			            false;
+	  str: 			                "󰄀";
+	  border-radius:                  100%;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  padding:                        8px 12px 8px 12px;
+	  font:			                "HackGen Console NF Regular 10";
 }
 
 entry {
-    background-color:               @BG;
-    text-color:                     @FG;
-    placeholder-color:              @FG;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search...";
-    blink:                          true;
-    border:                  	    0px 0px 2px 0px;
-    border-color:                   @BDR;
-    border-radius:                  10px;
-    padding:                        8px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  placeholder-color:              @FG;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  placeholder:                    "Search...";
+	  blink:                          true;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  padding:                        8px;
 }
 
 inputbar {
 	children: 						[ textbox-prompt-colon, prompt ];
-    background-color:               @BG;
-    text-color:                     @FG;
-    expand:                         false;
-    border:                  		0px 0px 0px 0px;
-    border-radius:                  0px;
-    border-color:                  	@BDR;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  expand:                         false;
+	  border:                  		0px 0px 0px 0px;
+	  border-radius:                  0px;
+	  border-color:                  	@BDR;
+	  margin:                         0px 0px 0px 0px;
+	  padding:                        0px;
+	  position:                       center;
 }
 
 case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
-    spacing:                        0;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  spacing:                        0;
 }
 
 
 listview {
-    background-color:               @BG;
-    columns:                        1;
-    lines:							5;
-    spacing:                        4px;
-    cycle:                          true;
-    dynamic:                        true;
-    layout:                         vertical;
+	  background-color:               @BG;
+	  columns:                        1;
+	  lines:							5;
+	  spacing:                        4px;
+	  cycle:                          true;
+	  dynamic:                        true;
+	  layout:                         vertical;
 }
 
 mainbox {
-    background-color:               @BG;
-    children:                       [ inputbar, listview ];
-    spacing:                       	15px;
-    padding:                        15px;
+	  background-color:               @BG;
+	  children:                       [ inputbar, listview ];
+	  spacing:                       	15px;
+	  padding:                        15px;
 }
 
 element {
-    background-color:               @BG;
-    text-color:                     @FG;
-    orientation:                    horizontal;
-    border-radius:                  10px;
-    padding:                        6px 6px 6px 6px;
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  orientation:                    horizontal;
+	  border-radius:                  10px;
+	  padding:                        6px 6px 6px 6px;
 }
 
 element-icon {
-    background-color: 				inherit;
-    text-color:       				inherit;
-    size:                           0px;
-    border:                         0px;
+	  background-color: 				inherit;
+	  text-color:       				inherit;
+	  size:                           0px;
+	  border:                         0px;
 }
 
 element-text {
-    background-color: 				inherit;
-    text-color:       				inherit;
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         2px 0px 2px 6px;
+	  background-color: 				inherit;
+	  text-color:       				inherit;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  vertical-align:                 0.5;
+	  margin:                         2px 0px 2px 6px;
 }
 
 element selected {
-    background-color:               @BGA;
-    text-color:                     @SEL;
-    border:                  		0px 0px 0px 0px;
-    border-radius:                  10px;
-    border-color:                  	@BDR;
+	  background-color:               @BGA;
+	  text-color:                     @SEL;
+	  border:                  		0px 0px 0px 0px;
+	  border-radius:                  10px;
+	  border-color:                  	@BDR;
 }
 
 element.active,
 element.selected.urgent {
-  background-color: @ON;
-  text-color: @BG;
-  border-color: @ON;
+	background-color: @ON;
+	text-color: @BG;
+	border-color: @ON;
 }
 
 element.selected.urgent {
-  border-color: @BDR;
+	border-color: @BDR;
 }
 
 element.urgent,
 element.selected.active {
-  background-color: @OFF;
-  text-color: @BG;
-  border-color: @OFF;
+	background-color: @OFF;
+	text-color: @BG;
+	border-color: @OFF;
 }
 
 element.selected.active {
-  border-color: @BDR;
+	border-color: @BDR;
 }
 '';
 		".local/bin/lock".text = ''betterlockscreen -l --span
 betterlockscreen -u /home/lotus/nixos-conf/home-manager/common/assets/wallpaper.jpg &
 		'';
+		".config/rofi/config.rasi".text = '' configuration {
+	kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+	kb-row-down: "Down,Control+j";
+	kb-accept-entry: "Control+m,Return,KP_Enter";
+	terminal: "mate-terminal";
+	kb-remove-to-eol: "Control+Shift+e";
+	/*kb-mode-next: "Shift+Right,Control+Tab,Control+l";*/
+	kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+	kb-remove-char-back: "BackSpace";
+}
+'';
 	};
 }

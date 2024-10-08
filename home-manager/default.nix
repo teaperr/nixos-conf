@@ -15,7 +15,7 @@
 		./rofi
 		./services
 		./speedcrunch.nix
-    ./theming.nix
+    ./theming
     ./tint2.nix
     ./tmux.nix
 		./vesktop
