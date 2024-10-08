@@ -1,13 +1,13 @@
 {
   home.file.".config/openbox/rc.xml".text = ''
-<?xml version="1.0" encoding="UTF-8"?>
+	<?xml version="1.0" encoding="UTF-8"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<applications>
-		<startup>
-			<command>sh ~/.config/openbox/autostart</command>
-			<command>sh ~/.config/openbox/environment</command>
-		</startup>
-	</applications>
+  <applications>
+    <startup>
+      <command>sh ~/.config/openbox/autostart</command>
+      <command>sh ~/.config/openbox/environment</command>
+    </startup>
+  </applications>
   <resistance>
     <strength>10</strength>
     <screen_edge_strength>10</screen_edge_strength>
@@ -30,10 +30,10 @@
     <!-- when followMouse is enabled, and a window is given focus by moving the
        mouse into it, also raise the window -->
   </focus>
-	<theme>
-  <name>Clearlooks</name>
-  <titleLayout>NLIMC</titleLayout>
-  <!--
+  <theme>
+    <name>catppuccin-mocha</name>
+    <titleLayout>NLIMC</titleLayout>
+    <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
       L: window label (AKA title).
@@ -43,150 +43,80 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-  <keepBorder>yes</keepBorder>
-  <animateIconify>yes</animateIconify>
-  <font place="ActiveWindow">
-    <name>sans</name>
-    <size>8</size>
-    <!-- font size in points -->
-    <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
-    <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
-  </font>
-  <font place="InactiveWindow">
-    <name>sans</name>
-    <size>8</size>
-    <!-- font size in points -->
-    <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
-    <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
-  </font>
-  <font place="MenuHeader">
-    <name>sans</name>
-    <size>9</size>
-    <!-- font size in points -->
-    <weight>normal</weight>
-    <!-- 'bold' or 'normal' -->
-    <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
-  </font>
-  <font place="MenuItem">
-    <name>sans</name>
-    <size>9</size>
-    <!-- font size in points -->
-    <weight>normal</weight>
-    <!-- 'bold' or 'normal' -->
-    <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
-  </font>
-  <font place="ActiveOnScreenDisplay">
-    <name>sans</name>
-    <size>9</size>
-    <!-- font size in points -->
-    <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
-    <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
-  </font>
-  <font place="InactiveOnScreenDisplay">
-    <name>sans</name>
-    <size>9</size>
-    <!-- font size in points -->
-    <weight>bold</weight>
-    <!-- 'bold' or 'normal' -->
-    <slant>normal</slant>
-    <!-- 'italic' or 'normal' -->
-  </font>
-	</theme>
-		<placement>
-			<policy>Smart</policy>
-			<!-- 'Smart' or 'UnderMouse' -->
-			<center>no</center>
-			<!-- whether to place windows in the center of the free area found or
+    <keepBorder>yes</keepBorder>
+    <animateIconify>yes</animateIconify>
+    <font place="ActiveWindow">
+      <name>Hack</name>
+      <size>8</size>
+      <!-- font size in points -->
+      <weight>Bold</weight>
+      <!-- 'bold' or 'normal' -->
+      <slant>Normal</slant>
+      <!-- 'italic' or 'normal' -->
+    </font>
+    <font place="InactiveWindow">
+      <name>Hack</name>
+      <size>8</size>
+      <!-- font size in points -->
+      <weight>Bold</weight>
+      <!-- 'bold' or 'normal' -->
+      <slant>Normal</slant>
+      <!-- 'italic' or 'normal' -->
+    </font>
+    <font place="MenuHeader">
+      <name>Hack</name>
+      <size>8</size>
+      <!-- font size in points -->
+      <weight>Normal</weight>
+      <!-- 'bold' or 'normal' -->
+      <slant>Normal</slant>
+      <!-- 'italic' or 'normal' -->
+    </font>
+    <font place="MenuItem">
+      <name>Hack</name>
+      <size>8</size>
+      <!-- font size in points -->
+      <weight>Normal</weight>
+      <!-- 'bold' or 'normal' -->
+      <slant>Normal</slant>
+      <!-- 'italic' or 'normal' -->
+    </font>
+    <font place="ActiveOnScreenDisplay">
+      <name>Hack</name>
+      <size>8</size>
+      <!-- font size in points -->
+      <weight>Normal</weight>
+      <!-- 'bold' or 'normal' -->
+      <slant>Normal</slant>
+      <!-- 'italic' or 'normal' -->
+    </font>
+    <font place="InactiveOnScreenDisplay">
+      <name>Hack</name>
+      <size>8</size>
+      <!-- font size in points -->
+      <weight>Normal</weight>
+      <!-- 'bold' or 'normal' -->
+      <slant>Normal</slant>
+      <!-- 'italic' or 'normal' -->
+    </font>
+  </theme>
+  <placement>
+    <policy>Smart</policy>
+    <!-- 'Smart' or 'UnderMouse' -->
+    <center>no</center>
+    <!-- whether to place windows in the center of the free area found or
 				 the top left corner -->
-			<monitor>Primary</monitor>
-			<!-- with Smart placement on a multi-monitor system, try to place new windows
+    <monitor>Primary</monitor>
+    <!-- with Smart placement on a multi-monitor system, try to place new windows
 				 on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
 				 the active window is, 'Primary' - only on the primary monitor -->
-			<primaryMonitor>1</primaryMonitor>
-			<!-- The monitor where Openbox should place popup dialogs such as the
+    <primaryMonitor>1</primaryMonitor>
+    <!-- The monitor where Openbox should place popup dialogs such as the
 				 focus cycling popup, or the desktop switch popup.  It can be an index
 				 from 1, specifying a particular monitor.  Or it can be one of the
 				 following: 'Mouse' - where the mouse is, or
 										'Active' - where the active window is -->
-		</placement>
-		<theme>
-			<name>catppuccin-mocha</name>
-			<titleLayout>NLDIMC</titleLayout>
-			<!--
-				available characters are NDSLIMC, each can occur at most once.
-				N: window icon
-				L: window label (AKA title).
-				I: iconify
-				M: maximize
-				C: close
-				S: shade (roll up/down)
-				D: omnipresent (on all desktops).
-		-->
-			<keepBorder>yes</keepBorder>
-			<animateIconify>yes</animateIconify>
-			<font place="ActiveWindow">
-				<name>sans</name>
-				<size>9</size>
-				<!-- font size in points -->
-				<weight>Bold</weight>
-				<!-- 'bold' or 'normal' -->
-				<slant>Normal</slant>
-				<!-- 'italic' or 'normal' -->
-			</font>
-			<font place="InactiveWindow">
-				<name>sans</name>
-				<size>9</size>
-				<!-- font size in points -->
-				<weight>Bold</weight>
-				<!-- 'bold' or 'normal' -->
-				<slant>Normal</slant>
-				<!-- 'italic' or 'normal' -->
-			</font>
-			<font place="MenuHeader">
-				<name>sans</name>
-				<size>9</size>
-				<!-- font size in points -->
-				<weight>normal</weight>
-				<!-- 'bold' or 'normal' -->
-				<slant>normal</slant>
-				<!-- 'italic' or 'normal' -->
-			</font>
-			<font place="MenuItem">
-				<name>sans</name>
-				<size>15</size>
-				<!-- font size in points -->
-				<weight>Normal</weight>
-				<!-- 'bold' or 'normal' -->
-				<slant>Normal</slant>
-				<!-- 'italic' or 'normal' -->
-			</font>
-			<font place="ActiveOnScreenDisplay">
-				<name>sans</name>
-				<size>10</size>
-				<!-- font size in points -->
-				<weight>Bold</weight>
-				<!-- 'bold' or 'normal' -->
-				<slant>Normal</slant>
-				<!-- 'italic' or 'normal' -->
-			</font>
-			<font place="InactiveOnScreenDisplay">
-				<name>sans</name>
-				<size>9</size>
-				<!-- font size in points -->
-				<weight>Bold</weight>
-				<!-- 'bold' or 'normal' -->
-				<slant>Normal</slant>
-				<!-- 'italic' or 'normal' -->
-			</font>
-		</theme>
+  </placement>
   <desktops>
     <!-- this stuff is only used at startup, pagers allow you to change them
        during a session
@@ -303,7 +233,7 @@
         <command>rofi -show drun -theme /home/lotus/.local/share/rofi/themes/catppuccin-mocha.rasi</command>
       </action>
     </keybind>
-		<keybind key="Super-v">
+    <keybind key="Super-v">
       <action name="Execute">
         <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme ~/.local/share/rofi/themes/catppuccin-mocha.rasi</command>
       </action>
@@ -892,8 +822,6 @@
     # 'Horizontal', 'Vertical' or boolean (yes/no)
   </application>
 
-  # end of the example
--->
   </applications>
 </openbox_config>
   '';
