@@ -192,7 +192,7 @@
     </keybind>
 		<keybind key="Super-v">
       <action name="Execute">
-        <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'</command>
+        <command>rofi -show drun -theme /home/lotus/.local/share/rofi/themes/catppuccin-mocha.rasi</command>
       </action>
     </keybind>
     <keybind key="Print">
