@@ -33,7 +33,7 @@
 		},
 		{
 			"type": "swap",
-			"key": "├─󰓡",
+			"key": "╰─󰓡",
 			"keyColor": "green"
 		},
 		"break",
@@ -96,7 +96,7 @@
 		},
 		{
 			"type": "localip",
-			"key": "├─󰩟",
+			"key": "╰─󰩟",
 			"compact": true,
 			"keyColor": "blue"
 		}
