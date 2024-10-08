@@ -22,5 +22,9 @@
 			popup_menu = { opacity = 0.8; };
 			dropdown_menu = { opacity = 0.8; };
 		};
+
+		fadeExclude = [
+			"name ~= 'Spectacle$'"
+		];
   };
 }
