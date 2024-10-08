@@ -2,6 +2,7 @@
 
 {
 	home.packages = with pkgs; [
+		pavucontrol
 		catimg
 		haskellPackages.greenclip
 		ripgrep
