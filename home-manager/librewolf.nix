@@ -26,6 +26,7 @@
       "extensions.webcompat.perform_injections" = true;
       "extensions.webcompat.perform_ua_overrides" = true;
 			"identity.fxaccounts.enabled" = true;
+			"ui.systemUsesDarkTheme" = 1;
     };
   };
 }

@@ -11,9 +11,9 @@
     	tmuxPlugins.better-mouse-mode
     ];
 
-    catppuccin.enable = true;
-
-    extraConfig = ''
+    catppuccin = {
+			enable = true;
+			extraConfig = ''
       set -g default-terminal "tmux-256color"
       set -ag terminal-overrides ",xterm-256color:RGB"
 
@@ -48,6 +48,7 @@
       set -g @catppuccin_gitmux_color "#E4C1F9"
       set -g @catppuccin_session_color "#9CE7B9"
       set -g @catppuccin_date_time_color "#A9DEF9"
-    '';
+			'';
+		};
   };
 }

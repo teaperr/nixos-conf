@@ -14,5 +14,6 @@
 		./librewolf.nix
 		./services
 		./greenclip.nix
+		./rofi/rofi.nix
   ];
 }

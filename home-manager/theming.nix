@@ -1,6 +1,9 @@
-{ config, pkgs, ... }:
-
 {
+	programs = {
+		btop = {
+			catppuccin.enable = true;
+		};
+	};
   catppuccin = {
     enable = true;
     flavor = "mocha";
@@ -9,14 +12,25 @@
 
   gtk = {
     enable = true;
+		catppuccin = {
+			enable = true;
+		};
   };
 
   qt = {
     enable = true;
+		platformTheme.name = "kvantum";
     style = {
-      name = "kvantum";
+			name = "kvantum";
+			catppuccin = {
+				enable = true;
+				apply = true;
+			};
     };
-    platformTheme.name = "kvantum";
   };
-}
 
+	services.dunst = {
+		enable = true;
+		catppuccin.enable = true;
+	};
+}

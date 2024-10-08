@@ -1,5 +1,4 @@
 {
-  programs.rofi.catppuccin.enable = true;
   home.file.".config/rofi/rofi.rasi".text = ''
 	configuration{
     modi: "run,drun,window";

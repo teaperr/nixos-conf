@@ -32,6 +32,7 @@
       update-grub = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
       tma = "tmux attach";
       autoremove = "sudo pacman -R $(pacman -Qdtq)";
+			t = "tmux";
 			y = "yazi";
       vi = "nvim";
       v = "nvim";
