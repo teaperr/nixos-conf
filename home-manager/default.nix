@@ -1,7 +1,9 @@
 {
   imports = [
     ./alacritty.nix
+		./btop.nix
 		./fastfetch.nix
+		./fonts.nix
     ./git.nix
 		./greenclip.nix
 		./kde

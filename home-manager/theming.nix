@@ -1,8 +1,6 @@
 {
 	programs = {
-		btop = {
-			catppuccin.enable = true;
-		};
+
 	};
   catppuccin = {
     enable = true;

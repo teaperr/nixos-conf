@@ -224,17 +224,32 @@
     </keybind>
     <keybind key="W-b">
       <action name="Execute">
-        <command>rofi -show window -theme /home/lotus/.local/share/rofi/themes/catppuccin-mocha.rasi</command>
+        <command>sh ~/.config/rofi/bin/window</command>
+      </action>
+    </keybind>
+    <keybind key="W-r">
+      <action name="Execute">
+        <command>sh ~/.config/rofi/bin/runner</command>
+      </action>
+    </keybind>
+    <keybind key="W-p">
+      <action name="Execute">
+        <command>sh ~/.config/rofi/bin/powermenu</command>
+      </action>
+    </keybind>
+    <keybind key="W-s">
+      <action name="Execute">
+        <command>sh ~/.config/rofi/bin/screenshot</command>
       </action>
     </keybind>
     <keybind key="W-space">
       <action name="Execute">
-        <command>rofi -show drun -theme /home/lotus/.local/share/rofi/themes/catppuccin-mocha.rasi</command>
+        <command>sh ~/.config/rofi/bin/launcher</command>
       </action>
     </keybind>
-    <keybind key="Super-v">
+    <keybind key="W-v">
       <action name="Execute">
-        <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme ~/.local/share/rofi/themes/catppuccin-mocha.rasi</command>
+        <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command 'print' -theme ~/.config/rofi/config/launcher.rasi</command>
       </action>
     </keybind>
     <!-- Keybindings for desktop switching -->
