@@ -262,7 +262,7 @@
     </keybind>
 		<keybind key="Super-v">
       <action name="Execute">
-        <command>rofi -show drun -theme /home/lotus/.local/share/rofi/themes/catppuccin-mocha.rasi</command>
+        <command>rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme ~/.local/share/rofi/themes/catppuccin-mocha.rasi</command>
       </action>
     </keybind>
     <keybind key="Print">
@@ -300,7 +300,7 @@
     </keybind>
     <keybind key="W-space">
       <action name="Execute">
-        <command>rofi -show drun</command>
+        <command>rofi -show drun -theme /home/lotus/.local/share/rofi/themes/catppuccin-mocha.rasi</command>
       </action>
     </keybind>
     <!-- Keybindings for desktop switching -->
