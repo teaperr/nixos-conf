@@ -1,4 +1,3 @@
-#!/bin/bash
 #
 #   This file echoes a bunch of 24-bit color codes
 #   to the terminal to demonstrate its functionality.

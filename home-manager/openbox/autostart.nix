@@ -16,8 +16,7 @@
 	exec spacefm --desktop &
 
 	# initialize desktop
-	# exec spacefm --desktop &
-	nitrogen &
+	exec spacefm --desktop &
 
 	# config section
 	xinput set-prop "pointer:Razer Razer DeathAdder Essential" "libinput Accel Speed" -1 &

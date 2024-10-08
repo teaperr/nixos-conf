@@ -3,7 +3,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
       ./services
     ];
   
@@ -154,6 +154,7 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
     efibootmgr
     arch-install-scripts
     i3lock-fancy-rapid
+		killall
   ];
 
   # font list
