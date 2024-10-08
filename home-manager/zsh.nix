@@ -32,7 +32,7 @@
       update-grub = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
       tma = "tmux attach";
       autoremove = "sudo pacman -R $(pacman -Qdtq)";
-			ff = "fastfetch"
+			ff = "fastfetch";
 			t = "tmux";
 			y = "yazi";
       vi = "nvim";
@@ -45,6 +45,7 @@
       colourtest = "bash ~/system_bullshit/scripts/colourtest.sh";
       fixmouse = "xinput set-prop '13' 'libinput Accel Speed' -1 && xinput set-button-map 13 1 2 3 4 5 6 7 8 3";
       copyfile = "xclip -selection clipboard -i";
+			copy = "xclip -selection clipboard";
     };
     initExtra = ''
 if [ "$XDG_CURRENT_DESKTOP" != "Openbox" ]; then
