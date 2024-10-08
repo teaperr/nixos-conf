@@ -14,6 +14,10 @@
     catppuccin = {
 			enable = true;
 			extraConfig = ''
+			setw -g mode-keys vi
+			bind-key -T copy-mode-vi v send -X begin-selection
+			bind-key -T copy-mode-vi y send -X copy-selection-and-cancel
+
       set -g default-terminal "tmux-256color"
       set -ag terminal-overrides ",xterm-256color:RGB"
 
