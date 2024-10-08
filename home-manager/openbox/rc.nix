@@ -30,27 +30,10 @@
     <!-- when followMouse is enabled, and a window is given focus by moving the
        mouse into it, also raise the window -->
   </focus>
-  <placement>
-    <policy>Smart</policy>
-    <!-- 'Smart' or 'UnderMouse' -->
-    <center>no</center>
-    <!-- whether to place windows in the center of the free area found or
-       the top left corner -->
-    <monitor>Primary</monitor>
-    <!-- with Smart placement on a multi-monitor system, try to place new windows
-       on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
-       the active window is, 'Primary' - only on the primary monitor -->
-    <primaryMonitor>1</primaryMonitor>
-    <!-- The monitor where Openbox should place popup dialogs such as the
-       focus cycling popup, or the desktop switch popup.  It can be an index
-       from 1, specifying a particular monitor.  Or it can be one of the
-       following: 'Mouse' - where the mouse is, or
-                  'Active' - where the active window is -->
-  </placement>
-  <theme>
-    <name>catppuccin-mocha</name>
-    <titleLayout>NLDIMC</titleLayout>
-    <!--
+	<theme>
+  <name>Clearlooks</name>
+  <titleLayout>NLIMC</titleLayout>
+  <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
       L: window label (AKA title).
@@ -60,63 +43,150 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>yes</keepBorder>
-    <animateIconify>yes</animateIconify>
-    <font place="ActiveWindow">
-      <name>sans</name>
-      <size>9</size>
-      <!-- font size in points -->
-      <weight>Bold</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->
-    </font>
-    <font place="InactiveWindow">
-      <name>sans</name>
-      <size>9</size>
-      <!-- font size in points -->
-      <weight>Bold</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->
-    </font>
-    <font place="MenuHeader">
-      <name>sans</name>
-      <size>9</size>
-      <!-- font size in points -->
-      <weight>normal</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
-      <!-- 'italic' or 'normal' -->
-    </font>
-    <font place="MenuItem">
-      <name>sans</name>
-      <size>15</size>
-      <!-- font size in points -->
-      <weight>Normal</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->
-    </font>
-    <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
-      <size>10</size>
-      <!-- font size in points -->
-      <weight>Bold</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->
-    </font>
-    <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
-      <size>9</size>
-      <!-- font size in points -->
-      <weight>Bold</weight>
-      <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
-      <!-- 'italic' or 'normal' -->
-    </font>
-  </theme>
+  <keepBorder>yes</keepBorder>
+  <animateIconify>yes</animateIconify>
+  <font place="ActiveWindow">
+    <name>sans</name>
+    <size>8</size>
+    <!-- font size in points -->
+    <weight>bold</weight>
+    <!-- 'bold' or 'normal' -->
+    <slant>normal</slant>
+    <!-- 'italic' or 'normal' -->
+  </font>
+  <font place="InactiveWindow">
+    <name>sans</name>
+    <size>8</size>
+    <!-- font size in points -->
+    <weight>bold</weight>
+    <!-- 'bold' or 'normal' -->
+    <slant>normal</slant>
+    <!-- 'italic' or 'normal' -->
+  </font>
+  <font place="MenuHeader">
+    <name>sans</name>
+    <size>9</size>
+    <!-- font size in points -->
+    <weight>normal</weight>
+    <!-- 'bold' or 'normal' -->
+    <slant>normal</slant>
+    <!-- 'italic' or 'normal' -->
+  </font>
+  <font place="MenuItem">
+    <name>sans</name>
+    <size>9</size>
+    <!-- font size in points -->
+    <weight>normal</weight>
+    <!-- 'bold' or 'normal' -->
+    <slant>normal</slant>
+    <!-- 'italic' or 'normal' -->
+  </font>
+  <font place="ActiveOnScreenDisplay">
+    <name>sans</name>
+    <size>9</size>
+    <!-- font size in points -->
+    <weight>bold</weight>
+    <!-- 'bold' or 'normal' -->
+    <slant>normal</slant>
+    <!-- 'italic' or 'normal' -->
+  </font>
+  <font place="InactiveOnScreenDisplay">
+    <name>sans</name>
+    <size>9</size>
+    <!-- font size in points -->
+    <weight>bold</weight>
+    <!-- 'bold' or 'normal' -->
+    <slant>normal</slant>
+    <!-- 'italic' or 'normal' -->
+  </font>
+	</theme>
+		<placement>
+			<policy>Smart</policy>
+			<!-- 'Smart' or 'UnderMouse' -->
+			<center>no</center>
+			<!-- whether to place windows in the center of the free area found or
+				 the top left corner -->
+			<monitor>Primary</monitor>
+			<!-- with Smart placement on a multi-monitor system, try to place new windows
+				 on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
+				 the active window is, 'Primary' - only on the primary monitor -->
+			<primaryMonitor>1</primaryMonitor>
+			<!-- The monitor where Openbox should place popup dialogs such as the
+				 focus cycling popup, or the desktop switch popup.  It can be an index
+				 from 1, specifying a particular monitor.  Or it can be one of the
+				 following: 'Mouse' - where the mouse is, or
+										'Active' - where the active window is -->
+		</placement>
+		<theme>
+			<name>catppuccin-mocha</name>
+			<titleLayout>NLDIMC</titleLayout>
+			<!--
+				available characters are NDSLIMC, each can occur at most once.
+				N: window icon
+				L: window label (AKA title).
+				I: iconify
+				M: maximize
+				C: close
+				S: shade (roll up/down)
+				D: omnipresent (on all desktops).
+		-->
+			<keepBorder>yes</keepBorder>
+			<animateIconify>yes</animateIconify>
+			<font place="ActiveWindow">
+				<name>sans</name>
+				<size>9</size>
+				<!-- font size in points -->
+				<weight>Bold</weight>
+				<!-- 'bold' or 'normal' -->
+				<slant>Normal</slant>
+				<!-- 'italic' or 'normal' -->
+			</font>
+			<font place="InactiveWindow">
+				<name>sans</name>
+				<size>9</size>
+				<!-- font size in points -->
+				<weight>Bold</weight>
+				<!-- 'bold' or 'normal' -->
+				<slant>Normal</slant>
+				<!-- 'italic' or 'normal' -->
+			</font>
+			<font place="MenuHeader">
+				<name>sans</name>
+				<size>9</size>
+				<!-- font size in points -->
+				<weight>normal</weight>
+				<!-- 'bold' or 'normal' -->
+				<slant>normal</slant>
+				<!-- 'italic' or 'normal' -->
+			</font>
+			<font place="MenuItem">
+				<name>sans</name>
+				<size>15</size>
+				<!-- font size in points -->
+				<weight>Normal</weight>
+				<!-- 'bold' or 'normal' -->
+				<slant>Normal</slant>
+				<!-- 'italic' or 'normal' -->
+			</font>
+			<font place="ActiveOnScreenDisplay">
+				<name>sans</name>
+				<size>10</size>
+				<!-- font size in points -->
+				<weight>Bold</weight>
+				<!-- 'bold' or 'normal' -->
+				<slant>Normal</slant>
+				<!-- 'italic' or 'normal' -->
+			</font>
+			<font place="InactiveOnScreenDisplay">
+				<name>sans</name>
+				<size>9</size>
+				<!-- font size in points -->
+				<weight>Bold</weight>
+				<!-- 'bold' or 'normal' -->
+				<slant>Normal</slant>
+				<!-- 'italic' or 'normal' -->
+			</font>
+		</theme>
   <desktops>
     <!-- this stuff is only used at startup, pagers allow you to change them
        during a session
