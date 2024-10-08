@@ -1,6 +1,5 @@
 {
   home.file.".config/openbox/rc.xml".text = ''
-	<?xml version="1.0" encoding="UTF-8"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <applications>
     <startup>
@@ -822,6 +821,8 @@
     # 'Horizontal', 'Vertical' or boolean (yes/no)
   </application>
 
+  # end of the example
+-->
   </applications>
 </openbox_config>
   '';

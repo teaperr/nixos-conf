@@ -1,4 +1,7 @@
 {
+	home.file.".config/rofi/config.rasi".text = ''
+@theme "/home/lotus/.local/share/rofi/themes/catppuccin-mocha.rasi"
+	'';
   home.file.".config/rofi/rofi.rasi".text = ''
 	configuration{
     modi: "run,drun,window";
@@ -31,7 +34,7 @@
 			grey: #6c7086;
 
 			width: 600;
-			font: "JetBrainsMono Nerd Font 14";
+			font: "Hack Nerd Font Mono 10";
 	}
 
 	element-text, element-icon , mode-switcher {
