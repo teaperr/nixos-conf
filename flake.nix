@@ -1,18 +1,18 @@
 {
-  description = "Arch Linux flake with Home Manager managing Neovim via Nixvim";
+  description = "thea's nixos";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05"; # Use the corresponding branch for your NixOS version
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
-    nixvim.url = "github:nix-community/nixvim/nixos-24.05"; # Match the version with nixpkgs
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager/master";
+    nixvim.url = "github:nix-community/nixvim";
     catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = { self, nixpkgs, home-manager, nixvim, catppuccin, ... }: {
     nixosConfigurations.my-nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";  # Adjust if you're using a different architecture
+      system = "x86_64-linux";
       modules = [
-        catppuccin.nixosModules.catppuccin  # Fix typo here
+        catppuccin.nixosModules.catppuccin
         ./system/configuration.nix
         home-manager.nixosModules.home-manager
       ];
@@ -28,7 +28,7 @@
           programs.nixvim.enable = true;
 	}
         ./home-manager/default.nix
-        catppuccin.homeManagerModules.catppuccin  # Fix typo here
+        catppuccin.homeManagerModules.catppuccin
         nixvim.homeManagerModules.nixvim
       ];
       pkgs = nixpkgs.legacyPackages.x86_64-linux;

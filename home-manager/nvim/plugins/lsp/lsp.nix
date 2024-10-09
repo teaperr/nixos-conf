@@ -5,21 +5,22 @@
 			lsp-lines.enable = true;
 			lsp-format.enable = true;
 			helm.enable = true;
+			web-devicons.enable = true;
 			lsp = {
 				enable = true;
 				# inlayHints = true;
 				servers = {
 					html.enable = true;
 					cssls.enable = true;
-					lua-ls.enable = true;
+					lua_ls.enable = true;
 					yamlls.enable = true;
 					pyright.enable = true;
 					gopls.enable = true;
-					tsserver.enable = true;
-					helm-ls.enable = true;
+					ts_ls.enable = true;
+					helm_ls.enable = true;
 					jsonls.enable = true;
 					clangd.enable = true;
-					nil-ls.enable = true;
+					nil_ls.enable = true;
 					# jdt-language-server.enable = true;
 					bashls.enable = true;
 				};

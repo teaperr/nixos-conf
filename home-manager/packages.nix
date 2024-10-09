@@ -1,7 +1,11 @@
 { pkgs, ... }:
 
 {
+	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		lutris
+		wineWowPackages.full
+		steam
 		speedcrunch
 		libreoffice-qt6-fresh
 		haskellPackages.doctemplates
