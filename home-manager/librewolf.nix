@@ -80,9 +80,11 @@
 			"privacy.query_stripping" = true;
 			"privacy.trackingprotection.cryptomining.enabled" = true;
 			"privacy.trackingprotection.enabled" = true;
-			"privacy.trackingprotection.fingerprinting.enabled" = true;
+			"privacy.trackingprotection.fingerprinting.enabled" = false;
 			"privacy.trackingprotection.pbmode.enabled" = true;
 			"privacy.usercontext.about_newtab_segregation.enabled" = true;
+			"browser.sessionstore.restore_on_demand" = true;
+			"browser.sessionstore.restore_tabs_lazily" = false;
 			"security.ssl.disable_session_identifiers" = true;
 			"services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSite" = false;
 			"signon.autofillForms" = false;

@@ -173,5 +173,10 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
 
   system.stateVersion = "24.05";
 
+	# set up swap file 
+	swapDevices = [{
+		device = "/swapfile";
+		size = 8 * 1024;
+	}];
 }
 
