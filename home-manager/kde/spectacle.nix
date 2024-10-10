@@ -1,9 +1,7 @@
 {
 	home.file.".config/spectaclerc".text = ''[General]
 clipboardGroup=PostScreenshotCopyImage
-
-[GuiConfig]
-captureMode=0
+launchAction=UseLastUsedCapturemode
 
 [ImageSave]
 translatedScreenshotsFolder=Screenshots
@@ -11,5 +9,5 @@ translatedScreenshotsFolder=Screenshots
 [VideoSave]
 preferredVideoFormat=0
 translatedScreencastsFolder=Screencasts
-	'';
+'';
 }

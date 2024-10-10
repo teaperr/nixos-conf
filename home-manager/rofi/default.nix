@@ -1545,5 +1545,121 @@ betterlockscreen -u /home/lotus/nixos-conf/home-manager/common/assets/wallpaper.
 	kb-remove-char-back: "BackSpace";
 }
 '';
+		".config/rofi/bin/music".text = ''#!/usr/bin/env bash
+rofi_command="rofi -theme $HOME/.config/rofi/config/musicmenu.rasi"
+
+# Options
+if [[ "$DIR" == "musicmenus" ]]; then
+    play="▶️ Play"
+    pause="⏸️ Pause"
+    stop="⏹️ Stop"
+    next="⏭️ Next"
+    prev="⏮️ Previous"
+    ddir="$HOME/.config/rofi/config"
+else
+    # Buttons
+    layout=$(grep BUTTON "$HOME/.config/rofi/config/musicmenu.rasi" | cut -d'=' -f2 | tr -d '[:blank:],*/')
+    if [[ "$layout" == "TRUE" ]]; then
+        play="▶️"
+        pause="⏸️"
+        stop="⏹️"
+        next="⏭️"
+        prev="⏮️"
+    else
+        play="▶️ Play"
+        pause="⏸️ Pause"
+        stop="⏹️ Stop"
+        next="⏭️ Next"
+        prev="⏮️ Previous"
+    fi
+    ddir="$HOME/.config/rofi/config"
+fi
+
+# Display Help
+show_msg() {
+    rofi -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
+}
+
+# Variable passed to rofi
+options="$play\n$pause\n$stop\n$next\n$prev"
+
+chosen="$(echo -e "$options" | $rofi_command -p "Music Control" -dmenu -selected-row 0)"
+case $chosen in
+    $play)
+        mpc play
+        ;;
+    $pause)
+        mpc pause
+        ;;
+    $stop)
+        mpc stop
+        ;;
+    $next)
+        mpc next
+        ;;
+    $prev)
+        mpc prev
+        ;;
+esac
+'';
+		".config/rofi/config/musicmenu.rasi".text = ''#!/usr/bin/env bash
+rofi_command="rofi -theme $HOME/.config/rofi/config/musicmenu.rasi"
+
+# Options
+if [[ "$DIR" == "musicmenus" ]]; then
+    play="▶️ Play"
+    pause="⏸️ Pause"
+    stop="⏹️ Stop"
+    next="⏭️ Next"
+    prev="⏮️ Previous"
+    ddir="$HOME/.config/rofi/config"
+else
+    # Buttons
+    layout=$(grep "BUTTON" "$HOME/.config/rofi/config/musicmenu.rasi" | cut -d'=' -f2 | tr -d '[:blank:],*/')
+    
+    if [[ "$layout" == "TRUE" ]]; then
+        play="▶️"
+        pause="⏸️"
+        stop="⏹️"
+        next="⏭️"
+        prev="⏮️"
+    else
+        play="▶️ Play"
+        pause="⏸️ Pause"
+        stop="⏹️ Stop"
+        next="⏭️ Next"
+        prev="⏮️ Previous"
+    fi
+    ddir="$HOME/.config/rofi/config"
+fi
+
+# Display Help
+show_msg() {
+    rofi -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
+}
+
+# Variable passed to rofi
+options="$play\n$pause\n$stop\n$next\n$prev"
+
+chosen="$(echo -e "$options" | $rofi_command -p "Music Control" -dmenu -selected-row 0)"
+case $chosen in
+    $play)
+        mpc play
+        ;;
+    $pause)
+        mpc pause
+        ;;
+    $stop)
+        mpc stop
+        ;;
+    $next)
+        mpc next
+        ;;
+    $prev)
+        mpc prev
+        ;;
+esac
+'';
+		
 	};
 }

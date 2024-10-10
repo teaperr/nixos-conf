@@ -6,6 +6,8 @@
 
 		vSync = true;
 
+		backend = "glx";
+
 		shadow = true;
 		shadowOffsets = [
 			0

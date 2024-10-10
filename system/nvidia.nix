@@ -1,23 +1,29 @@
-{ pkgs, config, ... }:
-
+{ config, lib, pkgs, ... }:
 {
-	# Enable NVIDIA proprietary drivers
-  services.xserver.videoDrivers = [ "nvidia" ];
+  boot.blacklistedKernelModules = [ "nouveau" ];
 
-  # Optionally enable modesetting (recommended)
-  hardware.nvidia.modesetting.enable = true;
-
-  # Enable the NVIDIA kernel module
-  boot.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
-
-  # Enable hardware acceleration in your system
   hardware.opengl = {
     enable = true;
-    driSupport = true;
+  };
+
+  services.xserver.videoDrivers = ["nvidia"];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+	hardware.graphics = {
+		enable32Bit = true;
     extraPackages = with pkgs; [
-      vaapiIntel
-      vaapiVdpau
+      vulkan-loader
       libvdpau
+      vaapiVdpau
     ];
   };
+	hardware.pulseaudio.support32Bit = true;
 }

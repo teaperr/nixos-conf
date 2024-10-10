@@ -1,2 +1,2 @@
-home-manager switch --flake .#lotus
+home-manager switch --flake .#lotus --impure
 openbox --reconfigure

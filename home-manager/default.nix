@@ -1,18 +1,20 @@
 {
   imports = [
     ./alacritty.nix
+		./aliases.nix
 		./btop.nix
 		./fastfetch.nix
 		./fonts.nix
     ./git.nix
 		./greenclip.nix
 		./kde
-		./librewolf.nix
+		# ./librewolf.nix
     ./nvim
     ./openbox
 		./packages.nix
     ./picom.nix
 		./rofi
+		./rmpc.nix
 		./services
 		./speedcrunch.nix
     ./theming

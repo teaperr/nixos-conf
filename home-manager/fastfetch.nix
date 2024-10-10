@@ -59,12 +59,7 @@
 		},
 		{
 			"type": "theme",
-			"key": "├─󰉼",
-			"keyColor": "yellow"
-		},
-		{
-			"type": "wallpaper",
-			"key": "╰─󰸉",
+			"key": "╰─󰉼",
 			"keyColor": "yellow"
 		},
 		"break",

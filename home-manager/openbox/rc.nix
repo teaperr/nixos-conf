@@ -222,6 +222,11 @@
         <command>alacritty</command>
       </action>
     </keybind>
+    <keybind key="W-m">
+      <action name="Execute">
+        <command>sh ~/.config/rofi/bin/music</command>
+      </action>
+    </keybind>
     <keybind key="W-b">
       <action name="Execute">
         <command>sh ~/.config/rofi/bin/window</command>

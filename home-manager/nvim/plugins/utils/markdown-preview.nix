@@ -4,10 +4,10 @@
 			enable = true;
 			settings = {
 				browser = "librewolf";
-				echo_preview_url = true;
+				echo_preview_url = 1;
 				port = "1312";
 				preview_options = {
-					disable_filename = true;
+					disable_filename = 1;
 				};
 				theme = "dark";
 			};

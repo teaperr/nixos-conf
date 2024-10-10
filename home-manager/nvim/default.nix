@@ -32,6 +32,7 @@
     ./plugins/editor/copilot-chat.nix
     ./plugins/editor/navic.nix
 		./plugins/editor/comment.nix
+		./plugins/editor/image.nix
 
     # UI plugins
     ./plugins/ui/bufferline.nix

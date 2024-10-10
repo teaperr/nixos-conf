@@ -3,8 +3,18 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		nodePackages.live-server
+		feh
+		exiftool
+		gdu
+		fzf
+		rmpc
+		mpd
+		mpdscribble
 		lutris
 		wineWowPackages.full
+		winetricks
+		protonplus
 		steam
 		speedcrunch
 		libreoffice-qt6-fresh
@@ -33,13 +43,11 @@
     tmux
     vesktop
     xorg.xinput
-    xclip
     btop
     htop
     catppuccin
     rofi
     tint2
-    picom
     spaceFM
     volumeicon
     dunst
@@ -49,7 +57,6 @@
     imagemagick
     cmake
     gnumake
-    nitrogen
     picom
     krita
 	];

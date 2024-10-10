@@ -33,7 +33,6 @@
       autoremove = "sudo pacman -R $(pacman -Qdtq)";
 			ff = "fastfetch";
 			t = "tmux";
-			y = "yazi";
       vi = "nvim";
       v = "nvim";
       e = "nvim .";
@@ -51,6 +50,15 @@ if [ "$XDG_CURRENT_DESKTOP" != "Openbox" ]; then
   xinput set-prop '13' 'libinput Accel Speed' -1
   xinput set-button-map 13 1 2 3 4 5 6 7 8 3
 fi
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
       '';
   };
   home.packages = with pkgs; [
