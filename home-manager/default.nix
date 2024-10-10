@@ -5,6 +5,7 @@
 		./btop.nix
 		./fastfetch.nix
 		./fonts.nix
+		./fzf.nix
     ./git.nix
 		./greenclip.nix
 		./kde
