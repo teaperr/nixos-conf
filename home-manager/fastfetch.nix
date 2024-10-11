@@ -33,9 +33,19 @@
 		},
 		{
 			"type": "swap",
-			"key": "╰─󰓡",
+			"key": "├─󰓡",
 			"keyColor": "green"
 		},
+		{
+      "type": "battery",
+      "key": "├─",
+      "keyColor": "green"
+    },
+    {
+      "type": "poweradapter",
+      "key": "╰─",
+      "keyColor": "green"
+    },
 		"break",
 		{
 			"type": "shell",
