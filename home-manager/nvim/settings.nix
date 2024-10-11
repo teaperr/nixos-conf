@@ -3,6 +3,7 @@
 {
   programs.nixvim = {
     opts = {
+			conceallevel = 1;
       number = true;
       relativenumber = true;
 

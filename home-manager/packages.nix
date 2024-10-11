@@ -3,6 +3,8 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		texliveTeTeX
+		tectonic
 		nodePackages.live-server
 		feh
 		exiftool

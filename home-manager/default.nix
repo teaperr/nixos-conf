@@ -2,6 +2,7 @@
   imports = [
     ./alacritty.nix
 		./aliases.nix
+		./betterlockscreen.nix
 		./btop.nix
 		./fastfetch.nix
 		./fonts.nix

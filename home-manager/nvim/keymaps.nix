@@ -5,6 +5,12 @@
 		globals.mapleader = " ";
 		keymaps = [
 			{
+				# edit misc notes on F1
+				mode = [ "i" "n" "v" ];
+				key = "<F1>";
+				action = "<Esc>:e ~/vaults/misc/random.md<Enter>";
+			}
+			{
 				# make an undo point every time ; is typed
 				mode = "i";
 				key = ";";
