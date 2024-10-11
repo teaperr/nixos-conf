@@ -4,6 +4,7 @@
 		./aliases.nix
 		./betterlockscreen.nix
 		./btop.nix
+		./environment.nix
 		./fastfetch.nix
 		./fonts.nix
 		./fzf.nix

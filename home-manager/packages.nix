@@ -3,6 +3,9 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		xorg.xauth
+		xorg.xhost
+		alsa-utils
 		texliveTeTeX
 		tectonic
 		nodePackages.live-server

@@ -212,16 +212,37 @@
       </action>
     </keybind>
     <!-- Move window to the right monitor (DP-1) -->
+
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+				<command>/usr/bin/env bash ~/.config/openbox/scripts/raiseVolume.sh</command>
+      </action>
+    </keybind>
+
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+				<command>/usr/bin/env bash ~/.config/openbox/scripts/lowerVolume.sh</command>
+      </action>
+    </keybind>
+
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+				<command>/usr/bin/env bash ~/.config/openbox/scripts/toggleMute.sh</command>
+      </action>
+    </keybind>
+
     <keybind key="W-Right">
       <action name="MoveResizeTo">
         <monitor force="yes">next</monitor>
       </action>
     </keybind>
+
     <keybind key="C-A-t">
       <action name="Execute">
         <command>alacritty</command>
       </action>
     </keybind>
+
     <keybind key="W-m">
       <action name="Execute">
         <command>sh ~/.config/rofi/bin/music</command>
