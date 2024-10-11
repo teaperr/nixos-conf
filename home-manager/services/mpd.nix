@@ -6,21 +6,21 @@ in
 	services.mpd = {
     enable = true;
 		musicDirectory = "~/Music";
-    
-    extraConfig = ''
-      audio_output {
-				type            "pulse"
-				name            "PipeWire Output"
-				mixer_type      "software"
-      }
-			bind_to_address     "localhost"
-			music_directory     "~/Music"
-			playlist_directory  "~/.config/mpd/playlists"
-			db_file             "~/.config/mpd/database"
-			log_file            "~/.config/mpd/log"
-			pid_file            "~/.config/mpd/pid"
-			state_file          "~/.config/mpd/state"
-    '';
+		extraConfig = ''music_directory     "~/Music"
+playlist_directory  "~/.config/mpd/playlists"
+db_file             "~/.config/mpd/database"
+log_file            "~/.config/mpd/log"
+log_level           "verbose"
+pid_file            "~/.config/mpd/pid"
+state_file          "~/.config/mpd/state"
+auto_update         "yes"
+audio_output {
+	type            "alsa"
+	name            "ALSA sound card"
+	device          "hw:0,0"
+	mixer_type      "software"
+}
+		'';
   };
 
 	home.file.".config/mpdscribble/mpdscribble.conf".text = ''
@@ -40,12 +40,15 @@ password = ${mpdPassword}
 playlist_directory  "~/.config/mpd/playlists"
 db_file             "~/.config/mpd/database"
 log_file            "~/.config/mpd/log"
+log_level           "verbose"
 pid_file            "~/.config/mpd/pid"
 state_file          "~/.config/mpd/state"
+auto_update         "yes"
 audio_output {
-	type            "pulse"
-	name            "PipeWire Output"
-mixer_type      "software"
+	type            "alsa"
+	name            "ALSA sound card"
+	device          "hw:0,0"
+	mixer_type      "software"
 }
 '';
 	

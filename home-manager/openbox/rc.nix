@@ -191,7 +191,12 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>spectacle</command>
+        <command>flameshot gui</command>
+      </action>
+    </keybind>
+    <keybind key="S-Print">
+      <action name="Execute">
+        <command>flameshot full --clipboard</command>
       </action>
     </keybind>
     <!-- Lock screen with i3lockmore -->
