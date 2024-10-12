@@ -129,7 +129,7 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
   users.users.lotus = {
     isNormalUser = true;
     description = "lotus";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;

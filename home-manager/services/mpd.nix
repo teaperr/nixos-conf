@@ -15,9 +15,8 @@ pid_file            "~/.config/mpd/pid"
 state_file          "~/.config/mpd/state"
 auto_update         "yes"
 audio_output {
-	type            "alsa"
-	name            "ALSA sound card"
-	device          "hw:0,0"
+	type            "pipewire"
+	name            "Pipewire sound"
 	mixer_type      "software"
 }
 		'';
@@ -45,9 +44,8 @@ pid_file            "~/.config/mpd/pid"
 state_file          "~/.config/mpd/state"
 auto_update         "yes"
 audio_output {
-	type            "alsa"
-	name            "ALSA sound card"
-	device          "hw:0,0"
+	type            "pipewire"
+	name            "Pipewire sound"
 	mixer_type      "software"
 }
 '';

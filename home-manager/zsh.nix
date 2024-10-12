@@ -19,6 +19,7 @@
       CASE_SENSITIVE = "TRUE";
       ENABLE_CORRECTION = "TRUE";
       COMPLETION_WAITING_DOTS = "...";
+			ZSH_COMPDUMP = "$ZSH/cache/.zcompdump-$HOST";
       # COLORTERM = "truecolor";
       # TERM = "xterm-256color";
     };
@@ -47,8 +48,7 @@
     };
     initExtra = ''
 if [ "$XDG_CURRENT_DESKTOP" != "Openbox" ] && ! grep -q "ThinkPad" /sys/devices/virtual/dmi/id/product_family; then
-  xinput set-prop '13' 'libinput Accel Speed' -1
-  xinput set-button-map 13 1 2 3 4 5 6 7 8 3
+	xinput set-prop 9 297 -1 && xinput set-button-map 9 1 2 3 4 5 6 7 8 3
 fi
 
 function y() {

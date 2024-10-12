@@ -1548,65 +1548,36 @@ betterlockscreen -u /home/lotus/nixos-conf/home-manager/common/assets/wallpaper.
 
 
 		".config/rofi/bin/musicmenu".text = ''#!/usr/bin/env bash
-rofi_command="rofi -theme $HOME/.config/rofi/config/musicmenu.rasi"
+rofi_command="rofi -theme $HOME/.config/rofi/config/musicmenu.rasi -no-click-to-exit"
 
-# Options
-if [[ "$DIR" == "powermenus" ]]; then
-	shutdown=""
-	reboot=""
-	lock=""
-	suspend=""
-	logout=""
-	ddir="$HOME/.config/rofi/config"
-else
-
-	# Buttons
-	layout=`cat $HOME/.config/rofi/config/musicmenu.rasi | grep BUTTON | cut -d'=' -f2 | tr -d '[:blank:],*/'`
-	if [[ "$layout" == "TRUE" ]]; then
-		previous="󰒮"
-		playpause="󰐎"
- 		next="󰒭"
-
-
-	else
-		previous="󰒮"
-		playpause="󰐎"
- 		next="󰒭"
-	fi
-	ddir="$HOME/.config/rofi/config"
-fi
-
-# Ask for confirmation
-rdialog () {
-rofi -dmenu\
-	  -i\
-	  -no-fixed-num-lines\
-	  -p "Are You Sure? : "\
-	  -theme "$ddir/confirm.rasi"
-}
-
-# Display Help
-show_msg() {
-	rofi -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
-}
+# Define the buttons (icons)
+previous="󰒮"
+playpause="󰐎"
+next="󰒭"
 
 # Variable passed to rofi
 options="$previous\n$playpause\n$next"
 
-chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
-case $chosen in
-		$previous)
-			rmpc prev
-		$previous)
+echo $options
 
-		$playpause)
-			rmpc togglepause
-		$playpause)
-
-		$next)
-			rmpc next
-		$next)
-esac
+while true; do
+  chosen="$(echo -e "$options" | $rofi_command -p "Music Controls" -dmenu -selected-column 2)"
+	echo $chosen
+  case $chosen in
+	$previous)
+		rmpc prev
+		;;
+	$playpause)
+		rmpc togglepause
+		;;
+	$next)
+		rmpc next
+		;;
+	*)
+		break
+		;;
+  esac
+done
 
 '';
 
@@ -1616,14 +1587,11 @@ esac
 	  drun-display-format:            "{icon} {name}";
 	  disable-history:                false;
 	  click-to-exit: 		            true;
-	  location:                       4;
+	  location:                       0;
 }
 
 @import "font.rasi"
 @import "colors.rasi"
-
-/* Line Responsible For Button Layouts */
-/* BUTTON = TRUE */
 
 window {
 	  transparency:                   "real";
@@ -1632,8 +1600,8 @@ window {
 	  border:                  	    2px;
 	  border-color:                   @BGA;
 	  border-radius:                  10px;
-	  width:                          110px;
-	  x-offset:                       -1%;
+	  width:                          400px;
+	  x-offset:                       0;
 	  y-offset:                       0;
 }
 
@@ -1658,49 +1626,21 @@ textbox-prompt-colon {
 	  font:			                "HackGen Console NF Regular 10";
 }
 
-entry {
-	  background-color:               @BG;
-	  text-color:                     @FG;
-	  placeholder-color:              @FG;
-	  expand:                         true;
-	  horizontal-align:               0;
-	  placeholder:                    "Search...";
-	  blink:                          true;
-	  border:                  	    0px 0px 2px 0px;
-	  border-color:                   @BDR;
-	  border-radius:                  10px;
-	  padding:                        8px;
-}
-
-inputbar {
-	  children: 		                [ textbox-prompt-colon ];
-	  background-color:               @BG;
-	  text-color:                     @FG;
-	  expand:                         false;
-	  border:                  	    0px 0px 0px 0px;
-	  border-radius:                  0px;
-	  border-color:                   @BDR;
-	  margin:                         0px 0px 0px 0px;
-	  padding:                        0px;
-	  position:                       center;
-}
-
 case-indicator {
 	  background-color:               @BG;
 	  text-color:                     @FG;
-	  spacing:                        0;
+	  spacing:                        10;
 }
-
 
 listview {
-	  background-color:               @BG;
-	  columns:                        1;
-	  lines:			                5;
-	  spacing:                        15px;
-	  cycle:                          true;
-	  dynamic:                        true;
-	  layout:                         vertical;
+	  background-color: @BG;
+	  columns: 3;
+	  lines: 1;
+	  spacing: 10px;
+	  cycle: true;
+	  dynamic: true;
 }
+
 
 mainbox {
 	  background-color:               @BG;
@@ -1729,7 +1669,7 @@ element-icon {
 element-text {
 	  background-color: 		        inherit;
 	  text-color:       		        inherit;
-	  font:			                "feather 20";
+	  font:			                "HackGen Console NF Regular 20";
 	  expand:                         true;
 	  horizontal-align:               0.5;
 	  vertical-align:                 0.5;
