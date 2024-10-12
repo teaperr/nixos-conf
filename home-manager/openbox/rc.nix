@@ -250,7 +250,7 @@
 
     <keybind key="W-m">
       <action name="Execute">
-        <command>sh ~/.config/rofi/bin/music</command>
+        <command>sh ~/.config/rofi/bin/musicmenu</command>
       </action>
     </keybind>
     <keybind key="W-b">

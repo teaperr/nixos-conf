@@ -1545,121 +1545,226 @@ betterlockscreen -u /home/lotus/nixos-conf/home-manager/common/assets/wallpaper.
 	kb-remove-char-back: "BackSpace";
 }
 '';
-		".config/rofi/bin/music".text = ''#!/usr/bin/env bash
+
+
+		".config/rofi/bin/musicmenu".text = ''#!/usr/bin/env bash
 rofi_command="rofi -theme $HOME/.config/rofi/config/musicmenu.rasi"
 
 # Options
-if [[ "$DIR" == "musicmenus" ]]; then
-    play="▶️ Play"
-    pause="⏸️ Pause"
-    stop="⏹️ Stop"
-    next="⏭️ Next"
-    prev="⏮️ Previous"
-    ddir="$HOME/.config/rofi/config"
+if [[ "$DIR" == "powermenus" ]]; then
+	shutdown=""
+	reboot=""
+	lock=""
+	suspend=""
+	logout=""
+	ddir="$HOME/.config/rofi/config"
 else
-    # Buttons
-    layout=$(grep BUTTON "$HOME/.config/rofi/config/musicmenu.rasi" | cut -d'=' -f2 | tr -d '[:blank:],*/')
-    if [[ "$layout" == "TRUE" ]]; then
-        play="▶️"
-        pause="⏸️"
-        stop="⏹️"
-        next="⏭️"
-        prev="⏮️"
-    else
-        play="▶️ Play"
-        pause="⏸️ Pause"
-        stop="⏹️ Stop"
-        next="⏭️ Next"
-        prev="⏮️ Previous"
-    fi
-    ddir="$HOME/.config/rofi/config"
+
+	# Buttons
+	layout=`cat $HOME/.config/rofi/config/musicmenu.rasi | grep BUTTON | cut -d'=' -f2 | tr -d '[:blank:],*/'`
+	if [[ "$layout" == "TRUE" ]]; then
+		previous="󰒮"
+		playpause="󰐎"
+ 		next="󰒭"
+
+
+	else
+		previous="󰒮"
+		playpause="󰐎"
+ 		next="󰒭"
+	fi
+	ddir="$HOME/.config/rofi/config"
 fi
+
+# Ask for confirmation
+rdialog () {
+rofi -dmenu\
+	  -i\
+	  -no-fixed-num-lines\
+	  -p "Are You Sure? : "\
+	  -theme "$ddir/confirm.rasi"
+}
 
 # Display Help
 show_msg() {
-    rofi -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
+	rofi -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
 }
 
 # Variable passed to rofi
-options="$play\n$pause\n$stop\n$next\n$prev"
+options="$previous\n$playpause\n$next"
 
-chosen="$(echo -e "$options" | $rofi_command -p "Music Control" -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
 case $chosen in
-    $play)
-        mpc play
-        ;;
-    $pause)
-        mpc pause
-        ;;
-    $stop)
-        mpc stop
-        ;;
-    $next)
-        mpc next
-        ;;
-    $prev)
-        mpc prev
-        ;;
+		$previous)
+			rmpc prev
+		$previous)
+
+		$playpause)
+			rmpc togglepause
+		$playpause)
+
+		$next)
+			rmpc next
+		$next)
 esac
+
 '';
-		".config/rofi/config/musicmenu.rasi".text = ''#!/usr/bin/env bash
-rofi_command="rofi -theme $HOME/.config/rofi/config/musicmenu.rasi"
 
-# Options
-if [[ "$DIR" == "musicmenus" ]]; then
-    play="▶️ Play"
-    pause="⏸️ Pause"
-    stop="⏹️ Stop"
-    next="⏭️ Next"
-    prev="⏮️ Previous"
-    ddir="$HOME/.config/rofi/config"
-else
-    # Buttons
-    layout=$(grep "BUTTON" "$HOME/.config/rofi/config/musicmenu.rasi" | cut -d'=' -f2 | tr -d '[:blank:],*/')
-    
-    if [[ "$layout" == "TRUE" ]]; then
-        play="▶️"
-        pause="⏸️"
-        stop="⏹️"
-        next="⏭️"
-        prev="⏮️"
-    else
-        play="▶️ Play"
-        pause="⏸️ Pause"
-        stop="⏹️ Stop"
-        next="⏭️ Next"
-        prev="⏮️ Previous"
-    fi
-    ddir="$HOME/.config/rofi/config"
-fi
-
-# Display Help
-show_msg() {
-    rofi -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
+	".config/rofi/config/musicmenu.rasi".text = ''configuration {
+	  show-icons:                     true;
+	  display-drun: 		            "";
+	  drun-display-format:            "{icon} {name}";
+	  disable-history:                false;
+	  click-to-exit: 		            true;
+	  location:                       4;
 }
 
-# Variable passed to rofi
-options="$play\n$pause\n$stop\n$next\n$prev"
+@import "font.rasi"
+@import "colors.rasi"
 
-chosen="$(echo -e "$options" | $rofi_command -p "Music Control" -dmenu -selected-row 0)"
-case $chosen in
-    $play)
-        mpc play
-        ;;
-    $pause)
-        mpc pause
-        ;;
-    $stop)
-        mpc stop
-        ;;
-    $next)
-        mpc next
-        ;;
-    $prev)
-        mpc prev
-        ;;
-esac
+/* Line Responsible For Button Layouts */
+/* BUTTON = TRUE */
+
+window {
+	  transparency:                   "real";
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  border:                  	    2px;
+	  border-color:                   @BGA;
+	  border-radius:                  10px;
+	  width:                          110px;
+	  x-offset:                       -1%;
+	  y-offset:                       0;
+}
+
+prompt {
+	  enabled: 			            true;
+	  margin: 			            0px 0px 0px 8px;
+	  padding: 			            8px;
+	  background-color: 		        @BG;
+	  text-color: 		            @FG;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+}
+
+textbox-prompt-colon {
+	  expand: 			            false;
+	  str: 			                "";
+	  border-radius:                  100%;
+	  background-color:               @BG;
+	  text-color:                     @BG;
+	  padding:                        8px 12px 8px 12px;
+	  font:			                "HackGen Console NF Regular 10";
+}
+
+entry {
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  placeholder-color:              @FG;
+	  expand:                         true;
+	  horizontal-align:               0;
+	  placeholder:                    "Search...";
+	  blink:                          true;
+	  border:                  	    0px 0px 2px 0px;
+	  border-color:                   @BDR;
+	  border-radius:                  10px;
+	  padding:                        8px;
+}
+
+inputbar {
+	  children: 		                [ textbox-prompt-colon ];
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  expand:                         false;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  0px;
+	  border-color:                   @BDR;
+	  margin:                         0px 0px 0px 0px;
+	  padding:                        0px;
+	  position:                       center;
+}
+
+case-indicator {
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  spacing:                        0;
+}
+
+
+listview {
+	  background-color:               @BG;
+	  columns:                        1;
+	  lines:			                5;
+	  spacing:                        15px;
+	  cycle:                          true;
+	  dynamic:                        true;
+	  layout:                         vertical;
+}
+
+mainbox {
+	  background-color:               @BG;
+	  children:                       [ listview ];
+	  spacing:                        15px;
+	  padding:                        15px;
+}
+
+element {
+	  background-color:               @BG;
+	  text-color:                     @FG;
+	  orientation:                    horizontal;
+	  border-radius:                  10px;
+	  padding:                        20px;
+}
+
+element-icon {
+	  background-color: 		        inherit;
+	  text-color:       		        inherit;
+	  horizontal-align:               0.5;
+	  vertical-align:                 0.5;
+	  size:                           0px;
+	  border:                         0px;
+}
+
+element-text {
+	  background-color: 		        inherit;
+	  text-color:       		        inherit;
+	  font:			                "feather 20";
+	  expand:                         true;
+	  horizontal-align:               0.5;
+	  vertical-align:                 0.5;
+	  margin:                         0px 0px 0px 0px;
+}
+
+element selected {
+	  background-color:               @BGA;
+	  text-color:                     @SEL;
+	  border:                  	    0px 0px 0px 0px;
+	  border-radius:                  10px;
+	  border-color:                   @BDR;
+}
+
+element.active,
+element.selected.urgent {
+	background-color: @ON;
+	text-color: @BG;
+	border-color: @ON;
+}
+
+element.selected.urgent {
+	border-color: @BDR;
+}
+
+element.urgent,
+element.selected.active {
+	background-color: @OFF;
+	text-color: @BG;
+	border-color: @OFF;
+}
+
+element.selected.active {
+	border-color: @BDR;
+}
 '';
-		
 	};
 }

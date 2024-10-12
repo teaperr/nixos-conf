@@ -41,7 +41,7 @@
       nmux = "tmux new -d -s";
       setmux = "tmux new -d -s nvim && tmux new -d -s dir && tmux new -d -s proc";
       colourtest = "bash ~/system_bullshit/scripts/colourtest.sh";
-      fixmouse = "xinput set-prop '13' 'libinput Accel Speed' -1 && xinput set-button-map 13 1 2 3 4 5 6 7 8 3";
+      fixmouse = "xinput set-prop 9 297 -1 && xinput set-button-map 9 1 2 3 4 5 6 7 8 3";
       copyfile = "xclip -selection clipboard -i";
 			copy = "xclip -selection clipboard";
     };

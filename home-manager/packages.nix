@@ -3,11 +3,14 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		platformio
+		avrdude
 		xorg.xauth
 		xorg.xhost
 		alsa-utils
 		texliveTeTeX
 		tectonic
+		flameshot
 		nodePackages.live-server
 		feh
 		exiftool
