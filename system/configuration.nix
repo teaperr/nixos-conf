@@ -12,7 +12,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = false;
+	# UNCOMMENT THIS LINE, AND DISABLE GRUB TO SWITCH TO SYSTEMD BOOT
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.grub = {
     default = "saved";
     enable = true;
