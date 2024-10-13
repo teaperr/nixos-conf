@@ -1,30 +1,14 @@
+{ config, pkgs, ... }:
+
 {
-  imports = [
-    ./alacritty.nix
-		./aliases.nix
-		./betterlockscreen.nix
-		./btop.nix
-		./environment.nix
-		./fastfetch.nix
-		./fonts.nix
-		./fzf.nix
-    ./git.nix
-		./greenclip.nix
-		./kde
-		# ./librewolf.nix
-    ./nvim
-    ./openbox
-		./packages.nix
-    ./picom.nix
-		./rofi
-		./rmpc.nix
+	imports = [
+		./core
+		./dev
+		./media
 		./services
-		./speedcrunch.nix
-    ./theming
-    ./tint2.nix
-    ./tmux.nix
-		./vesktop
-		./yazi.nix
-    ./zsh.nix
-  ];
+		./shell
+		./theming
+		./ui
+		./util
+	];
 }
