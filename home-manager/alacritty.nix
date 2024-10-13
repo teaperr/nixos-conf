@@ -8,6 +8,7 @@ import = [
 startup_mode = "Maximized"
 opacity = 0.8
 blur = true
+decorations = "None"
 
 [font]
 normal = { family = "Hack Nerd Font", style = "Regular" }
