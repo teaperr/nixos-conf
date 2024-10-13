@@ -3,6 +3,8 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		nicotine-plus
+		vlc
 		platformio
 		avrdude
 		xorg.xauth
