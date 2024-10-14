@@ -5,7 +5,7 @@
 		enable = true;
 		mimeApps = {
 			defaultApplications = {
-				"video" = [ "vlc.desktop" "librewolf.desktop" ];
+				"video/*" = [ "vlc.desktop" "librewolf.desktop" ];
 			};
 		};
 	};

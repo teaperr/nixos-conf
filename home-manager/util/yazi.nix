@@ -6,6 +6,11 @@
 		catppuccin.enable = true;
 		enableZshIntegration = true;
 		settings = {
+			opener = {
+				play = [
+					{ run = "vlc \"$@\""; orphan = true; for = "unix"; }
+				];
+			};
 			manager = {
 				show_hidden = true;
 				sort_by = "modified";

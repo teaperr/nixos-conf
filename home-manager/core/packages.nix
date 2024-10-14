@@ -3,6 +3,7 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		orca-slicer
 		nicotine-plus
 		vlc
 		platformio

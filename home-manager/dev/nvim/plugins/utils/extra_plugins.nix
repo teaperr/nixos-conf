@@ -14,4 +14,9 @@
 		})
 		pkgs.vimPlugins.nvim-web-devicons
   ];
+	programs.nixvim = {
+		plugins = {
+			toggleterm.enable = true;
+		};
+	};
 }
