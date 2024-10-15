@@ -62,6 +62,12 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
   services.displayManager = {
     sddm.enable = true;
     defaultSession = "none+openbox";
+		sddm.settings = {
+			Autologin = {
+				Session = "none+openbox";
+				User = "lotus";
+			};
+		};
   };
 
 	#  services.greetd = {
@@ -98,9 +104,9 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
       enable = true;
       extraConfig = ''
         Defaults timestamp_timeout=15
+				Defaults timestamp_type=global
       '';
-  };
-
+		};
   };
 
   # Enable sound with pipewire.

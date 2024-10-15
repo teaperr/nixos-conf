@@ -2,35 +2,41 @@
 	home.file.".config/rofi/bin/musicmenu".text = ''#!/usr/bin/env bash
 rofi_command="rofi -theme $HOME/.config/rofi/config/musicmenu.rasi -no-click-to-exit"
 
-# Define the buttons (icons)
+song_info=$(rmpc song)
+
+artist=$(echo "$song_info" | jq -r '.metadata.artist')
+title=$(echo "$song_info" | jq -r '.metadata.title')
+
+rofi_prompt="$artist - $title"
+
 previous="󰒮"
 playpause="󰐎"
 next="󰒭"
 
-# Variable passed to rofi
 options="$previous\n$playpause\n$next"
 
 echo $options
 
 while true; do
-  chosen="$(echo -e "$options" | $rofi_command -p "Music Controls" -dmenu -selected-row 1)"
-	echo $chosen
+  chosen="$(echo -e "$options" | $rofi_command -p "$rofi_prompt" -dmenu -selected-row 1)"
+  echo $chosen
   case $chosen in
-	$previous)
-		rmpc prev
-		;;
-	$playpause)
-		rmpc togglepause
-		;;
-	$next)
-		rmpc next
-		;;
-	*)
-		break
-		;;
+    $previous)
+      rmpc prev
+			sh ~/.config/rmpc/scripts/notify
+      ;;
+    $playpause)
+      rmpc togglepause
+      ;;
+    $next)
+      rmpc next
+			sh ~/.config/rmpc/scripts/notify
+      ;;
+    *)
+      break
+      ;;
   esac
 done
-
 '';
 
 }

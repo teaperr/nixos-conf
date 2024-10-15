@@ -25,7 +25,8 @@ window {
 
 prompt {
 	  enabled: 			            true;
-	  margin: 			            0px 0px 0px 8px;
+		content: "test";
+	  margin: 			            8px 0px 0px 8px;
 	  padding: 			            8px;
 	  background-color: 		        @BG;
 	  text-color: 		            @FG;
@@ -35,8 +36,7 @@ prompt {
 }
 
 textbox-prompt-colon {
-	  expand: 			            false;
-	  str: 			                "";
+		content: "test";
 	  border-radius:                  100%;
 	  background-color:               @BG;
 	  text-color:                     @BG;
