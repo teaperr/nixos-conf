@@ -3,6 +3,7 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		nix-ld
 		jq
 		orca-slicer
 		nicotine-plus

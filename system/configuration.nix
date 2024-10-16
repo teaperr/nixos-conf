@@ -182,6 +182,12 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
 
   system.stateVersion = "24.05";
 
+	programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
+
 	# set up swap file 
 	swapDevices = [{
 		device = "/swapfile";
