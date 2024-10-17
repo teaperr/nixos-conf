@@ -3,9 +3,8 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
-		nix-ld
-		jq
 		orca-slicer
+		jq
 		nicotine-plus
 		vlc
 		platformio
@@ -73,4 +72,5 @@
     picom
     krita
 	];
+
 }

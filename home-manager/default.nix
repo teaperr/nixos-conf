@@ -8,6 +8,7 @@
 		./services
 		./shell
 		./theming
+		./overlays
 		./ui
 		./util
 	];
