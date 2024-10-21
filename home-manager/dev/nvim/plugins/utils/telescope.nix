@@ -29,7 +29,7 @@
 					action = "buffers";
 					options.desc = "Open list of buffers";
 				};
-				"<leader>l" = {
+				"<leader>L" = {
 					action = "live_grep";
 					options.desc = "Live grep";
 				};
