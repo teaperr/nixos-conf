@@ -34,6 +34,7 @@
 		./plugins/editor/comment.nix
 		./plugins/editor/image.nix
 		./plugins/editor/yazi.nix
+		./plugins/editor/mkdnflow.nix
 
     # UI plugins
     ./plugins/ui/bufferline.nix
