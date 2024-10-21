@@ -129,7 +129,7 @@
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
-    <name>desktop 1</name><name>desktop 2</name>
+    <name>Main</name><name>Side</name>
     -->
     </names>
     <popupTime>875</popupTime>
@@ -183,6 +183,9 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- my custom shit -->
+		<keybind key="W-a">
+			<action name="ToggleAllDesktops"/>
+		</keybind>
     <keybind key="Super-Page_Down">
       <action name="Minimize"/>
     </keybind>

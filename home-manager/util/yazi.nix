@@ -20,8 +20,11 @@
 		keymap = {
 			manager.prepend_keymap = [
 				{ on = [ "g" "n" ]; run = "cd ~/nixos-conf"; desc = "go to nix config"; }
-				{ on = [ "g" "D" ]; run = "cd ~/Documents"; desc = "go to documents"; }
 				{ on = [ "g" "v" ]; run = "cd ~/vaults"; desc = "go to vaults"; }
+				{ on = [ "g" "D" "D" ]; run = "cd ~/Documents"; desc = "go to documents"; }
+				{ on = [ "g" "D" "p" ]; run = "cd ~/Documents/Personal"; desc = "go to personal documents"; }
+				{ on = [ "g" "D" "c" ]; run = "cd ~/Documents/College"; desc = "go to college documents"; }
+				{ on = [ "g" "l" ]; run = "cd ~/.local"; desc = "go to ~/.local"; }
 			];
 		};
 	};
