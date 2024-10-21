@@ -33,6 +33,7 @@
     ./plugins/editor/navic.nix
 		./plugins/editor/comment.nix
 		./plugins/editor/image.nix
+		./plugins/editor/yazi.nix
 
     # UI plugins
     ./plugins/ui/bufferline.nix

@@ -57,6 +57,31 @@
 				key = "<leader>t";
 				action = ":TransparentToggle<Enter>";
 			}
+			{
+				mode = "n";
+				key = "<leader>y";
+				action = ":Yazi<Enter>";
+			}
+			{
+				mode = "n";
+				key = "<leader>l";
+				action = ":BufferLineCycleNext<Enter>";
+			}
+			{
+				mode = "n";
+				key = "<leader>h";
+				action = ":BufferLineCyclePrev<Enter>";
+			}
+			{
+				mode = "n";
+				key = "<leader>p";
+				action = ":BufferLinePick<Enter>";
+			}
+			{
+				mode = "n";
+				key = "<leader>x";
+				action = ":BufferLinePickClose<Enter>";
+			}
 		];
   };
 }
