@@ -3,6 +3,8 @@
   programs.tmux = {
     enable = true;
     clock24 = true;
+		keyMode = "vi";
+		prefix = "C-a";
     baseIndex = 1;
     secureSocket =  false;
     terminal = "screen-256color";

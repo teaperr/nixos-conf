@@ -25,6 +25,8 @@
 				{ on = [ "g" "D" "p" ]; run = "cd ~/Documents/Personal"; desc = "go to personal documents"; }
 				{ on = [ "g" "D" "c" ]; run = "cd ~/Documents/College"; desc = "go to college documents"; }
 				{ on = [ "g" "l" ]; run = "cd ~/.local"; desc = "go to ~/.local"; }
+				{ on = [ "c" "m" ]; run = "plugin chmod"; desc = "Chmod selected file"; }
+				{ on = [ "T" ]; run = "plugin --sync max-preview"; desc = "Toggle max preview"; }
 			];
 		};
 	};

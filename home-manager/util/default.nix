@@ -8,6 +8,6 @@
 		./librewolf.nix
 		./speedcrunch.nix
 		./vesktop
-		./yazi.nix
+		./yazi
 	];
 }
