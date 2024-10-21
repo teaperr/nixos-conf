@@ -5,8 +5,6 @@
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       ./services
-			# comment this out if you do not have an nvidia gpu !!!!
-			./nvidia.nix
     ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -164,7 +162,6 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
   ];
 	
 	environment.variables = {
-    VK_DRIVER_FILES=/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json;
   };
 
   # font list
