@@ -3,6 +3,7 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		github-desktop
 		orca-slicer
 		jq
 		nicotine-plus
@@ -12,7 +13,7 @@
 		xorg.xauth
 		xorg.xhost
 		alsa-utils
-		texliveTeTeX
+		texliveFull
 		tectonic
 		flameshot
 		nodePackages.live-server
@@ -37,8 +38,6 @@
 		catimg
 		haskellPackages.greenclip
 		ripgrep
-		clipman
-		kicad
 		ueberzugpp
 		arandr
     fastfetch

@@ -4,6 +4,21 @@
 		plugins = {
 			lsp-lines.enable = true;
 			lsp-format.enable = true;
+			lsp-format = {
+				lspServersToEnable = [
+					"html"
+					"cssls"
+					"lua_ls"
+					"yamlls"
+					"pyright"
+					"gopls"
+					"ts_ls"
+					"helm_ls"
+					"jsonls"
+					"nil_ls"
+					"bashls"
+				];
+			};
 			helm.enable = true;
 			web-devicons.enable = true;
 			lsp = {
