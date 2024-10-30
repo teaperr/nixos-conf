@@ -23,7 +23,7 @@
       # COLORTERM = "truecolor";
       # TERM = "xterm-256color";
     };
-    
+
     shellAliases = {
       rsrc = "source ~/.zshrc";
       please = "sudo $(fc -ln -1)";
@@ -33,7 +33,7 @@
       tma = "tmux attach";
       autoremove = "sudo pacman -R $(pacman -Qdtq)";
 			ff = "fastfetch";
-			t = "tmux";
+			t = "tmux new-session -t 0";
       vi = "nvim";
       v = "nvim";
       e = "nvim .";
@@ -59,6 +59,8 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+PATH=~/.cargo/bin:$PATH
       '';
   };
   home.packages = with pkgs; [

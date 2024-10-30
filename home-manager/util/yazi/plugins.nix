@@ -1,45 +1,46 @@
+{ config, lib, ... }:
 let
-  # Fetch the yazi-plugins repository
   yaziPlugins = builtins.fetchGit {
     url = "https://github.com/yazi-rs/plugins";
-    rev = "4f1d0ae0862f464e08f208f1807fcafcd8778e16";  # Specify the commit hash you want
+    rev = "4f1d0ae0862f464e08f208f1807fcafcd8778e16";
   };
 
   enabledPlugins = [
     "chmod"
-    # "diff"
     "full-border"
     "git"
-    # "hide-preview"
-    # "jump-to-char"
-    # "lsar"
-    # "mactag"
+    "jump-to-char"
     "max-preview"
-    # "mime-ext"
-    # "no-status"
-    # "smart-filter"
   ];
 
-  # Map selected plugins to their full paths in the Git repository
+  githubPlugins = [
+    # "https://github.com/dedukun/relative-motions.yazi"
+  ];
+
   pluginPaths = map (plugin: {
     name = plugin;
-    path = "${yaziPlugins}/${plugin}.yazi";  # Targeting pluginname.yazi directory in the repo
+    path = "${yaziPlugins}/${plugin}.yazi";
   }) enabledPlugins;
+
+	githubPluginPaths = map (url: {
+    name = builtins.replaceStrings [".yazi"] [""] (lib.last (lib.splitString "/" url));
+    path = "${builtins.fetchGit { url = url; }}";
+  }) githubPlugins;
 
 in {
   programs.yazi = {
     enable = true;
 
-    # Use the selected plugins without the `.yazi` suffix
     plugins = builtins.listToAttrs (map (plugin: {
-      name = plugin.name;  # No `.yazi` suffix here
+      name = plugin.name;
       value = plugin.path;
-    }) pluginPaths);
+    }) (pluginPaths ++ githubPluginPaths));
   };
 
-	home.file.".config/yazi/init.lua".text = ''
-	require("full-border"):setup()
-	require("git"):setup()
-	'';
+  home.file.".config/yazi/init.lua".text = ''
+    require("full-border"):setup()
+    require("git"):setup()
+		-- require("relative-motions"):setup({})
+  '';
 }
 

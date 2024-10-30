@@ -82,6 +82,11 @@
 				key = "<leader>x";
 				action = ":BufferLinePickClose<Enter>";
 			}
+			{
+				mode = "n";
+				key = "<leader>n";
+				action = ":ToggleTerm<Enter>";
+			}
 		];
   };
 }

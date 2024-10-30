@@ -17,6 +17,7 @@
 					"jsonls"
 					"nil_ls"
 					"bashls"
+					"rls"
 				];
 			};
 			helm.enable = true;

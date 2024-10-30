@@ -17,6 +17,7 @@
 	programs.nixvim = {
 		plugins = {
 			toggleterm.enable = true;
+			rustaceanvim.enable = true;
 		};
 	};
 }

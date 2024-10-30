@@ -3,6 +3,14 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		sshfs
+		pipewire
+		alsa-lib
+		openssl_1_1
+		ffmpeg
+		scdl
+		prismlauncher
+		rustup
 		arduino-ide
 		github-desktop
 		orca-slicer
@@ -72,5 +80,7 @@
     picom
     krita
 	];
-
+	nixpkgs.config.permittedInsecurePackages = [
+		"openssl-1.1.1w"
+	];
 }
