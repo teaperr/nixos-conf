@@ -13,51 +13,53 @@
     	tmuxPlugins.better-mouse-mode
     ];
 
+		extraConfig = ''
+setw synchronize-panes off
+
+setw -g mode-keys vi
+bind-key -T copy-mode-vi v send -X begin-selection
+bind-key -T copy-mode-vi y send -X copy-selection-and-cancel
+
+bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded!"
+
+set -ag terminal-overrides ",xterm-256color:RGB"
+
+# keep directory on new session
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
+		'';
+
     catppuccin = {
 			enable = true;
+			flavor = "macchiato";
 			extraConfig = ''
-			setw synchronize-panes off
+# catppuccin config
+set -g @catppuccin_flavor 'macchiato'
+set -g @catppuccin_window_left_separator ""
+set -g @catppuccin_window_right_separator ""
+set -g @catppuccin_window_middle_separator " █"
+set -g @catppuccin_window_number_position "right"
 
-			setw -g mode-keys vi
-			bind-key -T copy-mode-vi v send -X begin-selection
-			bind-key -T copy-mode-vi y send -X copy-selection-and-cancel
+set -g @catppuccin_window_default_fill "number"
+set -g @catppuccin_window_default_color "#D8F9FD"
+set -g @catppuccin_window_default_text "#W"
 
-			bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded!"
+set -g @catppuccin_window_current_fill "number"
+set -g @catppuccin_window_current_color "#8DD4F7"
+set -g @catppuccin_window_current_text "#W"
 
-      set -g default-terminal "tmux-256color"
-      set -ag terminal-overrides ",xterm-256color:RGB"
+set -g @catppuccin_status_modules_right "gitmux session date_time"
+set -g @catppuccin_status_modules_left ""
+set -g @catppuccin_status_justify "left"
+set -g @catppuccin_status_left_separator  " "
+set -g @catppuccin_status_right_separator ""
+set -g @catppuccin_status_fill "icon"
+set -g @catppuccin_status_connect_separator "yes"
 
-      # keep directory on new session
-      bind '"' split-window -c "#{pane_current_path}"
-      bind % split-window -h -c "#{pane_current_path}"
-      bind c new-window -c "#{pane_current_path}"
-
-      # catppuccin config
-      set -g @catppuccin_flavor 'macchiato'
-      set -g @catppuccin_window_left_separator ""
-      set -g @catppuccin_window_right_separator ""
-      set -g @catppuccin_window_middle_separator " █"
-      set -g @catppuccin_window_number_position "right"
-
-      set -g @catppuccin_window_default_fill "number"
-      set -g @catppuccin_window_default_color "#D8F9FD"
-      set -g @catppuccin_window_default_text "#W"
-
-      set -g @catppuccin_window_current_fill "number"
-      set -g @catppuccin_window_current_color "#8DD4F7"
-      set -g @catppuccin_window_current_text "#W"
-
-      set -g @catppuccin_status_modules_right "gitmux session date_time"
-      set -g @catppuccin_status_modules_left ""
-      set -g @catppuccin_status_justify "left"
-      set -g @catppuccin_status_left_separator  " "
-      set -g @catppuccin_status_right_separator ""
-      set -g @catppuccin_status_fill "icon"
-      set -g @catppuccin_status_connect_separator "yes"
-
-      set -g @catppuccin_gitmux_color "#E4C1F9"
-      set -g @catppuccin_session_color "#9CE7B9"
-      set -g @catppuccin_date_time_color "#A9DEF9"
+set -g @catppuccin_gitmux_color "#E4C1F9"
+set -g @catppuccin_session_color "#9CE7B9"
+set -g @catppuccin_date_time_color "#A9DEF9"
 			'';
 		};
   };

@@ -3,6 +3,8 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		kicad
+		dexed
 		sshfs
 		pipewire
 		alsa-lib

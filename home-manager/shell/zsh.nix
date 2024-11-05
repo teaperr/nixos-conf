@@ -42,13 +42,13 @@
       nmux = "tmux new -d -s";
       setmux = "tmux new -d -s nvim && tmux new -d -s dir && tmux new -d -s proc";
       colourtest = "bash ~/system_bullshit/scripts/colourtest.sh";
-      fixmouse = "xinput set-prop 9 297 -1 && xinput set-button-map 9 1 2 3 4 5 6 7 8 3";
+      fixmouse = "xinput set-prop 17 297 -1 && xinput set-button-map 13 1 2 3 4 5 6 7 8 3";
       copyfile = "xclip -selection clipboard -i";
 			copy = "xclip -selection clipboard";
     };
     initExtra = ''
 if [ "$XDG_CURRENT_DESKTOP" != "Openbox" ] && ! grep -q "ThinkPad" /sys/devices/virtual/dmi/id/product_family; then
-	xinput set-prop 9 297 -1 && xinput set-button-map 9 1 2 3 4 5 6 7 8 3
+	xinput set-prop 13 297 -1 && xinput set-button-map 13 1 2 3 4 5 6 7 8 3
 fi
 
 function y() {

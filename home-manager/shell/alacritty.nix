@@ -1,14 +1,12 @@
 {
   home.file.".config/alacritty/alacritty.toml".text = ''
-import = [
-    "~/.config/alacritty/catppuccin-mocha.toml"
-]
+[general]
+import = [ "~/.config/alacritty/catppuccin-mocha.toml" ]
 
 [window]
 startup_mode = "Maximized"
-opacity = 0.8
-blur = true
 decorations = "None"
+opacity = 0.8
 
 [font]
 normal = { family = "Hack Nerd Font", style = "Regular" }
