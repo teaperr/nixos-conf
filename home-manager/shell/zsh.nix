@@ -32,6 +32,7 @@
       update-grub = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
       tma = "tmux attach";
       autoremove = "sudo pacman -R $(pacman -Qdtq)";
+			unfuck="git reset HEAD~1 --soft";
 			ff = "fastfetch";
 			t = "tmux new-session -t 0";
       vi = "nvim";
@@ -42,7 +43,7 @@
       nmux = "tmux new -d -s";
       setmux = "tmux new -d -s nvim && tmux new -d -s dir && tmux new -d -s proc";
       colourtest = "bash ~/system_bullshit/scripts/colourtest.sh";
-      fixmouse = "xinput set-prop 17 297 -1 && xinput set-button-map 13 1 2 3 4 5 6 7 8 3";
+      fixmouse = "xinput set-prop 13 300 -1 && xinput set-button-map 13 1 2 3 4 5 6 7 8 3";
       copyfile = "xclip -selection clipboard -i";
 			copy = "xclip -selection clipboard";
     };

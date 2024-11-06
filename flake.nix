@@ -25,7 +25,7 @@
 						username = "lotus";
 						homeDirectory = "/home/lotus";
 					};
-								programs.nixvim.enable = true;
+					programs.nixvim.enable = true;
 				}
         ./home-manager/default.nix
         catppuccin.homeManagerModules.catppuccin

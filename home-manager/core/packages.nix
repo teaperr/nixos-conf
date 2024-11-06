@@ -1,9 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, latestPkgs, ... }:
 
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
-		kicad
 		dexed
 		sshfs
 		pipewire
@@ -82,6 +81,7 @@
     picom
     krita
 	];
+
 	nixpkgs.config.permittedInsecurePackages = [
 		"openssl-1.1.1w"
 	];
