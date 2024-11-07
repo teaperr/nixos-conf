@@ -49,7 +49,7 @@
     };
     initExtra = ''
 if [ "$XDG_CURRENT_DESKTOP" != "Openbox" ] && ! grep -q "ThinkPad" /sys/devices/virtual/dmi/id/product_family; then
-	xinput set-prop 13 297 -1 && xinput set-button-map 13 1 2 3 4 5 6 7 8 3
+	xinput set-prop 13 300 -1 && xinput set-button-map 13 1 2 3 4 5 6 7 8 3
 fi
 
 function y() {
