@@ -3,6 +3,10 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		kdePackages.print-manager
+		unrar
+		cups
+		leocad
 		dexed
 		sshfs
 		pipewire

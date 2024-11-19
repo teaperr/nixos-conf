@@ -9,6 +9,11 @@
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+	services.printing = {
+		enable = true;
+		drivers = [ pkgs.hplip pkgs.gutenprint ];
+	};
+
   # Bootloader.
 	# UNCOMMENT THIS LINE, AND DISABLE GRUB TO SWITCH TO SYSTEMD BOOT
   # boot.loader.systemd-boot.enable = true;

@@ -8,6 +8,9 @@ startup_mode = "Maximized"
 decorations = "None"
 opacity = 0.8
 
+[cursor]
+style = "beam"
+
 [font]
 normal = { family = "Hack Nerd Font", style = "Regular" }
 bold = { family = "Hack Nerd Font", style = "Bold" }
