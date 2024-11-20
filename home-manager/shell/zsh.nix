@@ -14,6 +14,7 @@
 
     sessionVariables = {
       EDITOR = "nvim";
+			MANPAGER = "nvim +Man!";
       # ZSH_TMUX_FIXTERM_WITH_256COLOR = "TRUE";
       ZSH_TMUX_AUTOSTART = "TRUE";
       CASE_SENSITIVE = "TRUE";
