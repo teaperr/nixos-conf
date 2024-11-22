@@ -12,7 +12,7 @@
 				];
 			};
 			manager = {
-				show_hidden = true;
+				show_hidden = false;
 				sort_by = "modified";
 				sort_dir_first = false;
 			};
