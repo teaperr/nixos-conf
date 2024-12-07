@@ -3,7 +3,11 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		teams-for-linux
+		bottles
 		tldr
+		python3
+		python312Packages.pip
 		kdePackages.print-manager
 		unrar
 		cups
