@@ -3,7 +3,8 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
-		teams-for-linux
+		librewolf
+		rmpc
 		bottles
 		tldr
 		python3
@@ -21,37 +22,23 @@
 		scdl
 		prismlauncher
 		rustup
-		arduino-ide
 		github-desktop
-		orca-slicer
 		jq
-		nicotine-plus
-		vlc
-		platformio
 		avrdude
 		xorg.xauth
 		xorg.xhost
 		alsa-utils
-		texliveFull
-		tectonic
 		flameshot
-		nodePackages.live-server
 		feh
 		exiftool
 		gdu
 		fzf
-		rmpc
 		mpd
 		mpdscribble
-		lutris
 		wineWowPackages.full
 		winetricks
 		protonplus
-		steam
 		speedcrunch
-		libreoffice-qt6-fresh
-		haskellPackages.doctemplates
-		pandoc
 		obconf
 		pavucontrol
 		catimg
@@ -64,14 +51,11 @@
     git
 		github-cli
     tmux
-    librewolf
     xclip
     zsh-autosuggestions
     zsh-syntax-highlighting
     tree
-    librewolf
     tmux
-    vesktop
     xorg.xinput
     btop
     htop
@@ -81,14 +65,12 @@
     spaceFM
     volumeicon
     dunst
-    obs-studio
     xterm
     betterlockscreen
     imagemagick
     cmake
     gnumake
     picom
-    krita
 	];
 
 	nixpkgs.config.permittedInsecurePackages = [

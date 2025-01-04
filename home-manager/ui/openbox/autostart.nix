@@ -12,9 +12,6 @@
 	# picom &
 	picom --backend glx &
 
-	# initialize wallpaper
-	feh --bg-scale ~/nixos-conf/home-manager/common/assets/wallpaper.jpg &
-
 	# config section
 	xinput set-prop "pointer:Razer Razer DeathAdder Essential" "libinput Accel Speed" -1 &
 	xinput set-button-map "pointer:Razer Razer DeathAdder Essential" 1 2 3 4 5 6 7 8 3 &
@@ -30,11 +27,16 @@
 	# delay to make sure desktop is properly loaded
 	delay 2
 	# monitor layout
-	xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1366x768 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --mode 1920x1080 --pos 1440x0 --rotate normal
+	# xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1366x768 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --mode 1920x1080 --pos 1440x0 --rotate normal
+	bash ~/.screenlayout/screen.sh &
 	xrandr --output HDMI-0 --gamma 1.1:1:1
 
 	dunst &
 	mpdscribble &
+	betterlockscreen --lock &
+
+	# initialize wallpaper
+	feh --bg-scale /home/lotus/nixos-conf/home-manager/common/assets/wallpaper.jpg
 		'';
 	};
 }

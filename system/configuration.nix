@@ -139,11 +139,13 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
   users.users.lotus = {
     isNormalUser = true;
     description = "lotus";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "adbusers" ];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;
   };
+
+	programs.adb.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

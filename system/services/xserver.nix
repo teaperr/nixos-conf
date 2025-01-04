@@ -1,6 +1,6 @@
 {
 	services.xserver = {
-		dpi = 100;
+		dpi = 96;
 		enableCtrlAltBackspace = true;
 	};
 }

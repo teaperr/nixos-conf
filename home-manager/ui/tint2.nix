@@ -123,7 +123,7 @@ font_shadow = 0
 mouse_hover_icon_asb = 100 0 10
 mouse_pressed_icon_asb = 100 0 0
 scale_relative_to_dpi = 0
-scale_relative_to_screen_height = 0
+scale_relative_to_screen_height = 0.8
 
 #-------------------------------------
 # Taskbar
