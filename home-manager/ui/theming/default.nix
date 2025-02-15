@@ -12,9 +12,9 @@
   };
 
   gtk = {
-    enable = true;
+    enable = false;
 		catppuccin = {
-			enable = true;
+			enable = false;
 		};
   };
 

@@ -100,6 +100,14 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
       layout = "us";
       variant = "";
     };
+		config = ''
+Section "InputClass"
+	Identifier "Disable Emulate3Buttons"
+	MatchIsPointer "on"
+	Option "Emulate3Buttons" "false"
+EndSection
+
+		'';
   };
 
   security = {
@@ -114,6 +122,10 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
+	hardware.bluetooth = {
+		enable = true;
+		powerOnBoot = true;
+	};
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -139,7 +151,7 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
   users.users.lotus = {
     isNormalUser = true;
     description = "lotus";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "adbusers" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "adbusers" "docker" ];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;

@@ -13,8 +13,10 @@
 	picom --backend glx &
 
 	# config section
-	xinput set-prop "pointer:Razer Razer DeathAdder Essential" "libinput Accel Speed" -1 &
-	xinput set-button-map "pointer:Razer Razer DeathAdder Essential" 1 2 3 4 5 6 7 8 3 &
+	# xinput set-button-map 13 1 2 3 4 5 6 7 8 3 &
+	xinput set-prop 13 502 0
+	xinput set-prop 13 298 0
+
 
 	G_SLICE=always-malloc
 	tint2 &

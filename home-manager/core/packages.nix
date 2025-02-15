@@ -7,8 +7,6 @@
 		rmpc
 		bottles
 		tldr
-		python3
-		python312Packages.pip
 		kdePackages.print-manager
 		unrar
 		cups
@@ -17,7 +15,6 @@
 		sshfs
 		pipewire
 		alsa-lib
-		openssl_1_1
 		ffmpeg
 		scdl
 		prismlauncher
@@ -74,6 +71,5 @@
 	];
 
 	nixpkgs.config.permittedInsecurePackages = [
-		"openssl-1.1.1w"
 	];
 }

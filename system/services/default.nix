@@ -1,6 +1,7 @@
 {
   imports = [
     ./xserver.nix
+		./docker.nix
   ];
 
 	services = {

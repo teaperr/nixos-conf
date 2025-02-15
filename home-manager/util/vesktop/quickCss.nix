@@ -1,5 +1,5 @@
 {
-	home.file.".config/vesktop/settings/quickCss.css".text = ''
+	home.file.".config/vesktop/settings/old.quickCss.css".text = ''
 @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css");
 
 /* No, I don't want to make a thread from a chain of more than 2 replies */
