@@ -3,7 +3,7 @@
 {
 	home.packages = with pkgs; [
 		hack-font
-		hackgen-nf-font
+		nerd-fonts.hack
 	];
 
 	fonts = {

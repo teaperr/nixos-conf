@@ -9,6 +9,10 @@
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+	security.polkit.enable = true;
+
+	services.cloudflare-warp.enable = true;
+
 	services.printing = {
 		enable = true;
 		drivers = [ pkgs.hplip pkgs.gutenprint ];
@@ -38,6 +42,10 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
  };
   boot.loader.efi.canTouchEfiVariables = false;
 
+	# boot.kernelParams = [
+	# 	"intel_pstate=performance"
+	# ];
+
   networking.hostName = "nixos"; # Define your hostname.
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
@@ -64,6 +72,7 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
 
   services.displayManager = {
     sddm.enable = true;
+		sddm.wayland.enable = true;
     defaultSession = "none+openbox";
 		sddm.settings = {
 			Autologin = {
@@ -72,6 +81,17 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
 			};
 		};
   };
+
+	programs.labwc.enable = true;
+	programs.sway.enable = true;
+
+  environment.etc."xdg/wayland-sessions/sway.desktop".text = ''
+    [Desktop Entry]
+    Name=Sway
+    Exec=sway
+    Type=Application
+    DesktopNames=sway
+  '';
 
 	#  services.greetd = {
 	#    enable = true;
@@ -109,6 +129,8 @@ EndSection
 
 		'';
   };
+
+	# powerManagement.cpuFreqGovernor = "performance";
 
   security = {
     sudo = {
@@ -164,6 +186,9 @@ EndSection
   
   # package list
   environment.systemPackages = with pkgs; [
+		sway
+		swaylock
+		swayidle
     home-manager
     wget
     git
@@ -185,7 +210,7 @@ EndSection
 
   # font list
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "Hack" ]; })
+		nerd-fonts.hack
   ];
 
   # List services that you want to enable:
@@ -203,6 +228,8 @@ EndSection
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
+
+	services.seatd.enable = true;
 
 	# set up swap file 
 	swapDevices = [{

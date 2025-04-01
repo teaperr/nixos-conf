@@ -37,7 +37,7 @@ in {
     }) (pluginPaths ++ githubPluginPaths));
   };
 
-  home.file.".config/yazi/init.lua".text = ''
+  home.file.".config/yazi/main.lua".text = ''
     require("full-border"):setup()
     require("git"):setup()
 		-- require("relative-motions"):setup({})

@@ -173,7 +173,7 @@ mouse_scroll_down = next_task
 
 #-------------------------------------
 # System tray (notification area)
-systray_padding = 0 0 2
+systray_padding = 4 4 2
 systray_background_id = 1
 systray_sort = ascending
 systray_icon_size = 22
@@ -241,5 +241,5 @@ tooltip_padding = 2 2
 tooltip_background_id = 5
 tooltip_font_color = #cdd6f4 100  # Mocha text for tooltips
 tooltip_font = sans 9
-  '';
+ '';
 }
