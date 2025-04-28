@@ -3,13 +3,13 @@
 {
 	nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
+		piper
+		kdePackages.kdenlive
 		librewolf
 		rmpc
 		bottles
 		tldr
-		kdePackages.print-manager
 		unrar
-		cups
 		leocad
 		dexed
 		sshfs

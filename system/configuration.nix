@@ -71,14 +71,13 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
   # };
 
   services.displayManager = {
-    sddm.enable = true;
-		sddm.wayland.enable = true;
+    ly.enable = true;
     defaultSession = "none+openbox";
 		sddm.settings = {
-			Autologin = {
-				Session = "none+openbox";
-				User = "lotus";
-			};
+			# Autologin = {
+			# 	Session = "none+openbox";
+			# 	User = "lotus";
+			# };
 		};
   };
 
@@ -186,6 +185,7 @@ EndSection
   
   # package list
   environment.systemPackages = with pkgs; [
+		distrobox
 		sway
 		swaylock
 		swayidle
@@ -236,5 +236,10 @@ EndSection
 		device = "/swapfile";
 		size = 8 * 1024;
 	}];
+
+	nixpkgs.config.permittedInsecurePackages = [
+		"dotnet-runtime-wrapped-7.0.20"
+		"dotnet-runtime-7.0.20"
+	];
 }
 

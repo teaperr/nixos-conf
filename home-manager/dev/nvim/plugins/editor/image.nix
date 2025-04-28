@@ -7,14 +7,14 @@
 			backend = "ueberzug";
 			ueberzugPackage = pkgs.ueberzugpp;
 			tmuxShowOnlyInActiveWindow = true;
-			integrations = {
-				markdown = {
-					enabled = true;
-					clearInInsertMode = true;
-					downloadRemoteImages = true;
-					onlyRenderImageAtCursor = true;
-				};
-			};
+			# integrations = {
+			# 	markdown = {
+			# 		enabled = true;
+			# 		clearInInsertMode = true;
+			# 		downloadRemoteImages = true;
+			# 		onlyRenderImageAtCursor = true;
+			# 	};
+			# };
 		};
 	};
 }

@@ -4,10 +4,6 @@
 	];
 
 	home.packages = [
-    pkgs.rofi
-    pkgs.flameshot
-    pkgs.betterlockscreen
-    pkgs.alacritty
   ];
 
 	wayland.windowManager.sway = {

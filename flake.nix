@@ -28,7 +28,7 @@
 					programs.nixvim.enable = true;
 				}
         ./home-manager/default.nix
-        catppuccin.homeManagerModules.catppuccin
+        catppuccin.homeModules.catppuccin
         nixvim.homeManagerModules.nixvim
       ];
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
