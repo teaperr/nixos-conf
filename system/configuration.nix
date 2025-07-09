@@ -21,6 +21,7 @@
   # Bootloader.
 	# UNCOMMENT THIS LINE, AND DISABLE GRUB TO SWITCH TO SYSTEMD BOOT
   # boot.loader.systemd-boot.enable = true;
+	boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.loader.grub = {
     default = "saved";
     enable = true;
@@ -129,7 +130,8 @@ EndSection
 		'';
   };
 
-	# powerManagement.cpuFreqGovernor = "performance";
+	services.thermald.enable = true;
+	powerManagement.cpuFreqGovernor = "performance";
 
   security = {
     sudo = {

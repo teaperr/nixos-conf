@@ -64,7 +64,7 @@ function y() {
 
 PATH=~/.cargo/bin:$PATH
 
-xinput set-prop 13 300 0
+xinput set-prop 13 302 -1
       '';
   };
   home.packages = with pkgs; [

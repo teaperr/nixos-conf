@@ -1,6 +1,6 @@
 {
 	imports = [
-		./settings.nix
-		./quickCss.nix
+		# ./settings.nix
+		# ./quickCss.nix
 	];
 }

@@ -7,5 +7,6 @@
 		./sway
 		./theming
 		./tint2.nix
+		./hyprland
 	];
 }

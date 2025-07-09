@@ -38,7 +38,7 @@
 	# betterlockscreen --lock &
 
 	# initialize wallpaper
-	feh --bg-scale /home/lotus/nixos-conf/home-manager/common/assets/wallpaper.jpg
+	feh --bg-scale /home/lotus/nixos-conf/home-manager/common/assets/wallpaper.png
 		'';
 	};
 }
