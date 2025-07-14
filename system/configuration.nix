@@ -84,6 +84,11 @@ menuentry 'Arch Linux (rolling) (on /dev/nvme0n1p1)' --class arch --class gnu-li
 
 	programs.labwc.enable = true;
 	programs.sway.enable = true;
+	programs.hyprland = {
+		enable = true;
+		xwayland.enable = true;
+	};
+
 
   environment.etc."xdg/wayland-sessions/sway.desktop".text = ''
     [Desktop Entry]

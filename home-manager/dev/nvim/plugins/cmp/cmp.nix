@@ -37,9 +37,9 @@
         # Key bindings for nvim-cmp
         mapping = {
           # Navigate to next item in the completion menu
-          "<Tab>" = "cmp.mapping.select_next_item()";
+          "<C-j>" = "cmp.mapping.select_next_item()";
           # Navigate to previous item in the completion menu
-          "<S-Tab>" = "cmp.mapping.select_prev_item()";
+          "<C-k>" = "cmp.mapping.select_prev_item()";
           # Scroll documentation
           "<C-b>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";

@@ -44,15 +44,10 @@
       nmux = "tmux new -d -s";
       setmux = "tmux new -d -s nvim && tmux new -d -s dir && tmux new -d -s proc";
       colourtest = "bash ~/system_bullshit/scripts/colourtest.sh";
-      fixmouse = "xinput set-prop 9 297 0 && xinput set-button-map 9 1 2 3 4 5 6 7 8 3";
       copyfile = "xclip -selection clipboard -i";
 			copy = "xclip -selection clipboard";
     };
     initExtra = ''
-if [ "$XDG_CURRENT_DESKTOP" != "Openbox" ] && ! grep -q "ThinkPad" /sys/devices/virtual/dmi/id/product_family; then
-	fixmouse
-fi
-
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
@@ -64,7 +59,8 @@ function y() {
 
 PATH=~/.cargo/bin:$PATH
 
-xinput set-prop 13 302 -1
+bindkey '^Y' autosuggest-accept
+bindkey '^X' kill-whole-line
       '';
   };
   home.packages = with pkgs; [

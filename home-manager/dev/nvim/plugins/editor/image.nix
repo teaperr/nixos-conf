@@ -4,17 +4,19 @@
 	programs.nixvim = {
 		plugins.image = {
 			enable = true;
-			backend = "ueberzug";
-			ueberzugPackage = pkgs.ueberzugpp;
-			tmuxShowOnlyInActiveWindow = true;
-			# integrations = {
-			# 	markdown = {
-			# 		enabled = true;
-			# 		clearInInsertMode = true;
-			# 		downloadRemoteImages = true;
-			# 		onlyRenderImageAtCursor = true;
-			# 	};
-			# };
+			settings = {
+				backend = "ueberzug";
+				ueberzugPackage = pkgs.ueberzugpp;
+				tmux_show_only_in_active_window = true;
+				# integrations = {
+				# 	markdown = {
+				# 		enabled = true;
+				# 		clearInInsertMode = true;
+				# 		downloadRemoteImages = true;
+				# 		onlyRenderImageAtCursor = true;
+				# 	};
+				# };
+			};
 		};
 	};
 }

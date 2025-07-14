@@ -57,7 +57,6 @@
     btop
     htop
     catppuccin
-    rofi
     tint2
     spaceFM
     volumeicon
