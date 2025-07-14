@@ -8,5 +8,6 @@
 		./theming
 		./tint2.nix
 		./hyprland
+		./dunst
 	];
 }

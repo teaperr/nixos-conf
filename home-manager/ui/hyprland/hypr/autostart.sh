@@ -4,6 +4,7 @@
 librewolf &
 steam &
 
+hyprpaper &
 kdeconnect-indicator &
 kdeconnect-cli --refresh &
 dunst &

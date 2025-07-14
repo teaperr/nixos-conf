@@ -6,6 +6,7 @@
 
 	};
   catppuccin = {
+		waybar.enable = true;
     enable = true;
     flavor = "mocha";
     accent = "pink";
@@ -33,5 +34,6 @@
 	services.dunst = {
 		enable = true;
 		catppuccin.enable = true;
+		
 	};
 }
