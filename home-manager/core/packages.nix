@@ -22,8 +22,6 @@
 		github-desktop
 		jq
 		avrdude
-		xorg.xauth
-		xorg.xhost
 		alsa-utils
 		flameshot
 		feh
@@ -53,7 +51,6 @@
     zsh-syntax-highlighting
     tree
     tmux
-    xorg.xinput
     btop
     htop
     catppuccin

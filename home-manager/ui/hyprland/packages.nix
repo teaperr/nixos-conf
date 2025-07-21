@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-	home.packages = with pkgs; [
-		waybar
-		rofi-wayland
-		hyprpaper
-	];
+  home.packages = with pkgs; [
+    waybar
+    rofi-wayland
+    swaylock
+  ];
 }

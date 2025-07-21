@@ -1,7 +1,7 @@
 {
 	programs.librewolf = {
-		enable = true;
-		settings = {
+		# enable = true;
+		# settings = {
 			# "app.normandy.api_url" = "";
 			# "app.normandy.enabled" = false;
 			# "app.shield.optoutstudies.enabled" = false;
@@ -101,6 +101,6 @@
 			# "webgl.disabled" = true;
 			# "webgl.renderer-string-override" = " ";
 			# "webgl.vendor-string-override" = " ";
-		};
+		# };
 	};
 }

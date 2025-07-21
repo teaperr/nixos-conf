@@ -9,18 +9,21 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins = [ "git" "tmux" ];
+      plugins = [
+        "git"
+        "tmux"
+      ];
     };
 
     sessionVariables = {
       EDITOR = "nvim";
-			MANPAGER = "nvim +Man!";
+      MANPAGER = "nvim +Man!";
       # ZSH_TMUX_FIXTERM_WITH_256COLOR = "TRUE";
       ZSH_TMUX_AUTOSTART = "TRUE";
       CASE_SENSITIVE = "TRUE";
       ENABLE_CORRECTION = "TRUE";
       COMPLETION_WAITING_DOTS = "...";
-			ZSH_COMPDUMP = "$ZSH/cache/.zcompdump-$HOST";
+      ZSH_COMPDUMP = "$ZSH/cache/.zcompdump-$HOST";
       # COLORTERM = "truecolor";
       # TERM = "xterm-256color";
     };
@@ -33,9 +36,9 @@
       update-grub = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
       tma = "tmux attach";
       autoremove = "sudo pacman -R $(pacman -Qdtq)";
-			unfuck="git reset HEAD~1 --soft";
-			ff = "fastfetch";
-			t = "tmux new-session -t 0";
+      unfuck = "git reset HEAD~1 --soft";
+      ff = "fastfetch";
+      t = "tmux new-session -t 0";
       vi = "nvim";
       v = "nvim";
       e = "nvim .";
@@ -45,23 +48,34 @@
       setmux = "tmux new -d -s nvim && tmux new -d -s dir && tmux new -d -s proc";
       colourtest = "bash ~/system_bullshit/scripts/colourtest.sh";
       copyfile = "xclip -selection clipboard -i";
-			copy = "xclip -selection clipboard";
+      copy = "xclip -selection clipboard";
     };
+
     initExtra = ''
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
+      export QT_SCREEN_SCALE_FACTORS="1;1"
+      export GBM_BACKEND="nvidia-drm"
+      export __GLX_VENDOR_LIBRARY_NAME="nvidia"
+      export _JAVA_AWT_WM_NONREPARENTING="1"
+      export ANV_QUEUE_THREAD_DISABLE="1"
+      export QT_QPA_PLATFORM="wayland"
+      export CLUTTER_BACKEND="wayland"
+      export SDL_VIDEODRIVER="wayland"
+      export XDG_SESSION_TYPE="wayland"
 
-PATH=~/.cargo/bin:$PATH
+      function y() {
+      	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+      	yazi "$@" --cwd-file="$tmp"
+      	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+      		builtin cd -- "$cwd"
+      	fi
+      	rm -f -- "$tmp"
+      }
 
-bindkey '^Y' autosuggest-accept
-bindkey '^X' kill-whole-line
-      '';
+      PATH=~/.cargo/bin:$PATH
+
+      bindkey '^Y' autosuggest-accept
+      bindkey '^X' kill-whole-line
+    '';
   };
   home.packages = with pkgs; [
     zsh-autosuggestions
