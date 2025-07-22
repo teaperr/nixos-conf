@@ -1,9 +1,8 @@
 { config, pkgs, ... }:
 
 {
-	imports = [
-		./packages.nix
-		./hyprland.nix
-		./waybar.nix
-	];
+  imports = [
+    ./packages.nix
+    ./hyprland.nix
+  ];
 }
