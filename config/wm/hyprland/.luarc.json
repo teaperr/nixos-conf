@@ -1,0 +1,7 @@
+{
+	"$schema": "https://raw.githubusercontent.com/LuaLS/lua-language-server/main/meta/EmmyLua.schema.json",
+	"workspace.library": [],
+	"diagnostics.globals": [
+		"hl"
+	]
+}
