@@ -3,10 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
     home-manager.url = "github:nix-community/home-manager/master";
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     nixcord.url = "github:FlameFlag/nixcord";
     catppuccin.url = "github:catppuccin/nix";
@@ -20,16 +21,13 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-ld = {
-      url = "github:Mic92/nix-ld";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
+			nixpkgs-stable,
       home-manager,
       nixvim,
       catppuccin,
@@ -39,14 +37,12 @@
       hyprland,
       noctalia,
       zen-browser,
-      nix-ld,
       ...
     }@inputs:
     {
       nixosConfigurations.my-nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          nix-ld.nixosModules.nix-ld
           hyprland.nixosModules.default
 
           catppuccin.nixosModules.catppuccin
@@ -90,4 +86,5 @@
         extraSpecialArgs = { inherit inputs; };
       };
     };
+
 }

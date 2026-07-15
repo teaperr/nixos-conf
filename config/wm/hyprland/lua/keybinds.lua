@@ -26,7 +26,7 @@ end)
 
 -- replay buffer bind passthrough for obs
 -- save buffer
-hl.bind("CTRL + SHIFT + ALT + E", hl.dsp.pass({ window = "class:^(com\\.obsproject\\.Studio)$" }))
+hl.bind("CTRL + SHIFT + ALT + E", hl.dsp.pass({ window = "class:^(com.obsproject.Studio)$" }))
 
 -- window management ─────────────────────────────────────────────────
 hl.bind(modshift .. " + Q", hl.dsp.window.close())

@@ -1,2 +1,5 @@
 hl.window_rule({ match = { class = "StardewModdingAPI" }, workspace = "7 silent", fullscreen = 1 })
 hl.window_rule({ match = { initial_class = "XTerm" }, workspace = "7 silent" })
+hl.window_rule({ name = "gametag", match = { class = "^(HytaleClient)$" }, tag = "+game" })
+hl.window_rule({ name = "gametag", match = { class = "^(steam_app_*)$" }, tag = "+game" })
+hl.window_rule({ name = "gametag", match = { class = "^(factorygamesteam-win64-shipping.exe)$" }, tag = "+game" })

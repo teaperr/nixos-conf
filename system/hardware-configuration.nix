@@ -18,8 +18,8 @@
     "xhci_pci"
     "ahci"
     "usbhid"
-    "usb_storage"
     "ums_realtek"
+    "usb_storage"
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
@@ -27,62 +27,22 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/45f8c7ea-cc90-489d-80a9-9005ddff6b16";
+    device = "/dev/disk/by-uuid/7f957751-1a05-47a2-adf1-fb9c7f415e8d";
+    fsType = "ext4";
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/e844862d-3deb-47ca-a2fe-c775f94643ad";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/D0B7-FE03";
+    device = "/dev/disk/by-uuid/A900-842E";
     fsType = "vfat";
-    options = [ "umask=0077" ];
-  };
-
-  fileSystems."/efi" = {
-    device = "/dev/disk/by-uuid/1E2E-3DE1";
-    fsType = "vfat";
-    options = [ "umask=0077" ];
-  };
-
-  fileSystems."/mnt/ssd" = {
-    device = "/dev/disk/by-partuuid/e778a075-0f2c-4681-ac2d-4278d2a89858";
-    fsType = "ntfs";
-    options = [ "rw" ];
-  };
-
-  fileSystems."/home/lotus/Documents" = {
-    device = "/t/shared/Documents";
-    fsType = "none";
-    options = [ "bind" ];
-  };
-
-  fileSystems."/home/lotus/Downloads" = {
-    device = "/mnt/shared/Downloads";
-    fsType = "none";
-    options = [ "bind" ];
-  };
-
-  fileSystems."/home/lotus/Videos" = {
-    device = "/mnt/shared/Videos";
-    fsType = "none";
-    options = [ "bind" ];
-  };
-
-  fileSystems."/home/lotus/Games" = {
-    device = "/mnt/shared/Games";
-    fsType = "none";
-    options = [ "bind" ];
-  };
-
-  fileSystems."/home/lotus/drives/secondary" = {
-    device = "/mnt/shared/";
-    fsType = "none";
-    options = [ "bind" ];
-  };
-
-  fileSystems."/home/lotus/drives/ssd" = {
-    device = "/mnt/ssd";
-    fsType = "none";
-    options = [ "bind" ];
+    options = [
+      "fmask=0022"
+      "dmask=0022"
+    ];
   };
 
   swapDevices = [ ];

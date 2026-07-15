@@ -6,6 +6,7 @@
 }:
 
 {
+  news.display = "silent";
   imports = [
     ./config
   ];

@@ -2,7 +2,7 @@
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("[silent] bash ~/hm/scripts/obs-start.sh")
-	hl.exec_cmd("noctalia")
+	hl.exec_cmd("noctalia && noctalia msg power-set performance")
 	hl.exec_cmd("[workspace 1 silent] " .. term)
 	-- hl.exec_cmd("LIBVA_DRIVER_NAME=i915 discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy")
 	hl.exec_cmd("[silent] vesktop")

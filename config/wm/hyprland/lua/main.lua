@@ -4,11 +4,11 @@ monitor_secondary = "desc:Ancor Communications Inc ASUS VS228 E8LMTF150829"
 
 -- imports
 require("config.keybinds")
+require("config.games")
 require("config.autostart")
 require("config.wallpaper")
 require("config.workspaces")
 require("config.rules")
-require("config.games")
 
 -- ── Monitors ────────────────────────────────────────────────────────
 hl.monitor({

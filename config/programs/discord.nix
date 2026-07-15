@@ -13,10 +13,11 @@
   };
   programs.nixcord = {
     enable = false;
-    discord = {
-      enable = true;
-      vencord.enable = false;
-    };
+    # discord = {
+    #   enable = true;
+    #   vencord.enable = false;
+    # };
     vesktop.enable = true;
   };
+  home.packages = with pkgs; [ vesktop ];
 }

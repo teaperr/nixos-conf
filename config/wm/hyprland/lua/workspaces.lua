@@ -21,6 +21,7 @@ hl.window_rule({ match = { class = "zen" }, workspace = "3" })
 
 hl.window_rule({ match = { class = "steam" }, workspace = "4 silent" })
 
+hl.window_rule({ match = { class = "Spotify" }, workspace = "5 silent" })
 hl.window_rule({ match = { class = "spotify" }, workspace = "5 silent" })
 
 hl.window_rule({

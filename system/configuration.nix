@@ -30,16 +30,6 @@
     ./nvidia.nix
   ];
 
-  # auto mount secondary drive
-  fileSystems."/mnt/shared" = {
-    device = "/dev/disk/by-partuuid/66f2df75-5b23-4d25-9137-96f4497555b7";
-    fsType = "ntfs-3g";
-    options = [
-      "rw"
-      "uid=1000"
-    ];
-  };
-
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -79,6 +69,10 @@
       gnome.enable = true;
     };
   };
+
+  environment.xfce.excludePackages = with pkgs.xfce; [
+    xfce4-notifyd
+  ];
 
   boot.extraModprobeConfig = ''
       	options hid_apple fnmode=2
@@ -147,6 +141,7 @@
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
+    git
     limine
     vim
     librewolf
@@ -166,9 +161,9 @@
     networkmanager-openvpn
   ];
 
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   networking.firewall.enable = false;
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }
