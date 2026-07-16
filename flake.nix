@@ -27,7 +27,7 @@
     {
       self,
       nixpkgs,
-			nixpkgs-stable,
+      nixpkgs-stable,
       home-manager,
       nixvim,
       catppuccin,

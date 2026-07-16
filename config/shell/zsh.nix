@@ -36,9 +36,16 @@
     };
 
     initContent = ''
+      # Fuzzy/substring completion matching (this is what oh-my-zsh's completion.zsh gave you)
+      zstyle ':completion:*' matcher-list ''' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+      zstyle ':completion:*' menu select
+      zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+      zstyle ':completion:*' completer _complete _match _approximate
+
+      setopt COMPLETE_IN_WORD
+      setopt ALWAYS_TO_END
       setopt CORRECT
       setopt CORRECT_ALL
-      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
       ${builtins.readFile ./zshrc.bash}
     '';
