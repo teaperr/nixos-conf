@@ -1,0 +1,260 @@
+config_version = 2
+
+[bar.widgets]
+background_opacity = 0.69999998435378075
+capsule = true
+center = [ "group:g1" ]
+end = [ "bluetooth", "network", "tray", "volume", "brightness", "battery", "notifications", "clipboard", "group:g2" ]
+margin_edge = 9
+margin_ends = 9
+start = [ "wallpaper", "workspaces", "media" ]
+
+    [[bar.widgets.capsule_group]]
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "launcher", "date", "clock" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.widgets.capsule_group]]
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "lock_screen", "session" ]
+    opacity = 1.0
+    padding = 6.0
+
+[calendar]
+enabled = true
+
+    [calendar.account.personal_google]
+    name = "Personal Calendar"
+    type = "google"
+
+[desktop_widgets]
+enabled = false
+
+[dock]
+enabled = false
+
+[hooks]
+colors_changed = "sh /home/lotus/hm/scripts/on-wallpaper-changed.sh"
+
+[location]
+address = "Frome, United Kingdom"
+
+[lockscreen]
+blur_intensity = 0.0
+tint_intensity = 0.0
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-login-box@DP-3",
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000005"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 957.0
+    output = "DP-3"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 645.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.29999999999999999
+        background_radius = 12.0
+        input_opacity = 0.65000000000000002
+        input_radius = 6.0
+        show_login_button = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 96.0
+    box_width = 272.0
+    cx = 960.0
+    cy = 380.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = true
+        background_color = "surface"
+        background_opacity = 0.29999999999999999
+        background_padding = 0.0
+        background_radius = 12.0
+        circle = true
+        clock_style = "digital"
+        color = "on_surface"
+        font_family = ""
+        format = "{:%H:%M}"
+        shadow = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 576.0
+    box_width = 1936.0
+    cx = 960.0
+    cy = 988.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        aspect_ratio = 6.0
+        background = false
+        bands = 60.0
+        centered = false
+        mirrored = true
+        show_when_idle = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 144.0
+    box_width = 176.0
+    cx = 1824.0
+    cy = 1002.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background_opacity = 0.65000000000000002
+        font_family = ""
+        forecast_days = 3
+        shadow = false
+        show_forecast = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 173.0
+    cy = 1002.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "media_player"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = true
+        background_opacity = 0.65000000000000002
+        font_family = ""
+        hide_when_no_media = true
+        layout = "horizontal"
+        shadow = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 32.0
+    box_width = 112.0
+    cx = 960.0
+    cy = 460.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = true
+        background_opacity = 0.29999999999999999
+        background_padding = 5.0
+        background_radius = 6.0
+        clock_style = "digital"
+        font_family = ""
+        format = "{:%a %d %b}"
+        shadow = false
+
+[shell]
+clipboard_history_max_entries = 10000
+font_family = "Hack Nerd Font Mono"
+settings_show_advanced = true
+
+    [shell.panel]
+    clipboard_placement = "attached"
+
+    [shell.screenshot]
+    directory = "/tmp/Screenshots"
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Oxocarbon"
+custom_palette = "peakpx-ts"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "hyprland" ]
+    community_ids = [ "zen-browser", "neovim", "rofi", "discord", "papirus-icons", "yazi" ]
+
+[wallpaper]
+directory = "/home/lotus/hm/assets/wallpapers"
+transition = [ "fade" ]
+transition_on_startup = true
+
+    [wallpaper.automation]
+    enabled = true
+    interval_seconds = 600
+
+    [wallpaper.default]
+    path = "/home/lotus/hm/assets/wallpapers/snow leopards.jpg"
+
+    [wallpaper.last]
+    path = "/home/lotus/hm/assets/wallpapers/snow leopards.jpg"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/lotus/hm/assets/wallpapers/snow leopards.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/lotus/hm/assets/wallpapers/snow leopards.jpg"
+
+[widget.bluetooth]
+capsule = true
+color = "#89B4FA"
+
+[widget.calendar]
+type = "custom_button"
+
+[widget.clock]
+capsule = true
+font_weight = 700
+
+[widget.date]
+font_weight = 700
+
+[widget.launcher]
+font_weight = 700
+
+[widget.lock_screen]
+color = "#FAB387"
+command = "noctalia msg session lock"
+glyph = "lock"
+type = "custom_button"
+
+[widget.session]
+color = "#F38BA8"

@@ -7,6 +7,9 @@
 }:
 
 {
+  home.file.".local/state/noctalia".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/hm/config/wm/hyprland/noctalia/noctalia-local/noctalia/";
+
   programs.noctalia = {
     enable = true;
 

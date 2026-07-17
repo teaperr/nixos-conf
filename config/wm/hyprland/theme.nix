@@ -56,6 +56,7 @@
 
   # ── Cursor (X11 + Wayland) ────────────────────────────────────────────────
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     x11.enable = true;
     name = "Catppuccin-Mocha-Dark-Cursors";
