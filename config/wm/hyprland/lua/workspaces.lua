@@ -3,7 +3,7 @@ hl.workspace_rule({ workspace = 1, monitor = monitor_primary, default = true })
 hl.workspace_rule({ workspace = 2, monitor = monitor_secondary, default = true })
 hl.workspace_rule({ workspace = 3, monitor = monitor_primary })
 hl.workspace_rule({ workspace = 4, monitor = monitor_primary })
-hl.workspace_rule({ workspace = 5, monitor = monitor_secondary })
+hl.workspace_rule({ workspace = 5, monitor = monitor_primary })
 hl.workspace_rule({ workspace = 6, monitor = monitor_primary })
 hl.workspace_rule({ workspace = 7, monitor = monitor_primary })
 hl.workspace_rule({ workspace = 8, monitor = monitor_secondary })
@@ -26,6 +26,8 @@ hl.window_rule({ match = { class = "spotify" }, workspace = "special:magic silen
 
 hl.window_rule({ match = { class = "org.keepassxc.KeePassXC" }, workspace = "6 silent" })
 
+hl.window_rule({ match = { class = "vlc" }, workspace = "6" })
+
 hl.window_rule({
 	match = { initial_class = "vesktop", initial_title = "Discord Popout" },
 	workspace = "6",
@@ -39,11 +41,11 @@ hl.window_rule({
 
 hl.window_rule({ match = { class = "nemo" }, workspace = "9 silent" })
 
-hl.window_rule({ match = { class = "org.speedcrunch." }, workspace = "special:scratchpad" })
+hl.window_rule({ match = { class = "org.speedcrunch." }, workspace = "special:scratchpad silent" })
 hl.window_rule({
 	match = { class = "com.ghostty.notes" },
 	tag = "+notes",
-	workspace = "special:scratchpad",
+	workspace = "special:scratchpad silent",
 	fullscreen = "1",
 	fullscreen_state = "1",
 })

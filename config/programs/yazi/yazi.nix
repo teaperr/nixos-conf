@@ -4,7 +4,6 @@
     enable = true;
     enableZshIntegration = true;
     shellWrapperName = "y";
-
     settings = {
       opener = {
         play = [
@@ -15,13 +14,14 @@
           }
         ];
       };
-      manager = {
+      mgr = {
         show_hidden = false;
         sort_by = "mtime";
+        sort_reverse = true;
         sort_dir_first = false;
+        linemode = "mtime";
       };
     };
-
     keymap = {
       mgr.prepend_keymap = [
         # ── Goto binds ────────────────────────────────────────────────
@@ -73,7 +73,6 @@
           run = "cd ~/.steam/steam/steamapps/common";
           desc = "go to steamapps";
         }
-
         # ── Plugins ───────────────────────────────────────────────────
         {
           on = [
@@ -90,7 +89,8 @@
         }
         {
           on = "<C-y>";
-          run = [ "plugin wl-clipboard" ];
+          run = "plugin wl-clipboard";
+          desc = "Copy to system clipboard";
         }
       ];
     };

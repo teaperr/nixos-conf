@@ -16,7 +16,7 @@ hl.bind(mod .. " + E", hl.dsp.exec_cmd(files))
 
 -- discord mute and deafen bind passthrough for vesktop
 -- toggle mute bind
-hl.bind("CTRL + SHIFT + ALT + EQUAL", function()
+hl.bind("Hangul", function()
 	hl.dispatch(hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "code:58", window = "class:^(vesktop)$" }))
 end)
 -- toggle deafen bind
@@ -26,7 +26,7 @@ end)
 
 -- replay buffer bind passthrough for obs
 -- save buffer
-hl.bind("CTRL + SHIFT + ALT + E", hl.dsp.pass({ window = "class:^(com.obsproject.Studio)$" }))
+hl.bind("Hangul_Hanja", hl.dsp.pass({ window = "class:^(com.obsproject.Studio)$" }))
 
 -- window management ─────────────────────────────────────────────────
 hl.bind(modshift .. " + Q", hl.dsp.window.close())

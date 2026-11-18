@@ -22,11 +22,14 @@
     audacity
     openvpn
     kicad
+    easyeffects
+    annotator
 
     (python3.withPackages (ps: with ps; [ pygobject3 ]))
 
     gtk4
     gtk4-layer-shell
+    intiface-central
   ];
 
   imports = [ inputs.funplayer.homeManagerModules.default ];

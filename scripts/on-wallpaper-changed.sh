@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# check if game is running
+if gamemoded -s | grep -q "is active"; then
+    echo "GameMode is active. Exiting script."
+    exit 1
+fi
+
 sleep 0.5
 hyprctl reload
 

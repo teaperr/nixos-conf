@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-obs --startreplaybuffer --disable-shutdown-check & disown
+rm -rf ~/.config/obs-studio/.sentinel && obs --startreplaybuffer & disown

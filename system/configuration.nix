@@ -58,6 +58,13 @@
     useXkbConfig = true;
   };
 
+  services.flatpak.enable = true;
+
+  xdg.systemDirs.data = [
+    "/var/lib/flatpak/exports/share"
+    "${config.home.homeDirectory}/.local/share/flatpak/exports/share"
+  ];
+
   services.xserver = {
     enable = true;
     xkb = {
@@ -99,6 +106,8 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+
+    extraLadspaPackages = [ pkgs.rnnoise-plugin ];
   };
 
   users.users.lotus = {
@@ -109,6 +118,7 @@
       "plugdev"
       "dialout"
       "libvirtd"
+      "adbusers"
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
@@ -140,8 +150,18 @@
   programs.gamescope.enable = true;
 
   programs.gamemode.enable = true;
+  programs.gamemode.settings = {
+    general = {
+      renice = 10;
+    };
+    custom = {
+      start = "${pkgs.libnotify}/bin/notify-send 'GameMode Started'";
+      end = "${pkgs.libnotify}/bin/notify-send 'GameMode Ended'";
+    };
+  };
 
   environment.systemPackages = with pkgs; [
+    android-tools
     git
     limine
     vim
